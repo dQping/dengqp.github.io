@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>babel-plugin-import配置babel按需引入antd模块，编译后报错 | HOME</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="HOME">
+    <meta name="author" content="Demi Deng">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAAs</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Vue-cli项目构建/" class="animsition-link">Vue-cli项目构建<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/antd/" class="animsition-link">antd<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/css/" class="animsition-link">css<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/gulp/" class="animsition-link">gulp<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/javascript/" class="animsition-link">javascript<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/javascript插件/" class="animsition-link">javascript插件<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/react学习/" class="animsition-link">react学习<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/日记/" class="animsition-link">日记<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/调试/" class="animsition-link">调试<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+  <div class="container">
+    <div class="row col-md-offset-2">
+      <div class="col-md-8">
+        <h1>babel-plugin-import配置babel按需引入antd模块，编译后报错</h1>
+        <span class="post-meta">
+      <time datetime="2019-05-15T03:23:41.000Z" itemprop="datePublished">
+          2019-05-15
+      </time>
+    
+</span>
+      </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <p>用 create-react-app 做项目的时候，同时引入了 antd，为了实现按需加载 antd 模块，用到官方提供的 babel-plugin-import （ 一个用于按需加载组件代码和样式的 babel 插件）</p>
+<a id="more"></a>
+<p>虽然项目一开始是用 create-react-app 创建，但是之后有 npm run eject，将所有内建的配置暴露出来，这样可以自由重新配置 webpack，至于为什么要这样，是因为目前 create-react-app 初始化的项目并不支持 less 文件，但是它已经把 webpack 的一些基础配置也封装起来了。而 antd 是基于 less 开发的，为了更灵活地使用 antd 甚至是改动一下 antd 中的 less 源码，很有必要重新配置一下 webpack.</p>
+<p>其实只是一个简单的改动,根据 babel-plugin-import 的文档说明：在 babel-loader 之前插入了一段简单的配置。如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">              test: /\.(js|mjs|jsx|ts|tsx)$/,</span><br><span class="line">              include: paths.appSrc,</span><br><span class="line">              loader: require.resolve(&quot;babel-loader&quot;),</span><br><span class="line">              options: &#123;</span><br><span class="line">                customize: require.resolve(</span><br><span class="line">                  &quot;babel-preset-react-app/webpack-overrides&quot;</span><br><span class="line">                ),</span><br><span class="line"></span><br><span class="line">                plugins: [</span><br><span class="line">+                 [</span><br><span class="line">+                   &quot;import&quot;,</span><br><span class="line">+                   &#123;</span><br><span class="line">+                     libraryName: &quot;antd&quot;,</span><br><span class="line">+                     style: true</span><br><span class="line">+                   &#125;</span><br><span class="line">+                 ],</span><br><span class="line">                  [</span><br><span class="line">                    require.resolve(&quot;babel-plugin-named-asset-import&quot;),</span><br><span class="line">                    &#123;</span><br><span class="line">                      loaderMap: &#123;</span><br><span class="line">                        svg: &#123;</span><br><span class="line">                          ReactComponent: &quot;@svgr/webpack?-svgo,+ref![path]&quot;</span><br><span class="line">                        &#125;</span><br><span class="line">                      &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                  ]</span><br><span class="line">                ],</span><br><span class="line">                cacheDirectory: true,</span><br><span class="line">                cacheCompression: isEnvProduction,</span><br><span class="line">                compact: isEnvProduction</span><br><span class="line">              &#125;</span><br><span class="line">            &#125;,</span><br></pre></td></tr></table></figure>
+<p>然后 npm start 编译完成后 发现报错了。错误如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">./node_modules/antd/lib/grid/style/index.less (./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-7-1!./node_modules/postcss-loader/src??postcss!./node_modules/less-loader/dist/cjs.js??ref--6-oneOf-7-3!./node_modules/antd/lib/grid/style/index.less)</span><br><span class="line"></span><br><span class="line">// https://github.com/ant-design/ant-motion/issues/44</span><br><span class="line">.bezierEasingMixin();</span><br><span class="line">^</span><br><span class="line">Inline JavaScript is not enabled. Is it set in your options?</span><br><span class="line">      in /Users/dengqiuping1/Desktop/pick/node_modules/antd/lib/style/color/bezierEasing.less (line 110, column 0)</span><br><span class="line">console.(anonymous function) @ index.js:1375</span><br><span class="line">handleErrors @ webpackHotDevClient.js:151</span><br><span class="line">push../node_modules/react-dev-utils/webpackHotDevClient.js.connection.onmessage @ webpackHotDevClient.js:194</span><br><span class="line">push../node_modules/sockjs-client/lib/event/eventtarget.js.EventTarget.dispatchEvent @ eventtarget.js:56</span><br><span class="line">(anonymous) @ main.js:282</span><br><span class="line">push../node_modules/sockjs-client/lib/main.js.SockJS._transportMessage @ main.js:280</span><br><span class="line">push../node_modules/sockjs-client/lib/event/emitter.js.EventEmitter.emit @ emitter.js:53</span><br><span class="line">WebSocketTransport.ws.onmessage @ websocket.js:36</span><br></pre></td></tr></table></figure>
+<p>如何解决这个问题呢？报错信息给了一个链接 <a href="https://github.com/ant-design/ant-motion/issues/44" target="_blank" rel="noopener">https://github.com/ant-design/ant-motion/issues/44</a></p>
+<p>于是打开项目 package.json 发现 less 版本是^3.9.0</p>
+<p>目前来看，解决方案：将 less 版本降到 3.0 以下 比如安装 2.7.3 版本。</p>
+<p><strong>两种方式：</strong></p>
+<p>1.npm i -S less@^2.7.3</p>
+<p>2.打开 webpack.config.js 找到 getStyleLoaders() 方法，增加 javascriptEnabled: true 如下配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">  const getStyleLoaders = (cssOptions, preProcessor) =&gt; &#123;</span><br><span class="line">    const loaders = [</span><br><span class="line">      isEnvDevelopment &amp;&amp; require.resolve(&quot;style-loader&quot;),</span><br><span class="line">      isEnvProduction &amp;&amp; &#123;</span><br><span class="line">        loader: MiniCssExtractPlugin.loader,</span><br><span class="line">        options: shouldUseRelativeAssetPaths ? &#123; publicPath: &quot;../../&quot; &#125; : &#123;&#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        loader: require.resolve(&quot;css-loader&quot;),</span><br><span class="line">        options: cssOptions</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line"></span><br><span class="line">        loader: require.resolve(&quot;postcss-loader&quot;),</span><br><span class="line">        options: &#123;</span><br><span class="line">          ident: &quot;postcss&quot;,</span><br><span class="line">          plugins: () =&gt; [</span><br><span class="line">            require(&quot;postcss-flexbugs-fixes&quot;),</span><br><span class="line">            require(&quot;postcss-preset-env&quot;)(&#123;</span><br><span class="line">              autoprefixer: &#123;</span><br><span class="line">                flexbox: &quot;no-2009&quot;</span><br><span class="line">              &#125;,</span><br><span class="line">              stage: 3</span><br><span class="line">            &#125;),</span><br><span class="line">            postcssNormalize()</span><br><span class="line">          ],</span><br><span class="line">          sourceMap: isEnvProduction &amp;&amp; shouldUseSourceMap</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ].filter(Boolean);</span><br><span class="line">    if (preProcessor) &#123;</span><br><span class="line">      loaders.push(&#123;</span><br><span class="line">        loader: require.resolve(preProcessor),</span><br><span class="line">        options: &#123;</span><br><span class="line">          sourceMap: isEnvProduction &amp;&amp; shouldUseSourceMap,</span><br><span class="line">+         javascriptEnabled: true</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    return loaders;</span><br><span class="line">  &#125;;</span><br></pre></td></tr></table></figure>
+
+      <div class="clearfix"></div>
+      <hr class="nogutter" />
+    </div>
+    <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2019/05/08/学习收藏集/">
+        学习收藏集 →
+    </a>
+    
+</nav>
+
+    <div class="col-md-8 col-md-offset-2 col-sm-24">
+      <script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+
+    </div>
+  </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

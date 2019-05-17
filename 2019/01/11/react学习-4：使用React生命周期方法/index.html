@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>react学习-4：使用React生命周期方法 | HOME</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="HOME">
+    <meta name="author" content="Demi Deng">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAAs</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Vue-cli项目构建/" class="animsition-link">Vue-cli项目构建<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/antd/" class="animsition-link">antd<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/css/" class="animsition-link">css<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/gulp/" class="animsition-link">gulp<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/javascript/" class="animsition-link">javascript<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/javascript插件/" class="animsition-link">javascript插件<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/react学习/" class="animsition-link">react学习<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/日记/" class="animsition-link">日记<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/调试/" class="animsition-link">调试<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+  <div class="container">
+    <div class="row col-md-offset-2">
+      <div class="col-md-8">
+        <h1>react学习-4：使用React生命周期方法</h1>
+        <span class="post-meta">
+      <time datetime="2019-01-11T07:02:52.000Z" itemprop="datePublished">
+          2019-01-11
+      </time>
+    
+</span>
+      </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <p>React 生命周期主要包括三个阶段：初始化阶段、运行中阶段和销毁阶段，在 React 不同的生命周期里，会依次触发不同的钩子函数。</p>
+<a id="more"></a>
+<p><img src="/blog/img/lifeline.png" alt="react生命周期"></p>
+<h2 id="初始化阶段-Mount"><a href="#初始化阶段-Mount" class="headerlink" title="初始化阶段 Mount"></a>初始化阶段 Mount</h2><p><strong>以下说明中带删除线的生命周期方法即将被移除，实际写代码过程中最好不要使用。使用其替代方法</strong></p>
+<ul>
+<li>constructor()</li>
+<li><del>componentWillMount()</del></li>
+<li>render()</li>
+<li>componentDidMount()</li>
+</ul>
+<h2 id="运行中阶段-Update"><a href="#运行中阶段-Update" class="headerlink" title="运行中阶段 Update"></a>运行中阶段 Update</h2><ul>
+<li><del>componentWillReceiveProps()</del> / static getDerivedStateFromProps()</li>
+<li>shouldComponentUpdate()</li>
+<li><del>componentWillUpdate()</del> / getSnapshotBeforeUpdate()</li>
+<li>render()</li>
+<li>componentDidUpdate()</li>
+</ul>
+<h2 id="销毁阶段-Unmount"><a href="#销毁阶段-Unmount" class="headerlink" title="销毁阶段 Unmount"></a>销毁阶段 Unmount</h2><ul>
+<li>componentWillUnmount()</li>
+</ul>
+<h2 id="生命周期方法"><a href="#生命周期方法" class="headerlink" title="生命周期方法"></a>生命周期方法</h2><h3 id="componentWillMount（即将移除）"><a href="#componentWillMount（即将移除）" class="headerlink" title="componentWillMount（即将移除）"></a>componentWillMount（即将移除）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentWillMount()</span><br></pre></td></tr></table></figure>
+<p>componentWillMount()是唯一一个在 render()之前调用的生命周期方法。因此是在服务端渲染中唯一被调用的方法。</p>
+<p><strong>注意</strong>：因为 componentWillMount()将被删除，所以官方推荐使用 <strong>constructor()</strong> 替代该方法</p>
+<h3 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentDidMount()</span><br></pre></td></tr></table></figure>
+<p>当该方法被调用时候，React 已经渲染了组件并且将组件插入 DOM。因此如有有任何依赖于 DOM 的初始化，应该放在这里。该方法中可以使用 this.setState()方法，它将触发重新渲染。</p>
+<p>使用场景：</p>
+<ul>
+<li>fetch data</li>
+<li>依赖 DOM 初始化</li>
+<li>添加事件监听</li>
+</ul>
+<h3 id="componentWillReceiveProps（即将移除）"><a href="#componentWillReceiveProps（即将移除）" class="headerlink" title="componentWillReceiveProps（即将移除）"></a>componentWillReceiveProps（即将移除）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentWillReceiveProps(nextProps)</span><br></pre></td></tr></table></figure>
+<p>当组件接收到新的 props，该方法会首先被调用，但是需要注意一点，即使 props 并没有发生改变，该方法也会被调用，所以使用该方法的时候要确保比较 this.props 和 nextProps，避免不必要的渲染。</p>
+<p><strong>注意</strong>：componentWillReceiveProps 将被移除，使用新的 <strong>static getDerivedStateFromProps</strong> 代替。</p>
+<h3 id="static-getDerivedStateFromProps（新增）"><a href="#static-getDerivedStateFromProps（新增）" class="headerlink" title="static getDerivedStateFromProps（新增）"></a>static getDerivedStateFromProps（新增）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">static getDerivedStateFromProps(props, state)</span><br></pre></td></tr></table></figure>
+<p>每次 render 都会调用该方法——即使 props 没有发生变化。<strong>所以要谨慎使用</strong>。</p>
+<h3 id="shouldComponentUpdate"><a href="#shouldComponentUpdate" class="headerlink" title="shouldComponentUpdate"></a>shouldComponentUpdate</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">shouldComponentUpdate(nextState, nextProps)</span><br></pre></td></tr></table></figure>
+<p>该方法在初始化时候不执行。在有些时候需要避免不必要的渲染，可以使用该方法。返回 false 意味着 React 不执行 componentWillUpdate()，render()，componentDidUpdate()。<strong>在该方法中不可以设置 setState。</strong></p>
+<p><strong>注意：</strong>根据 React 文档，React 可能将 shouldComponentUpdate 视做提示而不是严格的根据它的返回结果决定是否执行，也就是说可能出现 shouldComponentUpdate 返回 false，但是还是发生重新渲染。</p>
+<p>如前所述，该方法可能有有问题。React 官方提供了另一个解决办法，所以如果发现某个组件慢，可以使用<strong>React.PureComponent</strong> 替代 React.component，它将对 props 和 state 提供一个浅层对照。</p>
+<h3 id="componentWillUpdate（即将移除）"><a href="#componentWillUpdate（即将移除）" class="headerlink" title="componentWillUpdate（即将移除）"></a>componentWillUpdate（即将移除）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentWillUpdate(nextProps, nextState)</span><br></pre></td></tr></table></figure>
+<p>该方法在被渲染前调用。componentWillUpdate 在新的 props 进入组件或者 state 改变的时候调用。<strong>在该方法中不能调用 setState</strong></p>
+<p>常见的用例有：</p>
+<ul>
+<li>根据 state 的变化设置变量</li>
+<li>派发事件</li>
+<li>开始动画</li>
+</ul>
+<p><strong>注：</strong>componentWillUpdate 即将被移除，此方法可以替换为 componentDidUpdate()。如果你在此方法中读取 DOM 信息（例如，为了保存滚动位置），则可以将此逻辑移至 getSnapshotBeforeUpdate() 中。</p>
+<h3 id="getSnapshotBeforeUpdate"><a href="#getSnapshotBeforeUpdate" class="headerlink" title="getSnapshotBeforeUpdate()"></a>getSnapshotBeforeUpdate()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getSnapshotBeforeUpdate(prevProps, prevState)</span><br></pre></td></tr></table></figure>
+<p>getSnapshotBeforeUpdate() 在最近一次渲染输出（提交到 DOM 节点）之前调用。它使得组件能在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置）。<strong>此生命周期的任何返回值将作为参数传递给 componentDidUpdate()</strong>。</p>
+<p>此用法并不常见，但它可能出现在 UI 处理中，如需要以特殊方式处理滚动位置的聊天线程等。应返回 snapshot 的值（或 null）。</p>
+<h3 id="componentDidUpdate"><a href="#componentDidUpdate" class="headerlink" title="componentDidUpdate"></a>componentDidUpdate</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentDidUpdate(prevProps, prevState, snapshot)</span><br></pre></td></tr></table></figure>
+<p>componentDidUpdate() 会在更新后会被立即调用</p>
+<h3 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount"></a>componentWillUnmount</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">componentWillUnmount()</span><br></pre></td></tr></table></figure>
+<p>在卸载，销毁组件之前调用该方法。<strong>在卸载组件时候不能设置 State</strong></p>
+<ul>
+<li>使用该方法清理 actions</li>
+<li>删除在 componentDidMount 或其他地方添加的事件监听</li>
+<li>断开网络请求</li>
+<li>清空计时器</li>
+<li>清理在 componentDidMount 中创建的 DOM 元素</li>
+</ul>
+
+      <div class="clearfix"></div>
+      <hr class="nogutter" />
+    </div>
+    <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/01/18/JS中的可枚举属性与不可枚举属性/" style="float: left;">
+        ← JS中的可枚举属性与不可枚举属性
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/01/10/react学习-3：Redux/">
+        react学习-3：Redux →
+    </a>
+    
+</nav>
+
+    <div class="col-md-8 col-md-offset-2 col-sm-24">
+      <script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+
+    </div>
+  </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>webpack总结 | HOME</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="HOME">
+    <meta name="author" content="Demi Deng">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+    
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+  
+  
+  
+
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAAs</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Vue-cli项目构建/" class="animsition-link">Vue-cli项目构建<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/antd/" class="animsition-link">antd<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/css/" class="animsition-link">css<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/gulp/" class="animsition-link">gulp<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/javascript/" class="animsition-link">javascript<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/javascript插件/" class="animsition-link">javascript插件<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/react学习/" class="animsition-link">react学习<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(13)</small></a></li>
+				    
+				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/日记/" class="animsition-link">日记<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/调试/" class="animsition-link">调试<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+  <div class="container">
+    <div class="row col-md-offset-2">
+      <div class="col-md-8">
+        <h1>webpack总结</h1>
+        <span class="post-meta">
+      <time datetime="2019-03-30T14:07:04.000Z" itemprop="datePublished">
+          2019-03-30
+      </time>
+    
+    
+    | 
+    <a href='/tags/自动化构建工具/'>自动化构建工具</a>
+    
+    
+</span>
+      </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <p>因为最近学了 gulp，写了一篇学习记录，所以顺便对之前用的 webpack 也做一篇总结，方便以后回顾。webpack 其实就是一个模块打包工具, webpack 能够正确的识别 ES Module 、CommonJS 、CMD 、ADM 的模块引入规范,配置相应的 loader 就可以对任何类型的文件做打包处理。</p>
+<a id="more"></a>
+<h2 id="常用的-loader"><a href="#常用的-loader" class="headerlink" title="常用的 loader"></a>常用的 loader</h2><p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时<strong>预处理文件</strong>。因此，loader 类似于 gulp 构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。</p>
+<pre><code>常用的 loader
+- file-loader : 将文件打包到输出文件夹并返回地址
+- url-loader: 类似 file-loader ，但是打包文件内容并入到 bundle.js 中了，可配置 limit 限制文件大小
+- style-loader: 通过注入 &lt;style&gt;&lt;/style&gt; 标记将 样式 添加到 html 文件的 &lt;head&gt;&lt;/head&gt; 中
+- css-loader: 解释 @import 和 url()，如import / require（）并解析它们。
+- sass-loader: 加载Sass / SCSS文件并将其编译为CSS。
+- postcss-loader: 使用PostCSS处理CSS的webpack的加载器， 需要使用 postcss.config.js 配置文件做相应配置
+- babel-loader: 此包允许使用Babel和webpack转换JavaScript文件。
+</code></pre><p><strong>babel-loader</strong> 只是允许了 webpack 使用 Babel 来转换 JavaScript 文件，abel-loader 本身并没有转换 JavaScript 文件的功能，因此，还需要加载 <strong>@babel/core @babel/preset-env</strong> 这两个包；@babel/core 编译的依赖包，这个包的作用是把 js 代码分析成 ast，方便各个插件分析语法进行相应的处理；@babel/preset-env 中包含所有了 ES6+ 转 ES5 的规则。项目中最好使用一个 .babelrc 文件管理 babel 的配置而不是放在 babel-loader 的 options 中。</p>
+<p><strong>@babel/polyfill 与 @babel/plugin-transform-runtime 作用的区别</strong></p>
+<p>polyfill 包含一个自定义的运行时再生器和 core-js，这将模拟完整的 ES2015 +环境，这意味着我们可以使用新的内置函数（如 Promise 或 WeakMap），静态方法（如 Array.from 或 Object.assign），实例方法（如 Array.prototype.includes）和生成器函数。为了做到这一点，polyfill 将这些添加到<strong>全局变量中</strong>。</p>
+<p>所以，如果我们使用 @babel/polyfill 去配置开发一些公用类库，会造成全局变量污染，因为在开发类库或一些开源 ui 的时候，我们并无法准确控制使用者的代码运行环境，这时使用 polyfill 就会出现问题。对于这种情况，我们会选择使用 @babel/plugin-transform-runtime 来配置开发，因为 transform-runtime 是以闭包的形式来添加我们需要的新语法。</p>
+<p>.babelrc 文件内容示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">// @babel/polyfill 配置</span><br><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;@babel/preset-env&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;targets&quot;: &#123;</span><br><span class="line">          &quot;edge&quot;: &quot;17&quot;,</span><br><span class="line">          &quot;firefox&quot;: &quot;60&quot;,</span><br><span class="line">          &quot;chrome&quot;: &quot;67&quot;,</span><br><span class="line">          &quot;safari&quot;: &quot;11.1&quot;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;useBuiltIns&quot;: &quot;usage&quot;,  //  在文件需要的位置单独按需引入</span><br><span class="line">        &quot;corejs&quot;: 3</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// @babel/plugin-transform-runtime 配置</span><br><span class="line">&#123;</span><br><span class="line">    &quot;plugins&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;@babel/plugin-transform-runtime&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;absoluteRuntime&quot;: false,</span><br><span class="line">        &quot;corejs&quot;: 2,</span><br><span class="line">        &quot;helpers&quot;: true,</span><br><span class="line">        &quot;regenerator&quot;: true,</span><br><span class="line">        &quot;useESModules&quot;: false</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="常用的-plugin"><a href="#常用的-plugin" class="headerlink" title="常用的 plugin"></a>常用的 plugin</h2><p>webpack 的插件功能类似 vue 或者 react 的生命周期钩子，会在打包运行过程的某个阶段，执行我们配置的某个插件，从而实现一些功能。</p>
+<pre><code>常用的webpack插件
+- HtmlWebpackPlugin : 编译完成后根据指定 html 模版 生成 html 文件，并引入编译好的 js.
+- CleanWebpackPlugin : 编译前清除 output 中指定文件夹中的文件.
+- HotModuleReplacementPlugin : 热模块更新(简称HMR)， webpack自带的，不需要额外再安装
+- SplitChunksPlugin : webpack自带的，不需要额外再安装,用于做 code splitting
+- MiniCssExtractPlugin : 此插件将CSS提取到单独的文件中，不配置默认会被放到js文件中
+- optimize-css-assets-webpack-plugin : 压缩css文件
+</code></pre><h2 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h2><p>webpack-dev-server 用于 development 模式下的快速开发应用程序，它不会将打包内容写入文件，而是存在内存中，并且为我们启动一个本地服务器。配置 hot: true 即可在每次修改时自动刷新页面内容，非常方便。</p>
+<p>配置示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var path = require(&apos;path&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  //...</span><br><span class="line">  devServer: &#123;</span><br><span class="line">    contentBase: path.join(__dirname, &apos;dist&apos;),</span><br><span class="line">    compress: true,</span><br><span class="line">    port: 8181,</span><br><span class="line">    hot: true,</span><br><span class="line">    hotOnly: true,  // 即使 HMR 失效的时候，浏览器也不自动刷新</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="Optimization（优化）"><a href="#Optimization（优化）" class="headerlink" title="Optimization（优化）"></a>Optimization（优化）</h2><p>webpack 4.0 会根据所选模式( development 或者 production ) 为我们运行默认的优化，如果我们手动配置 <a href="https://webpack.js.org/configuration/optimization" target="_blank" rel="noopener">Optimization</a> 会将相应的默认配置覆盖。</p>
+<h3 id="three-shaking"><a href="#three-shaking" class="headerlink" title="three shaking"></a>three shaking</h3><p>Tree Shaking 依赖于 ES2015 模块语法(export/import)的静态结构，即导入和导出,用于消除无用代码。新的 webpack 4 版本扩展了这一功能，通过 <strong>“sideEffects”package.json</strong> 属性向编译器提供提示，表示项目中的哪些文件是“纯粹的”，因此如果未使用则可以安全修剪。</p>
+<p>示例代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// src/math.js 文件内容</span><br><span class="line">export function square(x) &#123;</span><br><span class="line">  return x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export function cube(x) &#123;</span><br><span class="line">  return x * x * x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// src/index.js 文件内容</span><br><span class="line">+ import &#123; cube &#125; from &apos;./math.js&apos;;</span><br><span class="line"></span><br><span class="line">// 如果我们只使用了math.js 中的部分内容，那么句没有必要全部打包</span><br><span class="line">// 只需要打包需要的部分即可，我们可以做以下配置</span><br><span class="line"></span><br><span class="line">// webpack.config.js</span><br><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">+ mode: &apos;development&apos;,</span><br><span class="line">+ optimization: &#123;</span><br><span class="line">+   usedExports: true</span><br><span class="line">+ &#125;</span><br><span class="line">&#125;;</span><br><span class="line">// 将 mode 设置为 development 是因为 生产环境已经默认配置了此项功能</span><br></pre></td></tr></table></figure>
+<h3 id="code-splitting"><a href="#code-splitting" class="headerlink" title="code splitting"></a>code splitting</h3><p>chunk 是什么？就是代码片段，webpack 打包过后，dist 中的每一个 js 文件都是一个 chunk.</p>
+<p>code splitting 就是通过对代码公用部分进行一些拆分来提高代码的运行速度，webpack 4.0 已经支持 code splitting，我们只需要在配置文件中加 optimization 的配置即可。</p>
+<p>webpack 实现代码分割针对两种引用方式：同步和异步</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// 同步引用</span><br><span class="line">import _ from &apos;lodash&apos;;</span><br><span class="line">console.log(_join([&apos;a&apos;,&apos;b&apos;,&apos;c&apos;],&apos;***&apos;));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// 异步引用</span><br><span class="line">async function getComponent() &#123;</span><br><span class="line">    const &#123; default: _ &#125; = await import(/* webpackChunkName:&quot;lodash&quot; */&apos;lodash&apos;);</span><br><span class="line">    const element = document.createElement(&apos;div&apos;);</span><br><span class="line">    element.innerHTML = _.join([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;], &apos;***&apos;);</span><br><span class="line">    return element;</span><br><span class="line">&#125;</span><br><span class="line">getComponent().then((element =&gt;&#123;</span><br><span class="line">    document.body.appendChild(element)</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<p>异步代码分割(import):</p>
+<p>optimization.splitChunks 的默认配置项</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  //...</span><br><span class="line">  optimization: &#123;</span><br><span class="line">    splitChunks: &#123;</span><br><span class="line">      chunks: &apos;async&apos;,  // 代码分割只对异步代码生效</span><br><span class="line">      minSize: 30000, // 大于 30000 字节 大约 30kb  才会做代码分割</span><br><span class="line">      maxSize: 0,</span><br><span class="line">      minChunks: 1, // 当一个模块被用了至少 1 次，才会被考虑是否做代码分割。</span><br><span class="line">      maxAsyncRequests: 5, // 同时最多只能分割出5个库</span><br><span class="line">      maxInitialRequests: 3, // 对于入口文件引入的库最多只能分割出3个</span><br><span class="line">      automaticNameDelimiter: &apos;~&apos;,</span><br><span class="line">      name: true,</span><br><span class="line">      cacheGroups: &#123;</span><br><span class="line">        vendors: &#123;</span><br><span class="line">          test: /[\\/]node_modules[\\/]/,</span><br><span class="line">          priority: -10</span><br><span class="line">        &#125;,</span><br><span class="line">        default: &#123;</span><br><span class="line">          minChunks: 2,</span><br><span class="line">          priority: -20,</span><br><span class="line">          reuseExistingChunk: true</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    SplitChunksPlugin 配置参数说明：</span><br><span class="line">    - chunks：表示将选择哪些块进行优化。有效值为 all(同步+异步)，async（异步）和initial（同步）</span><br><span class="line">    - minSize：以字节为单位，文件size大于配置的值才会做代码分割</span><br><span class="line">    - maxSize：以字节为单位，文件size大于配置的值会做二次分割，一般不用</span><br><span class="line">    - minChunks：在打包生成的文件中，一个模块至少被引用几次才会考虑做代码分割</span><br><span class="line">    - maxAsyncRequests：按需加载时的最大并行请求数。</span><br><span class="line">    - maxInitialRequests：入口文件（index.html）的最大并行请求数。</span><br><span class="line">    - automaticNameDelimiter：命名链接符，默认情况下，webpack将使用 缓存组名+链接符+入口文件名 作为分割出的库名。</span><br><span class="line">    - name：拆分块的名称，提供true将自动生成基于 缓存组名+链接符+入口文件名 的名称。</span><br><span class="line">    - cacheGroups：根据此项配置决定分割出来的代码块要放到那个缓存组中。</span><br><span class="line">    - priority：优先级，如果分割出的代码块符合多个缓存组的条件，那就先放到优先级高的组中。</span><br><span class="line">    - reuseExistingChunk：设置为 true 表示如果一个模块已经被打包过了，那么再遇到这个模块会直接忽略它，直接使用之前被打包过的那个模块。</span><br><span class="line">    - fileName： 在 cacheGroups 组中设置 fileName 表示不实用默认的块命名（缓存组名+链接符+入口文件名），而是将符合该组的块都打包到同一个文件中去，文件名局势</span><br><span class="line">    chunks 和 cacheGroups 是配合使用的 fileName 的值。</span><br></pre></td></tr></table></figure>
+<h3 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h3><p>懒加载就是指通过 <strong>import</strong> 来异步的加载一个模块，但是具体什么时候去加载这个模块，要看代码怎么去写，什么时候真正的执行 import 这个语法的时候，代码才会真正的被载入。</p>
+<p>懒加载能够提高我们页面的加载速度，vue, react, angular 等框架的路由都是使用懒加载模式实现的。</p>
+<p>懒加载示例：点击页面的时候才会加载 lodash 模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">async function getComponent() &#123;</span><br><span class="line">    const &#123; default: _ &#125; = await import(/* webpackChunkName:&quot;lodash&quot; */&apos;lodash&apos;);</span><br><span class="line">    const element = document.createElement(&apos;div&apos;);</span><br><span class="line">    element.innerHTML = _.join([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;], &apos;***&apos;);</span><br><span class="line">    return element;</span><br><span class="line">&#125;</span><br><span class="line">document.addEventListener(&apos;click&apos;, () =&gt; &#123;</span><br><span class="line">    getComponent().then((element =&gt; &#123;</span><br><span class="line">        document.body.appendChild(element)</span><br><span class="line">    &#125;))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="preloading-和-prefetching"><a href="#preloading-和-prefetching" class="headerlink" title="preloading 和 prefetching"></a>preloading 和 prefetching</h3><p>webpack 4.6.0+ 增加了对预取和预加载的支持。 在声明导入时使用一些内联指 ​​ 令允许 webpack 输出“Resource Hint”，它告诉浏览器： prefetch：将来某些导航可能需要资源 preload：当前导航期间可能需要资源，通过这种方式提高网站的访问速度。</p>
+<p>preloading 预加载的块具有中等优先级并立即下载,预加载的块开始与父块并行加载。,prefetching 会等到主业务流程加载完成后，页面带宽空闲的时候，会自动去加载某些可能需要的资源。</p>
+<p>内联指 ​​ 令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import(/* webpackPrefetch: true */ &apos;LoginModal&apos;);</span><br></pre></td></tr></table></figure>
+<h2 id="打包分析"><a href="#打包分析" class="headerlink" title="打包分析"></a>打包分析</h2><p>可以通过运行 <strong>webpack –profile –json&gt; stats.json</strong> 生成所需的 JSON(stats.json)文件，通过此文件进行分析，官方提供网址:<a href="https://github.com/webpack/analyse" target="_blank" rel="noopener">https://github.com/webpack/analyse</a></p>
+<p>还有社区提供的几种分析工具：</p>
+<ul>
+<li><a href="https://alexkuz.github.io/webpack-chart/" target="_blank" rel="noopener">webpack-chart</a>:webpack 统计信息的交互式饼图。</li>
+<li><a href="https://github.com/webpack-contrib/webpack-bundle-analyzer" target="_blank" rel="noopener">webpack-bundle-analyzer</a>:一个插件和 CLI 实用程序，它将 bundle 内容表示为方便的交互式可缩放树形图。</li>
+<li><a href="https://chrisbateman.github.io/webpack-visualizer/" target="_blank" rel="noopener">webpack-visualizer</a>:可视化分析生成的软件包以查看哪些模块占用空间以及哪些模块可能重复。</li>
+<li><a href="https://webpack.jakoblind.no/optimize/" target="_blank" rel="noopener">webpack bundle optimize helper</a>:此工具将分析我们项目的捆绑包，并提供有关改进措施的可操作建议，以减少捆绑包的大小。</li>
+</ul>
+<h2 id="webpack-与浏览器缓存"><a href="#webpack-与浏览器缓存" class="headerlink" title="webpack 与浏览器缓存"></a>webpack 与浏览器缓存</h2><p>webpack 打包输出 output 中支持为文件名配置 contenthash 串，在每次更改代码打包上线时，可以防止用户浏览器缓存而不去请求最新文件的问题。</p>
+<h2 id="Shimming"><a href="#Shimming" class="headerlink" title="Shimming"></a>Shimming</h2><p>webpack 是基于模块打包的，模块与模块之间完全解耦，但如果我们希望将一些依赖库作为全局依赖，就可以配置相应的垫片（Shimming），我们可以使用 <strong>ProvidePlugin</strong> ，例如以下示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  const path = require(&apos;path&apos;);</span><br><span class="line">+ const webpack = require(&apos;webpack&apos;);</span><br><span class="line"></span><br><span class="line">  module.exports = &#123;</span><br><span class="line">    entry: &apos;./src/index.js&apos;,</span><br><span class="line">    output: &#123;</span><br><span class="line">      filename: &apos;bundle.js&apos;,</span><br><span class="line">      path: path.resolve(__dirname, &apos;dist&apos;)</span><br><span class="line">    &#125;,</span><br><span class="line">+   plugins: [</span><br><span class="line">+     new webpack.ProvidePlugin(&#123;</span><br><span class="line">+       $: &apos;jquery&apos;</span><br><span class="line">+     &#125;)</span><br><span class="line">+   ]</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line"># 这个配置告诉 webpack , 如果遇到变量 $ 的至少一个实例，请包含 jquery 包并将其提供给需要它的模块。</span><br></pre></td></tr></table></figure>
+<p>模块中的 this 指向模块自身， 如果想要让模块中的 this 指向 window，可以在配置文件中使用 imports-loader 进行配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line">const webpack = require(&apos;webpack&apos;);</span><br><span class="line">  module.exports = &#123;</span><br><span class="line">    ....</span><br><span class="line">+   module: &#123;</span><br><span class="line">+     rules: [</span><br><span class="line">+       &#123;</span><br><span class="line">+         test: /\.js$/,</span><br><span class="line">+         use: &apos;imports-loader?this=&gt;window&apos;</span><br><span class="line">+       &#125;</span><br><span class="line">+     ]</span><br><span class="line">+   &#125;,</span><br><span class="line"> &#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="webpack-配置案例"><a href="#webpack-配置案例" class="headerlink" title="webpack 配置案例"></a>webpack 配置案例</h2><p>以下是我使用 webpack 做的几类简单的配置方案，仅做参考：内容待完善。。。</p>
+
+      <div class="clearfix"></div>
+      <hr class="nogutter" />
+    </div>
+    <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/04/01/jQuery-Validate-js笔记/" style="float: left;">
+        ← 表单校验：jQuery.Validate.js使用笔记
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/03/29/git提交远程仓库的冲突解决/">
+        git提交远程仓库的冲突解决 →
+    </a>
+    
+</nav>
+
+    <div class="col-md-8 col-md-offset-2 col-sm-24">
+      <script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+
+    </div>
+  </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>
