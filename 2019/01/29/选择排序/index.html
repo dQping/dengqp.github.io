@@ -17,45 +17,80 @@
 <!--<![endif]-->
 
 <head>
-  <title>选择排序 | HOME</title>
+  <title>选择排序 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="HOME">
-    <meta name="author" content="Demi Deng">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
 
-    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-  
-  
-  
+    
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
 </head>
 
 <!--
@@ -158,7 +193,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -209,14 +244,18 @@
   <a href="/tags/排序/">排序</a>     | 
   <a href="/categories/算法/">算法</a>  
 </span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">算法分析</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">js 实现</span></a></li></ol>
+</div>
 
       </div>
     </div>
+
     <div class="col-md-8 col-md-offset-2">
       <p>在时间复杂度上表现最稳定的排序算法之一，因为无论什么数据进去都是 O(n²)的时间复杂度。。。所以用到它的时候，数据规模越小越好。唯一的好处可能就是不占用额外的内存空间了吧。</p>
 <a id="more"></a>
 <p><img src="/blog/img/xuanze.gif" alt="选择排序"></p>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>算法原理：把每一个数都与第一个数比较，如果小于第一个数，就把它们交换位置；这样一轮下来，最小的数就排到了最前面；重复 n-1 轮，就实现了选择排序</p>
+<h2><span id="算法分析">算法分析</span></h2><p>算法原理：把每一个数都与第一个数比较，如果小于第一个数，就把它们交换位置；这样一轮下来，最小的数就排到了最前面；重复 n-1 轮，就实现了选择排序</p>
 <p>算法描述：</p>
 <ul>
 <li><1>比较第一个元素和后面的所有元素，如果比第一个元素小，就交换他们，这样第一个的元素会是最小的；</1></li>
@@ -234,7 +273,7 @@
 
 稳定性
 - 不稳定
-</code></pre><h2 id="js-实现"><a href="#js-实现" class="headerlink" title="js 实现"></a>js 实现</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function selectionSort(arr) &#123;</span><br><span class="line">  var len = arr.length;</span><br><span class="line">  for (let i = 0; i &lt; len - 1; i++) &#123;</span><br><span class="line">    for (let j = i + 1; j &lt; len; j++) &#123;</span><br><span class="line">      if (arr[i] &gt; arr[j]) &#123;</span><br><span class="line">        let temp = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><h2><span id="js-实现">js 实现</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function selectionSort(arr) &#123;</span><br><span class="line">  var len = arr.length;</span><br><span class="line">  for (let i = 0; i &lt; len - 1; i++) &#123;</span><br><span class="line">    for (let j = i + 1; j &lt; len; j++) &#123;</span><br><span class="line">      if (arr[i] &gt; arr[j]) &#123;</span><br><span class="line">        let temp = arr[i];</span><br><span class="line">        arr[i] = arr[j];</span><br><span class="line">        arr[j] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
@@ -253,54 +292,19 @@
 </nav>
 
     <div class="col-md-8 col-md-offset-2 col-sm-24">
-      <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
+      <div id="comments"></div>
 
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
+<script>
+  var gitment = new Gitment({
+    id: "Tue Jan 29 2019 15:40:20 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
 </script>
 
     </div>
@@ -308,41 +312,68 @@
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
+      <!-- ============================ Footer =========================== -->
 
 <footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </footer>
 
 <!-- ============================ END Footer =========================== -->
+
       <!-- Load our scripts -->
 <!-- Resizable 'on-demand' full-height hero -->
 <script type="text/javascript">

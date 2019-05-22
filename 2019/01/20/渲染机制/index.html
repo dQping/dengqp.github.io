@@ -17,45 +17,80 @@
 <!--<![endif]-->
 
 <head>
-  <title>渲染机制 | HOME</title>
+  <title>渲染机制 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="HOME">
-    <meta name="author" content="Demi Deng">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
 
-    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-  
-  
-  
+    
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
 </head>
 
 <!--
@@ -158,7 +193,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -208,14 +243,18 @@
      | 
   <a href="/categories/前端知识基础/">前端知识基础</a>  
 </span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">渲染引擎简介</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">DOCTYPE 及作用</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">浏览器的渲染过程</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">重排 Reflow</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">重绘 Repaint</span></a></li></ol>
+</div>
 
       </div>
     </div>
+
     <div class="col-md-8 col-md-offset-2">
       <p>我们可能都知道浏览器含有一个渲染引擎，用来渲染窗口所展示的内容。默认情况下，渲染引擎可以显示 html、xml 文档及图片，它也可以借助插件（一种浏览器扩展）显示其他类型数据，例如使用 PDF 阅读器插件，用于显示 PDF 格式。但是其具体的渲染原理和流程确很少了解，所以本篇通过简单的学习后做一个相关知识的小结。</p>
 <a id="more"></a>
-<h2 id="渲染引擎简介"><a href="#渲染引擎简介" class="headerlink" title="渲染引擎简介"></a>渲染引擎简介</h2><p>这边主要讨论的浏览器——Firefox、Chrome 和 Safari 是基于两种渲染引擎构建的，Firefox 使用 Geoko——Mozilla 自主研发的渲染引擎，Safari 和 Chrome 都使用 webkit。</p>
-<h2 id="DOCTYPE-及作用"><a href="#DOCTYPE-及作用" class="headerlink" title="DOCTYPE 及作用"></a>DOCTYPE 及作用</h2><p>DTD（Document Type Definition 文档类型定义），是一系列的语法规则，用来定义 XML 或者 (X)HTML 的文件类型。浏览器会使用它来判断文档类型，决定使用何种协议来解析，以及切换浏览器模式。</p>
+<h2><span id="渲染引擎简介">渲染引擎简介</span></h2><p>这边主要讨论的浏览器——Firefox、Chrome 和 Safari 是基于两种渲染引擎构建的，Firefox 使用 Geoko——Mozilla 自主研发的渲染引擎，Safari 和 Chrome 都使用 webkit。</p>
+<h2><span id="doctype-及作用">DOCTYPE 及作用</span></h2><p>DTD（Document Type Definition 文档类型定义），是一系列的语法规则，用来定义 XML 或者 (X)HTML 的文件类型。浏览器会使用它来判断文档类型，决定使用何种协议来解析，以及切换浏览器模式。</p>
 <p>DOCTYPE 是用来声明文档类型和 DTD 规范的，一个主要的用途便是文件的合法性验证，如果文件代码不合法，那么浏览器解析时便会出一些差错。</p>
 <p>常用的 DOCTYPE 声明:</p>
 <ul>
@@ -234,7 +273,7 @@
 <li>HTML 4.01 Frameset:该 DTD 等同于 HTML 4.01 Transitional，但允许框架集内容。</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01 Frameset//EN&quot;</span><br><span class="line">&quot;http://www.w3.org/TR/html4/frameset.dtd&quot;&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="浏览器的渲染过程"><a href="#浏览器的渲染过程" class="headerlink" title="浏览器的渲染过程"></a>浏览器的渲染过程</h2><p>渲染引擎首先通过网络获得所请求文档的内容，通常以 8K 分块的方式完成。下面是渲染引擎在取得内容之后的基本流程：解析 html 以构建 dom 树 -&gt; 构建 render 树 -&gt; 布局 render 树 -&gt; 绘制 render 树。</p>
+<h2><span id="浏览器的渲染过程">浏览器的渲染过程</span></h2><p>渲染引擎首先通过网络获得所请求文档的内容，通常以 8K 分块的方式完成。下面是渲染引擎在取得内容之后的基本流程：解析 html 以构建 dom 树 -&gt; 构建 render 树 -&gt; 布局 render 树 -&gt; 绘制 render 树。</p>
 <p>解释一下几个概念，方便理解：</p>
 <ul>
 <li><p>DOM Tree：浏览器将 HTML 解析成树形的数据结构。</p>
@@ -264,7 +303,7 @@
 </li>
 </ol>
 <p><strong>注意：</strong>上述这个过程是逐步完成的，为了更好的用户体验，渲染引擎将会尽可能早的将内容呈现到屏幕上，并不会等到所有的 html 都解析完成之后再去构建和布局 render 树。它是解析完一部分内容就显示一部分内容，同时，可能还在通过网络下载其余内容。</p>
-<h2 id="重排-Reflow"><a href="#重排-Reflow" class="headerlink" title="重排 Reflow"></a>重排 Reflow</h2><p>当浏览器发现某个部分发生了点变化影响了布局，需要倒回去重新渲染，内行称这个回退的过程叫 reflow。reflow 会从 <html> 这个 root frame 开始递归往下，依次计算所有的结点几何尺寸和位置。reflow 几乎是无法避免的。现在界面上流行的一些效果，比如树状目录的折叠、展开（实质上是元素的显 示与隐藏）等，都将引起浏览器的 reflow。鼠标滑过、点击……只要这些行为引起了页面上某些元素的占位面积、定位方式、边距等属性的变化，都会引起它内部、周围甚至整个页面的重新渲染。通常我们都无法预估浏览器到底会 reflow 哪一部分的代码，它们都彼此相互影响着。</html></p>
+<h2><span id="重排-reflow">重排 Reflow</span></h2><p>当浏览器发现某个部分发生了点变化影响了布局，需要倒回去重新渲染，内行称这个回退的过程叫 reflow。reflow 会从 <html> 这个 root frame 开始递归往下，依次计算所有的结点几何尺寸和位置。reflow 几乎是无法避免的。现在界面上流行的一些效果，比如树状目录的折叠、展开（实质上是元素的显 示与隐藏）等，都将引起浏览器的 reflow。鼠标滑过、点击……只要这些行为引起了页面上某些元素的占位面积、定位方式、边距等属性的变化，都会引起它内部、周围甚至整个页面的重新渲染。通常我们都无法预估浏览器到底会 reflow 哪一部分的代码，它们都彼此相互影响着。</html></p>
 <p><strong>触发 Reflow</strong></p>
 <ul>
 <li>当增加、删除、修改 DOM 节点时，会导致 Reflow 或 Repaint</li>
@@ -273,7 +312,7 @@
 <li>Resize 窗口的时候（移动端没有这个问题），或是滚动的时候</li>
 <li>修改网页的默认字体的时候</li>
 </ul>
-<h2 id="重绘-Repaint"><a href="#重绘-Repaint" class="headerlink" title="重绘 Repaint"></a>重绘 Repaint</h2><p>repaint（重绘）：改变某个元素的背景色、文字颜色、边框颜色等等不影响它周围或内部布局的属性时，屏幕的一部分要重画，但是元素的几何尺寸没有变。</p>
+<h2><span id="重绘-repaint">重绘 Repaint</span></h2><p>repaint（重绘）：改变某个元素的背景色、文字颜色、边框颜色等等不影响它周围或内部布局的属性时，屏幕的一部分要重画，但是元素的几何尺寸没有变。</p>
 <p><strong>注意：</strong></p>
 <p>(1)display:none 的节点不会被加入 Render Tree，而 visibility: hidden 则会，所以，如果某个节点最开始是不显示的，设为 display:none 是更优的。</p>
 <p>(2)display:none 会触发 reflow，而 visibility:hidden 只会触发 repaint，因为没有发现位置变化。</p>
@@ -297,54 +336,19 @@
 </nav>
 
     <div class="col-md-8 col-md-offset-2 col-sm-24">
-      <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
+      <div id="comments"></div>
 
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
+<script>
+  var gitment = new Gitment({
+    id: "Sun Jan 20 2019 20:48:07 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
 </script>
 
     </div>
@@ -352,41 +356,68 @@
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
+      <!-- ============================ Footer =========================== -->
 
 <footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </footer>
 
 <!-- ============================ END Footer =========================== -->
+
       <!-- Load our scripts -->
 <!-- Resizable 'on-demand' full-height hero -->
 <script type="text/javascript">

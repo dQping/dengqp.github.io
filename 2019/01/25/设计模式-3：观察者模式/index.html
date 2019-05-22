@@ -17,45 +17,80 @@
 <!--<![endif]-->
 
 <head>
-  <title>设计模式-3：观察者模式/发布订阅模式 | HOME</title>
+  <title>设计模式-3：观察者模式/发布订阅模式 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="HOME">
-    <meta name="author" content="Demi Deng">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
 
-    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-  
-  
-  
+    
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
 </head>
 
 <!--
@@ -158,7 +193,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -208,28 +243,32 @@
      | 
   <a href="/categories/设计模式/">设计模式</a>  
 </span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">发布订阅模式介绍</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">发布者</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">发布列表</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">订阅功能</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">发布功能</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">取消订阅</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">先实现一个完整的简单发布订阅</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">观察者模式介绍</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">发布订阅模式和观察者模式的区别</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">实际使用的一些场景</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">设计原则验证</span></a></li></ol>
+</div>
 
       </div>
     </div>
+
     <div class="col-md-8 col-md-offset-2">
       <p>查了一些资料，有的说观察者（Observer）模式是发布（Publish）/订阅（Subscribe）模式的别名，也有人认为这两种模式还是存在差异，而我认为确实是存在一些差异的。虽然对两者模式来说，观察者和目标之间都是定义对象间<strong>一对多的关系</strong>，使得每当一个对象改变状态，则所有依赖它的对象都会得到通知并自动更新，<strong>但观察者模式的订阅者与发布者之间是存在依赖的，而发布/订阅模式则不会</strong></p>
 <a id="more"></a>
-<h2 id="发布订阅模式介绍"><a href="#发布订阅模式介绍" class="headerlink" title="发布订阅模式介绍"></a>发布订阅模式介绍</h2><p>发布-订阅模式有五个重要模块，分别是：<strong>发布者、发布列表、订阅功能、发布功能、取消订阅</strong>。</p>
-<h3 id="发布者"><a href="#发布者" class="headerlink" title="发布者"></a>发布者</h3><p>发布者是一个对象</p>
+<h2><span id="发布订阅模式介绍">发布订阅模式介绍</span></h2><p>发布-订阅模式有五个重要模块，分别是：<strong>发布者、发布列表、订阅功能、发布功能、取消订阅</strong>。</p>
+<h3><span id="发布者">发布者</span></h3><p>发布者是一个对象</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;&#125; // 发布者</span><br></pre></td></tr></table></figure>
-<h3 id="发布列表"><a href="#发布列表" class="headerlink" title="发布列表"></a>发布列表</h3><p>发布列表是一个数组或对象，用来存储每种产品订阅者的回调函数。</p>
+<h3><span id="发布列表">发布列表</span></h3><p>发布列表是一个数组或对象，用来存储每种产品订阅者的回调函数。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.list = []</span><br></pre></td></tr></table></figure>
-<h3 id="订阅功能"><a href="#订阅功能" class="headerlink" title="订阅功能"></a>订阅功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// key 所要订阅的产品类型</span><br><span class="line">// fn 订阅者传的回调函数</span><br><span class="line"></span><br><span class="line">obj.listen = function(key,fn)&#123;</span><br><span class="line">    if(!this.list[key])&#123;</span><br><span class="line">        // 如果没有对应产品的订阅者列表，则新增</span><br><span class="line">        this.list[key] = []</span><br><span class="line">    &#125;</span><br><span class="line">    this.list[key].push(fn)；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="发布功能"><a href="#发布功能" class="headerlink" title="发布功能"></a>发布功能</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">obj.emit = function()&#123;</span><br><span class="line">    var key = Array.prototype.shift.call(arguments);</span><br><span class="line">    var fns = this.list[key]; // 获取对应产品的所有订阅者回调</span><br><span class="line">    if(!fns || fns.length == 0)&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for(var i = 0; i &lt; fns.length; i++)&#123;</span><br><span class="line">        var fn = fns[i];</span><br><span class="line">        fn.apply(this,arguments)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="取消订阅"><a href="#取消订阅" class="headerlink" title="取消订阅"></a>取消订阅</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">obj.remove= function(key, fn) &#123;</span><br><span class="line">        // 如果使用remove方法，fn为函数名称，不能是匿名函数</span><br><span class="line">        var fns = this.list[key]</span><br><span class="line">        if (!fns || fns.length == 0) &#123;</span><br><span class="line">            // 如果没有被人订阅改事件，直接返回</span><br><span class="line">            return ;</span><br><span class="line">        &#125;</span><br><span class="line">        if (!fn) &#123;</span><br><span class="line">            // 如果没有传入取消订阅的回调函数，则改订阅类型的事件全部取消</span><br><span class="line">            fns &amp;&amp; (fns.length = 0)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            for (var i = 0; i &lt; fns.length; i++) &#123;</span><br><span class="line">                if (fns[i] === fn) &#123;</span><br><span class="line">                    fns.splice(i, 1)</span><br><span class="line">                    // 删除之后，i--保证下轮循环不会漏掉没有被遍历到的函数名</span><br><span class="line">                    i--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="先实现一个完整的简单发布订阅"><a href="#先实现一个完整的简单发布订阅" class="headerlink" title="先实现一个完整的简单发布订阅"></a>先实现一个完整的简单发布订阅</h3><p>代码如下:</p>
+<h3><span id="订阅功能">订阅功能</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// key 所要订阅的产品类型</span><br><span class="line">// fn 订阅者传的回调函数</span><br><span class="line"></span><br><span class="line">obj.listen = function(key,fn)&#123;</span><br><span class="line">    if(!this.list[key])&#123;</span><br><span class="line">        // 如果没有对应产品的订阅者列表，则新增</span><br><span class="line">        this.list[key] = []</span><br><span class="line">    &#125;</span><br><span class="line">    this.list[key].push(fn)；</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="发布功能">发布功能</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">obj.emit = function()&#123;</span><br><span class="line">    var key = Array.prototype.shift.call(arguments);</span><br><span class="line">    var fns = this.list[key]; // 获取对应产品的所有订阅者回调</span><br><span class="line">    if(!fns || fns.length == 0)&#123;</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    for(var i = 0; i &lt; fns.length; i++)&#123;</span><br><span class="line">        var fn = fns[i];</span><br><span class="line">        fn.apply(this,arguments)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="取消订阅">取消订阅</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">obj.remove= function(key, fn) &#123;</span><br><span class="line">        // 如果使用remove方法，fn为函数名称，不能是匿名函数</span><br><span class="line">        var fns = this.list[key]</span><br><span class="line">        if (!fns || fns.length == 0) &#123;</span><br><span class="line">            // 如果没有被人订阅改事件，直接返回</span><br><span class="line">            return ;</span><br><span class="line">        &#125;</span><br><span class="line">        if (!fn) &#123;</span><br><span class="line">            // 如果没有传入取消订阅的回调函数，则改订阅类型的事件全部取消</span><br><span class="line">            fns &amp;&amp; (fns.length = 0)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            for (var i = 0; i &lt; fns.length; i++) &#123;</span><br><span class="line">                if (fns[i] === fn) &#123;</span><br><span class="line">                    fns.splice(i, 1)</span><br><span class="line">                    // 删除之后，i--保证下轮循环不会漏掉没有被遍历到的函数名</span><br><span class="line">                    i--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="先实现一个完整的简单发布订阅">先实现一个完整的简单发布订阅</span></h3><p>代码如下:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">class Event &#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">        this.eventTypeObj = &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    on(eventType, fn) &#123;</span><br><span class="line">        if (!this.eventTypeObj[eventType]) &#123;</span><br><span class="line">            // 按照不同的订阅事件类型，存储不同的订阅回调</span><br><span class="line">            this.eventTypeObj[eventType] = []</span><br><span class="line">        &#125;</span><br><span class="line">        this.eventTypeObj[eventType].push(fn)</span><br><span class="line">    &#125;</span><br><span class="line">    emit() &#123;</span><br><span class="line">        // 可以理解为arguments借用shift方法</span><br><span class="line">        var eventType = Array.prototype.shift.call(arguments)</span><br><span class="line">        var eventList = this.eventTypeObj[eventType]</span><br><span class="line">        for (var i = 0; i &lt; eventList.length; i++) &#123;</span><br><span class="line">            eventList[i].apply(eventList[i], arguments)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    remove(eventType, fn) &#123;</span><br><span class="line">        // 如果使用remove方法，fn为函数名称，不能是匿名函数</span><br><span class="line">        var eventTypeList = this.eventTypeObj[eventType]</span><br><span class="line">        if (!eventTypeList) &#123;</span><br><span class="line">            // 如果没有被人订阅改事件，直接返回</span><br><span class="line">            return false</span><br><span class="line">        &#125;</span><br><span class="line">        if (!fn) &#123;</span><br><span class="line">            // 如果没有传入取消订阅的回调函数，则改订阅类型的事件全部取消</span><br><span class="line">            eventTypeList &amp;&amp; (eventTypeList.length = 0)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            for (var i = 0; i &lt; eventTypeList.length; i++) &#123;</span><br><span class="line">                if (eventTypeList[i] === fn) &#123;</span><br><span class="line">                    eventTypeList.splice(i, 1)</span><br><span class="line">                    // 删除之后，i--保证下轮循环不会漏掉没有被遍历到的函数名</span><br><span class="line">                    i--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var handleFn = function(data) &#123;</span><br><span class="line">    console.log(data)</span><br><span class="line">&#125;</span><br><span class="line">var event = new Event()</span><br><span class="line">event.on(&apos;click&apos;, handleFn)</span><br><span class="line">event.emit(&apos;click&apos;, &apos;1&apos;)   // 1</span><br><span class="line">event.remove(&apos;click&apos;, handleFn)</span><br><span class="line">event.emit(&apos;click&apos;, &apos;2&apos;)  // 不打印</span><br></pre></td></tr></table></figure>
 <p>以上代码可以满足先订阅后发布，但是如果先发布消息，后订阅就不满足了。这时候我们可以稍微修改一下即可满足先发布后订阅，在发布消息时，把事件缓存起来，等有订阅者时再执行。代码如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">class Event &#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">        this.eventTypeObj = &#123;&#125;</span><br><span class="line">        this.cacheObj = &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    on(eventType, fn) &#123;</span><br><span class="line">        if (!this.eventTypeObj[eventType]) &#123;</span><br><span class="line">            // 按照不同的订阅事件类型，存储不同的订阅回调</span><br><span class="line">            this.eventTypeObj[eventType] = []</span><br><span class="line">        &#125;</span><br><span class="line">        this.eventTypeObj[eventType].push(fn)</span><br><span class="line"></span><br><span class="line">        // 如果是先发布，则在订阅者订阅后，则根据发布后缓存的事件类型和参数，执行订阅者的回调</span><br><span class="line">        if (this.cacheObj[eventType]) &#123;</span><br><span class="line">            var cacheList = this.cacheObj[eventType]</span><br><span class="line">            for (var i = 0; i &lt; cacheList.length; i++) &#123;</span><br><span class="line">                cacheList[i]()</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    emit() &#123;</span><br><span class="line">        // 可以理解为arguments借用shift方法</span><br><span class="line">        var eventType = Array.prototype.shift.call(arguments)</span><br><span class="line">        var args = arguments</span><br><span class="line">        var that = this</span><br><span class="line"></span><br><span class="line">        function cache() &#123;</span><br><span class="line">            if (that.eventTypeObj[eventType]) &#123;</span><br><span class="line">                var eventList = that.eventTypeObj[eventType]</span><br><span class="line">                for (var i = 0; i &lt; eventList.length; i++) &#123;</span><br><span class="line">                    eventList[i].apply(eventList[i], args)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if (!this.cacheObj[eventType]) &#123;</span><br><span class="line">            this.cacheObj[eventType] = []</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 如果先订阅，则直接订阅后发布</span><br><span class="line">        cache(args)</span><br><span class="line"></span><br><span class="line">        // 如果先发布后订阅，则把发布的事件类型与参数保存起来，等到有订阅后执行订阅</span><br><span class="line">        this.cacheObj[eventType].push(cache)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="观察者模式介绍"><a href="#观察者模式介绍" class="headerlink" title="观察者模式介绍"></a>观察者模式介绍</h2><p>观察者模式是使用最多的一种模式，这种设计模式可以大大降低程序模块之间的耦合度，便于更加灵活的扩展和维护。</p>
+<h2><span id="观察者模式介绍">观察者模式介绍</span></h2><p>观察者模式是使用最多的一种模式，这种设计模式可以大大降低程序模块之间的耦合度，便于更加灵活的扩展和维护。</p>
 <p>实现一个简单的观察者模式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">// 主题，保存状态，状态变化之后，触发所有观察者对象</span><br><span class="line">class Subject&#123;</span><br><span class="line">    constructor()&#123;</span><br><span class="line">        this.state = 0;</span><br><span class="line">        this.observers = [];</span><br><span class="line">    &#125;</span><br><span class="line">    getState()&#123;</span><br><span class="line">        return this.state</span><br><span class="line">    &#125;</span><br><span class="line">    setState(state)&#123;</span><br><span class="line">        this.state = state;</span><br><span class="line">        this.notifyAllObservers()</span><br><span class="line">    &#125;</span><br><span class="line">    notifyAllObservers()&#123;</span><br><span class="line">        this.observers.forEach(observer =&gt; &#123;</span><br><span class="line">            observer.update();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    attach(observer)&#123;</span><br><span class="line">        this.observers.push(observer);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// 观察者</span><br><span class="line">class Observer&#123;</span><br><span class="line">    constructor(name, subject)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.subject = subject;</span><br><span class="line">        this.subject.attach(this);</span><br><span class="line">        update()&#123;</span><br><span class="line">            console.log(`$&#123;this.name&#125; update, state: $&#123;this.subject.getState()&#125;`)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 调用</span><br><span class="line"></span><br><span class="line">let subjectObj = new Subject();</span><br><span class="line">// 初始化多个观察者</span><br><span class="line">let o1 = new Observer(&apos;o1&apos;, subjectObj);</span><br><span class="line">let o2 = new Observer(&apos;o2&apos;, subjectObj);</span><br><span class="line">...</span><br><span class="line">// 主题变化会通知所有观察者</span><br><span class="line">subjectObj.setState();</span><br></pre></td></tr></table></figure>
-<h2 id="发布订阅模式和观察者模式的区别"><a href="#发布订阅模式和观察者模式的区别" class="headerlink" title="发布订阅模式和观察者模式的区别"></a>发布订阅模式和观察者模式的区别</h2><ol>
+<h2><span id="发布订阅模式和观察者模式的区别">发布订阅模式和观察者模式的区别</span></h2><ol>
 <li><strong>观察者模式</strong></li>
 </ol>
 <p>目标和观察者是基类，目标提供维护观察者的一系列方法，观察者提供更新接口。具体观察者和具体目标继承各自的基类，然后具体观察者把自己注册到具体目标里，在具体目标发生变化时候，调度观察者的更新方法。</p>
@@ -241,7 +280,7 @@
 <p>订阅者把自己想订阅的事件注册到调度中心，当该事件触发时候，发布者发布该事件到调度中心（顺带上下文），由调度中心统一调度订阅者注册到调度中心的处理代码。</p>
 <p>比如有个界面是实时显示天气，它就订阅天气事件（注册到调度中心，包括处理程序），当天气变化时（定时获取数据），就作为发布者发布天气信息到调度中心，调度中心就调度订阅者的天气处理程序。</p>
 <p><img src="/blog/img/fbdy.png" alt="观察模式"></p>
-<h2 id="实际使用的一些场景"><a href="#实际使用的一些场景" class="headerlink" title="实际使用的一些场景"></a>实际使用的一些场景</h2><ol>
+<h2><span id="实际使用的一些场景">实际使用的一些场景</span></h2><ol>
 <li><strong>网页事件绑定</strong></li>
 <li><strong>Promise</strong></li>
 <li><strong>jQuery callbacks</strong></li>
@@ -249,7 +288,7 @@
 <li><strong>vue 和 React 组件生命周期触发</strong></li>
 <li><strong>vue Watch</strong></li>
 </ol>
-<h2 id="设计原则验证"><a href="#设计原则验证" class="headerlink" title="设计原则验证"></a>设计原则验证</h2><ul>
+<h2><span id="设计原则验证">设计原则验证</span></h2><ul>
 <li>发布订阅模式和观察者模式都将目标和观察者分离，不是主动触发而是被动监听，两者解耦。</li>
 <li>满足开放封闭原则。</li>
 </ul>
@@ -271,54 +310,19 @@
 </nav>
 
     <div class="col-md-8 col-md-offset-2 col-sm-24">
-      <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
+      <div id="comments"></div>
 
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
+<script>
+  var gitment = new Gitment({
+    id: "Fri Jan 25 2019 10:30:07 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
 </script>
 
     </div>
@@ -326,41 +330,68 @@
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
+      <!-- ============================ Footer =========================== -->
 
 <footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </footer>
 
 <!-- ============================ END Footer =========================== -->
+
       <!-- Load our scripts -->
 <!-- Resizable 'on-demand' full-height hero -->
 <script type="text/javascript">

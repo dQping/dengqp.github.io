@@ -17,45 +17,80 @@
 <!--<![endif]-->
 
 <head>
-  <title>gulp学习 | HOME</title>
+  <title>gulp学习 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="HOME">
-    <meta name="author" content="Demi Deng">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
 
-    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-  
-  
-  
+    
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
 </head>
 
 <!--
@@ -158,7 +193,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -209,16 +244,20 @@
   <a href="/tags/自动化构建工具/">自动化构建工具</a>     | 
   <a href="/categories/gulp/">gulp</a>  
 </span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">前期</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">gulpfile.js</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">路径匹配规则：</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">API</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">gulp 插件</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">学习实践</span></a></li></ol>
+</div>
 
       </div>
     </div>
+
     <div class="col-md-8 col-md-offset-2">
       <p>gulp 中使用的是 node 的 stream（流） , 是以 stream 为媒介，先读取需要的 stream , 通过 pipe() 方法倒入到想要的地方，比如插件等等，经过插件处理的流可以继续导入到其他地方，包括写入文件中</p>
 <a id="more"></a>
-<h2 id="前期"><a href="#前期" class="headerlink" title="前期"></a>前期</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm init -y    // 生成 package.json</span><br><span class="line">npm install -g gulp   // 全局安装 gulp</span><br><span class="line">npm install gulp --save-dev   // 在项目中安装gulp</span><br></pre></td></tr></table></figure>
-<h2 id="gulpfile-js"><a href="#gulpfile-js" class="headerlink" title="gulpfile.js"></a>gulpfile.js</h2><p>在项目中新建 gulpfile.js 文件用于 gulp 构建编写</p>
+<h2><span id="前期">前期</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm init -y    // 生成 package.json</span><br><span class="line">npm install -g gulp   // 全局安装 gulp</span><br><span class="line">npm install gulp --save-dev   // 在项目中安装gulp</span><br></pre></td></tr></table></figure>
+<h2><span id="gulpfilejs">gulpfile.js</span></h2><p>在项目中新建 gulpfile.js 文件用于 gulp 构建编写</p>
 <p>流程： gulp.src() &gt; pipe() &gt; ….. &gt; pipe() &gt; dest()</p>
-<h3 id="路径匹配规则："><a href="#路径匹配规则：" class="headerlink" title="路径匹配规则："></a>路径匹配规则：</h3><pre><code>- * ： 匹配 0 或多个字符 ，例如 a , abc
+<h3><span id="路径匹配规则">路径匹配规则：</span></h3><pre><code>- * ： 匹配 0 或多个字符 ，例如 a , abc
 - ** ： 匹配 0 或多个目录 ，例如 a/ , a/b/cc
 - ? ： 匹配 1 个字符，例如 a/ , a/b/cc
 - [...] ： 匹配 括号内任意 1 个字符，例如 a/ , a/b/cc
@@ -227,7 +266,7 @@
 - +(p1|p2|p3) ： 匹配括号中给定的任意模式至少 1 次
 - *(p1|p2|p3) ： 匹配括号中给定的任意模式 0 次或多次
 - @(p1|p2|p3) ： 匹配括号中给定的任意模式 1 次
-</code></pre><h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><pre><code>- gulp.src(globs[, options]) 获取流，即读取我们要操作的文件；
+</code></pre><h3><span id="api">API</span></h3><pre><code>- gulp.src(globs[, options]) 获取流，即读取我们要操作的文件；
    globs：Srting 格式，文件匹配模式，多个匹配模式可用数组
    options：Object 格式，一般用不到
 
@@ -240,7 +279,7 @@
    deps：一个包含任务列表的数组，这些任务会在你当前任务运行之前完成
    fn：该函数定义任务所要执行的一些操作
    注： 执行多个任务，可通过定义一个空任务，将要执行的多个任务当作依赖，例 如 gulp.task(&apos;default&apos;,[&apos;one&apos;,&apos;two&apos;,&apos;three&apos;])
-</code></pre><h3 id="gulp-插件"><a href="#gulp-插件" class="headerlink" title="gulp 插件"></a>gulp 插件</h3><pre><code>- gulp-rename : 重命名
+</code></pre><h3><span id="gulp-插件">gulp 插件</span></h3><pre><code>- gulp-rename : 重命名
 - gulp-uglify : JS文件压缩
 - gulp-minify-css : CSS文件压缩
 - gulp-minify-html : html文件压缩
@@ -252,7 +291,7 @@
 - gulp-load-plugins : 自动加载插件
 - gulp-order : 按制定顺序重新排列文件流
 - gulp-spritesmith : 生成雪碧图
-</code></pre><h2 id="学习实践"><a href="#学习实践" class="headerlink" title="学习实践"></a>学习实践</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">const gulp = require(&apos;gulp&apos;);</span><br><span class="line">const packages = require(&apos;./package.json&apos;)</span><br><span class="line">const $ = require(&apos;gulp-load-plugins&apos;)(&#123; config: packages &#125;);</span><br><span class="line">//#endregion</span><br><span class="line"></span><br><span class="line">const sequence = require(&apos;run-sequence&apos;);</span><br><span class="line"></span><br><span class="line">$.sass.compiler = require(&apos;node-sass&apos;);</span><br><span class="line">const isProduction = process.env.ENV == &apos;prod&apos;; //判断环境</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, [&apos;image&apos;, &apos;sass&apos;, &apos;minify-css&apos;, &apos;babel&apos;, &apos;javascript&apos;, &apos;watch&apos;]);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;connect&apos;, function () &#123;</span><br><span class="line">    $.connect.server(&#123;</span><br><span class="line">        root: &apos;./&apos;,</span><br><span class="line">        port: 3000,//修改默认端口：http://localhost:3000/</span><br><span class="line">        livereload: true</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">//reload server</span><br><span class="line">gulp.task(&apos;reload&apos;, function () &#123;</span><br><span class="line">    gulp.src(&apos;./html/*.html&apos;)</span><br><span class="line">        .pipe($.connect.reload());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// babel编译</span><br><span class="line">gulp.task(&apos;babel&apos;, () =&gt; &#123;</span><br><span class="line">    gulp.src(packages.src.js + &apos;**/*.js&apos;)</span><br><span class="line">        .pipe($.sourcemaps.init())</span><br><span class="line">        .pipe($.order([&apos;vendor/jquery.js&apos;, &apos;module/*.js&apos;, &apos;index.js&apos;]))</span><br><span class="line">        .pipe($.concat(&apos;base.js&apos;))   // 合并文件</span><br><span class="line">        .pipe($.babel(&#123; presets: [&apos;@babel/preset-env&apos;] &#125;))</span><br><span class="line">        .pipe($.sourcemaps.write(&apos;.&apos;))</span><br><span class="line">        .pipe(gulp.dest(packages.build.js))</span><br><span class="line">&#125;)</span><br><span class="line">gulp.task(&apos;javascript&apos;, () =&gt; &#123;</span><br><span class="line">    gulp.src(packages.build.js + &apos;base.js&apos;)</span><br><span class="line">        .pipe($.uglify())            // 判断生产环境并压缩 buffer</span><br><span class="line">        .on(&apos;error&apos;, function (err) &#123;</span><br><span class="line">            $.util.log(&apos;uglify Error!&apos;, err.toString());</span><br><span class="line">            this.end();</span><br><span class="line">        &#125;)</span><br><span class="line">        .pipe($.rename(&#123; extname: &apos;.min.js&apos; &#125;)) // 改变文件扩展名</span><br><span class="line">        .pipe(gulp.dest(packages.target.js));  // 写入文件</span><br><span class="line">&#125;);</span><br><span class="line">// sass 编译</span><br><span class="line">gulp.task(&apos;sass&apos;, () =&gt; &#123;</span><br><span class="line">    gulp.src(packages.src.scss + &apos;main.scss&apos;)</span><br><span class="line">        .pipe($.sourcemaps.init())</span><br><span class="line">        .pipe($.sass().on(&apos;error&apos;, $.sass.logError))</span><br><span class="line">        .pipe($.sourcemaps.write(&apos;.&apos;))</span><br><span class="line">        .pipe(gulp.dest(packages.build.css));</span><br><span class="line">&#125;)</span><br><span class="line">// 压缩css</span><br><span class="line">gulp.task(&apos;minify-css&apos;, () =&gt; &#123;</span><br><span class="line">    gulp.src(packages.build.css + &apos;main.css&apos;)</span><br><span class="line">        .pipe($.cleanCss(&#123; compatibility: &apos;ie8&apos; &#125;))</span><br><span class="line">        .pipe($.rename(&#123; extname: &apos;.min.css&apos; &#125;))</span><br><span class="line">        .pipe(gulp.dest(packages.target.css));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//压缩图片</span><br><span class="line">gulp.task(&apos;image&apos;, () =&gt; &#123;</span><br><span class="line">    gulp.src(packages.src.image + &apos;*&apos;)</span><br><span class="line">        .pipe($.cache($.imagemin([</span><br><span class="line">            $.imagemin.gifsicle(&#123; interlaced: true &#125;),</span><br><span class="line">            $.imagemin.jpegtran(&#123; progressive: true &#125;),</span><br><span class="line">            $.imagemin.optipng(&#123; optimizationLevel: 5 &#125;),</span><br><span class="line">            $.imagemin.svgo(&#123;</span><br><span class="line">                plugins: [</span><br><span class="line">                    &#123; removeViewBox: true &#125;,</span><br><span class="line">                    &#123; cleanupIDs: false &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;)</span><br><span class="line">        ])))</span><br><span class="line">        .pipe(gulp.dest(packages.target.image))</span><br><span class="line">&#125;)</span><br><span class="line">//监听</span><br><span class="line">gulp.task(&apos;watch&apos;, function () &#123;</span><br><span class="line">    gulp.watch(packages.src.scss + &apos;**/*.scss&apos;, [&apos;sass&apos;]);</span><br><span class="line">    gulp.watch(packages.build.css + &apos;main.css&apos;, [&apos;minify-css&apos;]);</span><br><span class="line">    gulp.watch(packages.src.js + &apos;**/*.js&apos;, [&apos;babel&apos;]);</span><br><span class="line">    gulp.watch(packages.build.js + &apos;base.js&apos;, [&apos;javascript&apos;]);</span><br><span class="line">    //gulp.watch([packages.target.js,packages.target.css,&apos;./html/*&apos;],[&apos;reload&apos;]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</code></pre><h2><span id="学习实践">学习实践</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">const gulp = require(&apos;gulp&apos;);</span><br><span class="line">const packages = require(&apos;./package.json&apos;)</span><br><span class="line">const $ = require(&apos;gulp-load-plugins&apos;)(&#123; config: packages &#125;);</span><br><span class="line">//#endregion</span><br><span class="line"></span><br><span class="line">const sequence = require(&apos;run-sequence&apos;);</span><br><span class="line"></span><br><span class="line">$.sass.compiler = require(&apos;node-sass&apos;);</span><br><span class="line">const isProduction = process.env.ENV == &apos;prod&apos;; //判断环境</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, [&apos;image&apos;, &apos;sass&apos;, &apos;minify-css&apos;, &apos;babel&apos;, &apos;javascript&apos;, &apos;watch&apos;]);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;connect&apos;, function () &#123;</span><br><span class="line">    $.connect.server(&#123;</span><br><span class="line">        root: &apos;./&apos;,</span><br><span class="line">        port: 3000,//修改默认端口：http://localhost:3000/</span><br><span class="line">        livereload: true</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">//reload server</span><br><span class="line">gulp.task(&apos;reload&apos;, function () &#123;</span><br><span class="line">    gulp.src(&apos;./html/*.html&apos;)</span><br><span class="line">        .pipe($.connect.reload());</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// babel编译</span><br><span class="line">gulp.task(&apos;babel&apos;, () =&gt; &#123;</span><br><span class="line">    gulp.src(packages.src.js + &apos;**/*.js&apos;)</span><br><span class="line">        .pipe($.sourcemaps.init())</span><br><span class="line">        .pipe($.order([&apos;vendor/jquery.js&apos;, &apos;module/*.js&apos;, &apos;index.js&apos;]))</span><br><span class="line">        .pipe($.concat(&apos;base.js&apos;))   // 合并文件</span><br><span class="line">        .pipe($.babel(&#123; presets: [&apos;@babel/preset-env&apos;] &#125;))</span><br><span class="line">        .pipe($.sourcemaps.write(&apos;.&apos;))</span><br><span class="line">        .pipe(gulp.dest(packages.build.js))</span><br><span class="line">&#125;)</span><br><span class="line">gulp.task(&apos;javascript&apos;, () =&gt; &#123;</span><br><span class="line">    gulp.src(packages.build.js + &apos;base.js&apos;)</span><br><span class="line">        .pipe($.uglify())            // 判断生产环境并压缩 buffer</span><br><span class="line">        .on(&apos;error&apos;, function (err) &#123;</span><br><span class="line">            $.util.log(&apos;uglify Error!&apos;, err.toString());</span><br><span class="line">            this.end();</span><br><span class="line">        &#125;)</span><br><span class="line">        .pipe($.rename(&#123; extname: &apos;.min.js&apos; &#125;)) // 改变文件扩展名</span><br><span class="line">        .pipe(gulp.dest(packages.target.js));  // 写入文件</span><br><span class="line">&#125;);</span><br><span class="line">// sass 编译</span><br><span class="line">gulp.task(&apos;sass&apos;, () =&gt; &#123;</span><br><span class="line">    gulp.src(packages.src.scss + &apos;main.scss&apos;)</span><br><span class="line">        .pipe($.sourcemaps.init())</span><br><span class="line">        .pipe($.sass().on(&apos;error&apos;, $.sass.logError))</span><br><span class="line">        .pipe($.sourcemaps.write(&apos;.&apos;))</span><br><span class="line">        .pipe(gulp.dest(packages.build.css));</span><br><span class="line">&#125;)</span><br><span class="line">// 压缩css</span><br><span class="line">gulp.task(&apos;minify-css&apos;, () =&gt; &#123;</span><br><span class="line">    gulp.src(packages.build.css + &apos;main.css&apos;)</span><br><span class="line">        .pipe($.cleanCss(&#123; compatibility: &apos;ie8&apos; &#125;))</span><br><span class="line">        .pipe($.rename(&#123; extname: &apos;.min.css&apos; &#125;))</span><br><span class="line">        .pipe(gulp.dest(packages.target.css));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//压缩图片</span><br><span class="line">gulp.task(&apos;image&apos;, () =&gt; &#123;</span><br><span class="line">    gulp.src(packages.src.image + &apos;*&apos;)</span><br><span class="line">        .pipe($.cache($.imagemin([</span><br><span class="line">            $.imagemin.gifsicle(&#123; interlaced: true &#125;),</span><br><span class="line">            $.imagemin.jpegtran(&#123; progressive: true &#125;),</span><br><span class="line">            $.imagemin.optipng(&#123; optimizationLevel: 5 &#125;),</span><br><span class="line">            $.imagemin.svgo(&#123;</span><br><span class="line">                plugins: [</span><br><span class="line">                    &#123; removeViewBox: true &#125;,</span><br><span class="line">                    &#123; cleanupIDs: false &#125;</span><br><span class="line">                ]</span><br><span class="line">            &#125;)</span><br><span class="line">        ])))</span><br><span class="line">        .pipe(gulp.dest(packages.target.image))</span><br><span class="line">&#125;)</span><br><span class="line">//监听</span><br><span class="line">gulp.task(&apos;watch&apos;, function () &#123;</span><br><span class="line">    gulp.watch(packages.src.scss + &apos;**/*.scss&apos;, [&apos;sass&apos;]);</span><br><span class="line">    gulp.watch(packages.build.css + &apos;main.css&apos;, [&apos;minify-css&apos;]);</span><br><span class="line">    gulp.watch(packages.src.js + &apos;**/*.js&apos;, [&apos;babel&apos;]);</span><br><span class="line">    gulp.watch(packages.build.js + &apos;base.js&apos;, [&apos;javascript&apos;]);</span><br><span class="line">    //gulp.watch([packages.target.js,packages.target.css,&apos;./html/*&apos;],[&apos;reload&apos;]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
@@ -271,54 +310,19 @@
 </nav>
 
     <div class="col-md-8 col-md-offset-2 col-sm-24">
-      <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
+      <div id="comments"></div>
 
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
+<script>
+  var gitment = new Gitment({
+    id: "Wed Mar 27 2019 15:11:56 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
 </script>
 
     </div>
@@ -326,41 +330,68 @@
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
+      <!-- ============================ Footer =========================== -->
 
 <footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </footer>
 
 <!-- ============================ END Footer =========================== -->
+
       <!-- Load our scripts -->
 <!-- Resizable 'on-demand' full-height hero -->
 <script type="text/javascript">

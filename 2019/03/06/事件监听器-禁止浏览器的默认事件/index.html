@@ -17,45 +17,80 @@
 <!--<![endif]-->
 
 <head>
-  <title>事件监听器-禁止浏览器的默认事件 | HOME</title>
+  <title>事件监听器-禁止浏览器的默认事件 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="HOME">
-    <meta name="author" content="Demi Deng">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
 
-    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-  
-  
-  
+    
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
 </head>
 
 <!--
@@ -158,7 +193,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -209,14 +244,18 @@
   <a href="/tags/js事件监听/">js事件监听</a>     | 
   <a href="/categories/javascript/">javascript</a>  
 </span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">addEventListener()参数</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">应用</span></a></li></ol>
+</div>
 
       </div>
     </div>
+
     <div class="col-md-8 col-md-offset-2">
       <p>很多移动端的页面都会监听 touchstart 等 touch 事件，我们会使用 e.preventDafault();禁止掉浏览器的默认事件。那它的默认行为是什么呢，通常来说就是滚动当前页面（还可能是缩放页面），如果它的默认行为被阻止了，页面就必须静止不动。但浏览器无法预先知道一个监听器会不会调用 preventDefault()，它能做的只有等监听器执行完后再去执行默认行为，而监听器执行是要耗时的，有些甚至耗时很明显，这样就会导致页面卡顿。即便监听器是个空函数，也会产生一定的卡顿，毕竟空函数的执行也会耗时。</p>
  <a id="more"></a>
 <p>有 80% 的滚动事件监听器是不会阻止默认行为的，也就是说大部分情况下，浏览器是白等了。所以，passive 监听器诞生了，passive 的意思是“顺从的”，表示它不会对事件的默认行为说 no，浏览器知道了一个监听器是 passive 的，它就可以在两个线程里同时执行监听器中的 JavaScript 代码和浏览器的默认行为了。</p>
-<h2 id="addEventListener-参数"><a href="#addEventListener-参数" class="headerlink" title="addEventListener()参数"></a>addEventListener()参数</h2><p>很久以前，addEventListener() 的参数约定是这样的：</p>
+<h2><span id="addeventlistener参数">addEventListener()参数</span></h2><p>很久以前，addEventListener() 的参数约定是这样的：</p>
 <pre><code>addEventListener(type, listener, useCapture)
 </code></pre><p>后来，最后一个参数，也就是控制监听器是在捕获阶段执行还是在冒泡阶段执行的 useCapture 参数，变成了可选参数（传 true 的情况太少了），成了：</p>
 <pre><code>addEventListener(type, listener[, useCapture ])
@@ -234,7 +273,7 @@ addEventListener(type, listener, {
 capture: 表示函数是否捕获执行,
 passive: 表示是否执行默认事件，true执行，false不执行
 once: 是否是单次事件，如果是true，执行完事件就被销毁
-</code></pre><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>1、 在移动端可以禁掉浏览器左右滑动的前进和后退</p>
+</code></pre><h2><span id="应用">应用</span></h2><p>1、 在移动端可以禁掉浏览器左右滑动的前进和后退</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 禁止页面滑动</span><br><span class="line">document.addEventListener(&quot;touchmove&quot;, function (e) &#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">&#125;, &#123; passive: false, capture: false &#125;);</span><br></pre></td></tr></table></figure>
 <p>2、使用 passiveListener 使浏览器的滚动更加流畅。</p>
 <p>假如有人不小心在 passive 的监听器里调用了 preventDefault()，也无妨，因为 preventDefault() 不会产生任何效果。</p>
@@ -259,54 +298,19 @@ once: 是否是单次事件，如果是true，执行完事件就被销毁
 </nav>
 
     <div class="col-md-8 col-md-offset-2 col-sm-24">
-      <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
+      <div id="comments"></div>
 
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
+<script>
+  var gitment = new Gitment({
+    id: "Wed Mar 06 2019 17:58:28 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
 </script>
 
     </div>
@@ -314,41 +318,68 @@ once: 是否是单次事件，如果是true，执行完事件就被销毁
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
+      <!-- ============================ Footer =========================== -->
 
 <footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </footer>
 
 <!-- ============================ END Footer =========================== -->
+
       <!-- Load our scripts -->
 <!-- Resizable 'on-demand' full-height hero -->
 <script type="text/javascript">

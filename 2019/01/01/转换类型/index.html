@@ -17,45 +17,80 @@
 <!--<![endif]-->
 
 <head>
-  <title>类型转换 | HOME</title>
+  <title>类型转换 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="HOME">
-    <meta name="author" content="Demi Deng">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
 
-    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-  
-  
-  
+    
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
 </head>
 
 <!--
@@ -158,7 +193,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -208,9 +243,13 @@
      | 
   <a href="/categories/前端知识基础/">前端知识基础</a>  
 </span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">显示类型转换：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">Number 函数</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">String 函数</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">Boolean 函数:</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">隐式类型转换：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">常见题目：</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">typeof</span></a></li></ol>
+</div>
 
       </div>
     </div>
+
     <div class="col-md-8 col-md-offset-2">
       <p>数据类型分为原始数据类型和对象数据类型，本篇主要记录显示类型转换的一些相关知识。JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种（ES6 又新增了第七种 Symbol 类型的值）。</p>
 <a id="more"></a>
@@ -218,12 +257,12 @@
 <li>原始数据类型：Boolean Null Undefined Number String Symbol</li>
 <li>对象数据类型：Object</li>
 </ul>
-<h3 id="显示类型转换："><a href="#显示类型转换：" class="headerlink" title="显示类型转换："></a>显示类型转换：</h3><ul>
+<h3><span id="显示类型转换">显示类型转换：</span></h3><ul>
 <li>Number 函数</li>
 <li>String 函数</li>
 <li>Boolean 函数</li>
 </ul>
-<h4 id="Number-函数"><a href="#Number-函数" class="headerlink" title="Number 函数"></a>Number 函数</h4><p>1、原始类型转换：</p>
+<h4><span id="number-函数">Number 函数</span></h4><p>1、原始类型转换：</p>
 <ul>
 <li>数值： 转换后还是数值</li>
 <li>字符串： 如果可以被解析为数值，则转换为相应的数值，否则得到 NaN, 空字符串转为 0</li>
@@ -234,7 +273,7 @@
 <p>2、对象类型转换：</p>
 <p>先调用对象自身的 valueOf 方法，如果返回原始类型的值，再使用 Number();如果返回复合类型，再调用自身的 toString()</p>
 <p>如果 toString() 返回原始类型， 再使用 Number() ，如果返回的还是复合类型，则报错。</p>
-<h4 id="String-函数"><a href="#String-函数" class="headerlink" title="String 函数"></a>String 函数</h4><p>1、原始类型转换：</p>
+<h4><span id="string-函数">String 函数</span></h4><p>1、原始类型转换：</p>
 <ul>
 <li>数值： 转换后是相应的字符串</li>
 <li>字符串： 转换后还是原来的值</li>
@@ -245,15 +284,15 @@
 <p>2、对象类型转换：</p>
 <p>先调用对象自身的 toString() 方法，如果返回原始类型的值，再使用 String();如果返回复合类型，再调用自身的 valueOf()</p>
 <p>如果 valueOf() 返回原始类型， 再使用 String() ，如果返回的还是复合类型，则报错。</p>
-<h4 id="Boolean-函数"><a href="#Boolean-函数" class="headerlink" title="Boolean 函数:"></a>Boolean 函数:</h4><p>1、原始类型转换：</p>
+<h4><span id="boolean-函数">Boolean 函数:</span></h4><p>1、原始类型转换：</p>
 <p>undefined null +0 -0 空字符串 NaN 返回 false，其他值为 true</p>
-<h3 id="隐式类型转换："><a href="#隐式类型转换：" class="headerlink" title="隐式类型转换："></a>隐式类型转换：</h3><ul>
+<h3><span id="隐式类型转换">隐式类型转换：</span></h3><ul>
 <li>四则运算</li>
 <li>判断语句</li>
 <li>Native 调用（console.log(),alert()）</li>
 </ul>
-<h4 id="常见题目："><a href="#常见题目：" class="headerlink" title="常见题目："></a>常见题目：</h4><p>1、[]+[] // “”<br>2、[]+{} // “[object Object]”<br>3、{}+[] // 0<br>4、{}+{} // “[object Object][object object]”<br>5、true + true // 2<br>6、1+{a:1} // “1[object Object]”</p>
-<h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><ul>
+<h4><span id="常见题目">常见题目：</span></h4><p>1、[]+[] // “”<br>2、[]+{} // “[object Object]”<br>3、{}+[] // 0<br>4、{}+{} // “[object Object][object object]”<br>5、true + true // 2<br>6、1+{a:1} // “1[object Object]”</p>
+<h3><span id="typeof">typeof</span></h3><ul>
 <li>Undefine -&gt; “undefined”</li>
 <li>Null -&gt; “object”</li>
 <li>Boolean -&gt; “boolean”</li>
@@ -278,54 +317,19 @@
 </nav>
 
     <div class="col-md-8 col-md-offset-2 col-sm-24">
-      <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
+      <div id="comments"></div>
 
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
+<script>
+  var gitment = new Gitment({
+    id: "Tue Jan 01 2019 20:37:10 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
 </script>
 
     </div>
@@ -333,41 +337,68 @@
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
+      <!-- ============================ Footer =========================== -->
 
 <footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </footer>
 
 <!-- ============================ END Footer =========================== -->
+
       <!-- Load our scripts -->
 <!-- Resizable 'on-demand' full-height hero -->
 <script type="text/javascript">

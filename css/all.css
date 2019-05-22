@@ -3729,6 +3729,31 @@ nav.pagination {
 #hero .info_m {
   letter-spacing: 0;
 }
+.toc {
+  position: fixed;
+  left: 20px;
+  background-color: #f7f7f7;
+  padding: 30px 0;
+}
+.toc-list-item {
+  color: #000;
+}
+
+.toc-list-item a {
+  color: #000;
+}
+.toc-list-child .toc-list-item {
+  color: #9e7b7b;
+}
+.toc-list-child a {
+  color: #9e7b7b;
+}
+
+@media screen and (max-width: 1100px) {
+  .toc {
+    display: none;
+  }
+}
 
 @charset "utf-8";
 /* CSS Document */

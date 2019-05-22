@@ -17,45 +17,80 @@
 <!--<![endif]-->
 
 <head>
-  <title>vue排坑日记 | HOME</title>
+  <title>vue排坑日记 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="HOME">
-    <meta name="author" content="Demi Deng">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
 
-    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-  
-  
-  
+    
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
 </head>
 
 <!--
@@ -158,7 +193,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -208,22 +243,26 @@
      | 
   <a href="/categories/日记/">日记</a>  
 </span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">生命周期钩子函数引起的错误</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">外部 SCSS 文件中图片路径的 loader 解析错误</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">vue-cli3 一直运行/sockjs-node/info?t= 解决方案</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">打包后文件路径问题</span></a></li></ol>
+</div>
 
       </div>
     </div>
+
     <div class="col-md-8 col-md-offset-2">
       <p>本篇记录一下自己在学习 vue 的实战操作过程中遇到的问题及其产生的原因和解决方法，还有一些注意点等等，以便之后遇到同类问题的时候快速查阅。</p>
 <a id="more"></a>
-<h2 id="生命周期钩子函数引起的错误"><a href="#生命周期钩子函数引起的错误" class="headerlink" title="生命周期钩子函数引起的错误"></a>生命周期钩子函数引起的错误</h2><p>Vue 项目运行报错以下错误，但功能还是目前来说还是可以使用，从报错的 handlers[i].call 入手查找原因–这个错误是，<strong>调用相关的生命周期钩子函数引起来的错误</strong>。去找相应报错页面，查看页面相关的<strong>生命周期钩子函数 是否有 声明了未定义方法 或是 只声名了钩子函数</strong>，把钩子删除，或是把你定义的方法写完全了就可以了。</p>
+<h2><span id="生命周期钩子函数引起的错误">生命周期钩子函数引起的错误</span></h2><p>Vue 项目运行报错以下错误，但功能还是目前来说还是可以使用，从报错的 handlers[i].call 入手查找原因–这个错误是，<strong>调用相关的生命周期钩子函数引起来的错误</strong>。去找相应报错页面，查看页面相关的<strong>生命周期钩子函数 是否有 声明了未定义方法 或是 只声名了钩子函数</strong>，把钩子删除，或是把你定义的方法写完全了就可以了。</p>
 <p>提示警告：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[Vue warn]: Error in mounted hook: &quot;TypeError: handler.call is not a function&quot;</span><br><span class="line"></span><br><span class="line">found in</span><br><span class="line"></span><br><span class="line">---&gt; &lt;Login&gt; at src/components/Login.vue</span><br><span class="line">       &lt;Home&gt; at src/views/Home.vue</span><br><span class="line">         &lt;App&gt; at src/Main.vue</span><br><span class="line">           &lt;Root&gt;</span><br></pre></td></tr></table></figure>
 <p>提示错误：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">TypeError: handler.call is not a function</span><br><span class="line">    at invokeWithErrorHandling (vue.runtime.esm.js?2b0e:1854)</span><br><span class="line">    at callHook (vue.runtime.esm.js?2b0e:4194)</span><br><span class="line">    at Object.insert (vue.runtime.esm.js?2b0e:3132)</span><br><span class="line">    at invokeInsertHook (vue.runtime.esm.js?2b0e:6311)</span><br><span class="line">    at Vue.patch [as __patch__] (vue.runtime.esm.js?2b0e:6530)</span><br><span class="line">    at Vue._update (vue.runtime.esm.js?2b0e:3920)</span><br><span class="line">    at Vue.updateComponent (vue.runtime.esm.js?2b0e:4041)</span><br><span class="line">    at Watcher.get (vue.runtime.esm.js?2b0e:4444)</span><br><span class="line">    at new Watcher (vue.runtime.esm.js?2b0e:4433)</span><br><span class="line">    at mountComponent (vue.runtime.esm.js?2b0e:4048)</span><br></pre></td></tr></table></figure>
-<h2 id="外部-SCSS-文件中图片路径的-loader-解析错误"><a href="#外部-SCSS-文件中图片路径的-loader-解析错误" class="headerlink" title="外部 SCSS 文件中图片路径的 loader 解析错误"></a>外部 SCSS 文件中图片路径的 loader 解析错误</h2><p>在 Vue 中引用外部 SCSS(SCSS 里面使用了图片)时，loader 会报错，原因是：某 _.scss 文件引用了其它目录的图片文件，在 _.vue 中使用 scss 时，用 scss 的语法引入了该 *.scss 文件，最终 loader 解析图片路径出错，报错信息如下：</p>
+<h2><span id="外部-scss-文件中图片路径的-loader-解析错误">外部 SCSS 文件中图片路径的 loader 解析错误</span></h2><p>在 Vue 中引用外部 SCSS(SCSS 里面使用了图片)时，loader 会报错，原因是：某 _.scss 文件引用了其它目录的图片文件，在 _.vue 中使用 scss 时，用 scss 的语法引入了该 *.scss 文件，最终 loader 解析图片路径出错，报错信息如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./src/components/Header.vue?vue&amp;type=style&amp;index=0&amp;id=61dd7a3d&amp;scoped=true&amp;lang=scss&amp; (./node_modules/css-loader??ref--8-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-oneOf-1-2!./node_modules/sass-loader/lib/loader.js??ref--8-oneOf-1-3!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Header.vue?vue&amp;type=style&amp;index=0&amp;id=61dd7a3d&amp;scoped=true&amp;lang=scss&amp;)</span><br><span class="line">Module not found: Error: Can&apos;t resolve &apos;../../image/logo.png&apos; in &apos;/Users/dengqiuping1/self-library/project-library/vue-project-code/chuanyilou/src/components&apos;</span><br></pre></td></tr></table></figure>
 <p><strong>解决方法：借助 webpack 的<code>~</code>前缀</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// image.scss 文件中路径改动如下</span><br><span class="line"></span><br><span class="line">$imgUrl: &quot;~@/static/image/&quot;;</span><br><span class="line"></span><br><span class="line">//logo.png</span><br><span class="line"></span><br><span class="line">%imglogo&#123;</span><br><span class="line">    background-image: url(#&#123;$imgUrl&#125;logo.png);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-position: 0 20px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="vue-cli3-一直运行-sockjs-node-info-t-解决方案"><a href="#vue-cli3-一直运行-sockjs-node-info-t-解决方案" class="headerlink" title="vue-cli3 一直运行/sockjs-node/info?t= 解决方案"></a>vue-cli3 一直运行/sockjs-node/info?t= 解决方案</h2><p>首先 sockjs-node 是一个 JavaScript 库，提供跨浏览器 JavaScript 的 API，创建了一个低延迟、全双工的浏览器和 web 服务器之间通信通道。</p>
+<h2><span id="vue-cli3-一直运行sockjs-nodeinfot-解决方案">vue-cli3 一直运行/sockjs-node/info?t= 解决方案</span></h2><p>首先 sockjs-node 是一个 JavaScript 库，提供跨浏览器 JavaScript 的 API，创建了一个低延迟、全双工的浏览器和 web 服务器之间通信通道。</p>
 <ul>
 <li>服务端：sockjs-node（<a href="https://github.com/sockjs/sockjs-node）" target="_blank" rel="noopener">https://github.com/sockjs/sockjs-node）</a></li>
 <li>客户端：sockjs-clien（<a href="https://github.com/sockjs/sockjs-client）" target="_blank" rel="noopener">https://github.com/sockjs/sockjs-client）</a></li>
@@ -236,7 +275,7 @@
 2. 找到代码的 1605行
 </code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">try &#123;</span><br><span class="line"> //  self.xhr.send(payload); # 把这里注掉</span><br><span class="line"> &#125; catch (e) &#123;</span><br><span class="line">   self.emit(&apos;finish&apos;, 0, &apos;&apos;);</span><br><span class="line">   self._cleanup(false);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 <pre><code>3. 刷新，搞定。
-</code></pre><h2 id="打包后文件路径问题"><a href="#打包后文件路径问题" class="headerlink" title="打包后文件路径问题"></a>打包后文件路径问题</h2><p>执行 npm run build 之后 生成打包好的 dist 文件夹，访问 index.html 因为资源路径不对，获取不到静态资源，所以需要在 vue.config.js 中 对 baseUrl 进行配置</p>
+</code></pre><h2><span id="打包后文件路径问题">打包后文件路径问题</span></h2><p>执行 npm run build 之后 生成打包好的 dist 文件夹，访问 index.html 因为资源路径不对，获取不到静态资源，所以需要在 vue.config.js 中 对 baseUrl 进行配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports=&#123;</span><br><span class="line">    baseUrl:process.env.NODE_ENV == &apos;production&apos; ? &apos;./&apos; : &apos;/&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
@@ -256,54 +295,19 @@
 </nav>
 
     <div class="col-md-8 col-md-offset-2 col-sm-24">
-      <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
+      <div id="comments"></div>
 
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
+<script>
+  var gitment = new Gitment({
+    id: "Sun Mar 10 2019 10:31:45 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
 </script>
 
     </div>
@@ -311,41 +315,68 @@
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
+      <!-- ============================ Footer =========================== -->
 
 <footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </footer>
 
 <!-- ============================ END Footer =========================== -->
+
       <!-- Load our scripts -->
 <!-- Resizable 'on-demand' full-height hero -->
 <script type="text/javascript">

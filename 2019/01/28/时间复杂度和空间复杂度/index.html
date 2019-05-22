@@ -17,45 +17,80 @@
 <!--<![endif]-->
 
 <head>
-  <title>时间复杂度和空间复杂度 | HOME</title>
+  <title>时间复杂度和空间复杂度 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="HOME">
-    <meta name="author" content="Demi Deng">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
 
-    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-  
-  
-  
+    
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
 </head>
 
 <!--
@@ -158,7 +193,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -208,13 +243,17 @@
      | 
   <a href="/categories/算法/">算法</a>  
 </span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">时间复杂度</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">算法时间复杂度的定义：</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">推导大 O 阶方法</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">最坏情况与平均情况</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">算法的空间复杂度</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">时间与空间复杂度比较</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">十大经典算法的时间和空间复杂度</span></a></li></ol>
+</div>
 
       </div>
     </div>
+
     <div class="col-md-8 col-md-offset-2">
       <p>我们都知道，对于同一个问题来说，可以有多种解决问题的算法。尽管算法不是唯一的，但是对于问题本身来说相对好的算法还是存在的，这个要从「时效」和「存储」两方面来看。</p>
 <a id="more"></a>
-<h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>第一种算法：</p>
+<h2><span id="时间复杂度">时间复杂度</span></h2><p>第一种算法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var i, sum = 0, n = 100;   // 执行1次</span><br><span class="line">for( i=1; i &lt;= n; i++ )    // 执行了n+1次</span><br><span class="line">&#123;</span><br><span class="line">    sum = sum + i;          // 执行n次</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>第二种算法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int sum = 0, n = 100;     // 执行1次</span><br><span class="line">sum = (1+n)*n/2;          // 执行1次</span><br></pre></td></tr></table></figure>
@@ -223,9 +262,9 @@
 <p><img src="/blog/img/suanfa1.png" alt="图片1"><br><img src="/blog/img/suanfa2.png" alt="图片2"></p>
 <p>这组数据我们看得很清楚，当 n 的值变得非常大的时候，3n+1 已经没法和 2n^2 的结果相比较，最终几乎可以忽略不计。而算法 G 在跟算法 I 基本已经重合了。</p>
 <p>于是我们可以得到这样一个结论，判断一个算法的效率时，函数中的常数和其他次要项常常可以忽略，而更应该关注主项（最高项）的阶数。</p>
-<h3 id="算法时间复杂度的定义："><a href="#算法时间复杂度的定义：" class="headerlink" title="算法时间复杂度的定义："></a>算法时间复杂度的定义：</h3><p>在进行算法分析时，语句总的执行次数 T(n)是关于问题规模 n 的函数，进而分析 T(n)随 n 的变化情况并确定 T(n)的数量级。算法的时间复杂度，也就是算法的时间量度，记作：T(n)= O(f(n))。它表示随问题规模 n 的增大，算法执行时间的增长率和 f(n)的增长率相同，称作算法的渐近时间复杂度，简称为时间复杂度。其中 f(n)是问题规模 n 的某个函数。</p>
+<h3><span id="算法时间复杂度的定义">算法时间复杂度的定义：</span></h3><p>在进行算法分析时，语句总的执行次数 T(n)是关于问题规模 n 的函数，进而分析 T(n)随 n 的变化情况并确定 T(n)的数量级。算法的时间复杂度，也就是算法的时间量度，记作：T(n)= O(f(n))。它表示随问题规模 n 的增大，算法执行时间的增长率和 f(n)的增长率相同，称作算法的渐近时间复杂度，简称为时间复杂度。其中 f(n)是问题规模 n 的某个函数。</p>
 <p>用大写 O()来体现算法时间复杂度的记法，我们称之为大 O 记法。<strong>一般情况下，随着输入规模 n 的增大，T(n)增长最慢的算法为最优算法。</strong>显然，由此算法时间复杂度的定义可知，我们的三个求和算法的时间复杂度分别为 O(1)，O(n)，O(n^2)</p>
-<h3 id="推导大-O-阶方法"><a href="#推导大-O-阶方法" class="headerlink" title="推导大 O 阶方法"></a>推导大 O 阶方法</h3><p>如何分析一个算法的时间复杂度呢？即如何推导大 O 阶呢？</p>
+<h3><span id="推导大-o-阶方法">推导大 O 阶方法</span></h3><p>如何分析一个算法的时间复杂度呢？即如何推导大 O 阶呢？</p>
 <ul>
 <li>用常数 1 取代运行时间中的所有加法常数。</li>
 <li>在修改后的运行次数函数中，只保留最高阶项。</li>
@@ -242,15 +281,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var i = 1, n = 100;</span><br><span class="line">while( i &lt; n )</span><br><span class="line">&#123;</span><br><span class="line">    i = i * 2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>由于每次 i*2 之后，就距离 n 更近一步，假设有 x 个 2 相乘后大于或等于 n，则会退出循环。<br>于是由 2^x = n 得到 x = log(2)n，所以这个循环的时间复杂度为 O(logn)。</p>
 <p>常用的时间复杂度所耗费的时间从小到大依次是：<br>O(1) &lt; O(logn) &lt; (n) &lt; O(nlogn) &lt; O(n^2) &lt; O(n^3) &lt; O(2^n) &lt; O(n!) &lt; O(n^n)</p>
-<h3 id="最坏情况与平均情况"><a href="#最坏情况与平均情况" class="headerlink" title="最坏情况与平均情况"></a>最坏情况与平均情况</h3><p>我们查找一个有 n 个随机数字数组中的某个数字，最好的情况是第一个数字就是，那么算法的时间复杂度为 O(1)，但也有可能这个数字就在最后一个位置，那么时间复杂度为 O(n)。</p>
+<h3><span id="最坏情况与平均情况">最坏情况与平均情况</span></h3><p>我们查找一个有 n 个随机数字数组中的某个数字，最好的情况是第一个数字就是，那么算法的时间复杂度为 O(1)，但也有可能这个数字就在最后一个位置，那么时间复杂度为 O(n)。</p>
 <p>平均运行时间是期望的运行时间。</p>
 <p>最坏运行时间是一种保证。在应用中，这是一种最重要的需求，通常除非特别指定，我们提到的运行时间都是最坏情况的运行时间。</p>
-<h2 id="算法的空间复杂度"><a href="#算法的空间复杂度" class="headerlink" title="算法的空间复杂度"></a>算法的空间复杂度</h2><p>一个程序的空间复杂度是指运行完一个程序所需内存的大小。利用程序的空间复杂度，可以对程序的运行所需要的内存多少有个预先估计。一个程序执行时除了需要存储空间和存储本身所使用的指令、常数、变量和输入数据外，还需要一些对数据进行操作的工作单元和存储一些为现实计算所需信息的辅助空间。程序执行时所需存储空间包括以下两部分。</p>
+<h2><span id="算法的空间复杂度">算法的空间复杂度</span></h2><p>一个程序的空间复杂度是指运行完一个程序所需内存的大小。利用程序的空间复杂度，可以对程序的运行所需要的内存多少有个预先估计。一个程序执行时除了需要存储空间和存储本身所使用的指令、常数、变量和输入数据外，还需要一些对数据进行操作的工作单元和存储一些为现实计算所需信息的辅助空间。程序执行时所需存储空间包括以下两部分。</p>
 <p>（1）固定部分。这部分空间的大小与输入/输出的数据的个数多少、数值无关。主要包括指令空间（即代码空间）、数据空间（常量、简单变量）等所占的空间。这部分属于静态空间。</p>
 <p>（2）可变空间，这部分空间的主要包括动态分配的空间，以及递归栈所需的空间等。这部分的空间大小与算法有关。<br>一个算法所需的存储空间用 f(n)表示。S(n)=O(f(n))　　其中 n 为问题的规模，S(n)表示空间复杂度。</p>
-<h2 id="时间与空间复杂度比较"><a href="#时间与空间复杂度比较" class="headerlink" title="时间与空间复杂度比较"></a>时间与空间复杂度比较</h2><p>对于一个算法，其时间复杂度和空间复杂度往往是相互影响的。当追求一个较好的时间复杂度时，可能会使空间复杂度的性能变差，即可能导致占用较多的存储空间；反之，当追求一个较好的空间复杂度时，可能会使时间复杂度的性能变差，即可能导致占用较长的运行时间。</p>
+<h2><span id="时间与空间复杂度比较">时间与空间复杂度比较</span></h2><p>对于一个算法，其时间复杂度和空间复杂度往往是相互影响的。当追求一个较好的时间复杂度时，可能会使空间复杂度的性能变差，即可能导致占用较多的存储空间；反之，当追求一个较好的空间复杂度时，可能会使时间复杂度的性能变差，即可能导致占用较长的运行时间。</p>
 <p>另外，算法的所有性能之间都存在着或多或少的相互影响。因此，当设计一个算法（特别是大型算法）时，要综合考虑算法的各项性能，算法的使用频率，算法处理的数据量的大小，算法描述语言的特性，算法运行的机器系统环境等各方面因素，才能够设计出比较好的算法。算法的时间复杂度和空间复杂度合称为算法的复杂度。</p>
-<h2 id="十大经典算法的时间和空间复杂度"><a href="#十大经典算法的时间和空间复杂度" class="headerlink" title="十大经典算法的时间和空间复杂度"></a>十大经典算法的时间和空间复杂度</h2><p>排序分类：<strong>非线性时间比较类排序</strong> &amp; <strong>线性时间非比较类排序</strong></p>
+<h2><span id="十大经典算法的时间和空间复杂度">十大经典算法的时间和空间复杂度</span></h2><p>排序分类：<strong>非线性时间比较类排序</strong> &amp; <strong>线性时间非比较类排序</strong></p>
 <ul>
 <li><p>非线性时间比较类排序：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破 O(nlogn)，因此称为非线性时间比较类排序。</p>
 </li>
@@ -283,54 +322,19 @@
 </nav>
 
     <div class="col-md-8 col-md-offset-2 col-sm-24">
-      <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
+      <div id="comments"></div>
 
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
+<script>
+  var gitment = new Gitment({
+    id: "Mon Jan 28 2019 18:08:27 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
 </script>
 
     </div>
@@ -338,41 +342,68 @@
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
+      <!-- ============================ Footer =========================== -->
 
 <footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </footer>
 
 <!-- ============================ END Footer =========================== -->
+
       <!-- Load our scripts -->
 <!-- Resizable 'on-demand' full-height hero -->
 <script type="text/javascript">

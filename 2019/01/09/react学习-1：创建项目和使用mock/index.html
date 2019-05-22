@@ -17,45 +17,80 @@
 <!--<![endif]-->
 
 <head>
-  <title>react学习-1：创建项目和使用mock | HOME</title>
+  <title>react学习-1：创建项目和使用mock | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="HOME">
-    <meta name="author" content="Demi Deng">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
 
-    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-  
-  
-  
+    
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
 </head>
 
 <!--
@@ -158,7 +193,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -208,26 +243,30 @@
      | 
   <a href="/categories/react学习/">react学习</a>  
 </span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">创建项目</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">可用脚本命令说明</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">mock 使用的两种方式</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方式一： 代理到 mock 服务器</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方式二： 直接将 mock 数据放到项目的 public 文件夹</span></a></li></ol></li></ol>
+</div>
 
       </div>
     </div>
+
     <div class="col-md-8 col-md-offset-2">
       <p>create-react-app 作为最常用的 react 脚手架集成了很多的常用功能，比如支持 es6、JSX、动态 import、Fetch(polyfill)、proxy、postcss、eslint 等。本篇包括之后的实践都是基于 create-react-app 脚手架基础上的代码编写。</p>
  <a id="more"></a>
-<h2 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h2><p>全局安装脚手架：</p>
+<h2><span id="创建项目">创建项目</span></h2><p>全局安装脚手架：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g create-react-app</span><br></pre></td></tr></table></figure>
 <p>通过脚手架搭建项目：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ create-react-app &lt;项目名称&gt;</span><br></pre></td></tr></table></figure>
 <p>开始项目:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd &lt;项目名&gt;</span><br><span class="line">$ npm run start</span><br></pre></td></tr></table></figure>
-<h2 id="可用脚本命令说明"><a href="#可用脚本命令说明" class="headerlink" title="可用脚本命令说明"></a>可用脚本命令说明</h2><ul>
+<h2><span id="可用脚本命令说明">可用脚本命令说明</span></h2><ul>
 <li>首先说明：通过 npm run 执行下面命令实际上是运行 node_modules/react-srcipt/script 下对应的脚本文件；</li>
 <li>npm run start : 开始项目，通过<a href="http://localhost:3000" target="_blank" rel="noopener">http://localhost:3000</a> 可访问项目；</li>
 <li>npm run build : 项目打包，在生产环境中编译代码，并放在 build 目录中；所有代码将被正确打包，并进行优化、压缩同时使用 hash 重命名文件；执行该命令前需要在 package.json 中新增条配置 <strong>“homepage”: “.”</strong>, 同时 build 后的项目需要在服务器下才能访问；否则打开的将是空白页面；</li>
 <li>npm run test : 交互监视模式下启动测试运行程序；</li>
 <li>npm run eject : 将隐藏的配置导出；需要知道的是 create-react-app 脚手架本质上是使用 react-scripts 进行配置项目，所有配置文件信息都被隐藏起来(node_modules/react-scripts)；当需要手动修改扩展 webpack 配置时有时就需要将隐藏的配置暴露出来；特别需要注意的是该操作是一个单向操作，一旦使用 eject，那么就不能恢复了(再次将配置隐藏)；</li>
 </ul>
-<h2 id="mock-使用的两种方式"><a href="#mock-使用的两种方式" class="headerlink" title="mock 使用的两种方式"></a>mock 使用的两种方式</h2><h3 id="方式一：-代理到-mock-服务器"><a href="#方式一：-代理到-mock-服务器" class="headerlink" title="方式一： 代理到 mock 服务器"></a>方式一： 代理到 mock 服务器</h3><p>然后将前端的请求转发到这个服务器上，从而完成整个 mock 过程，以下使用 serve 这个 nodejs 开发的服务器作为我们的服务器。</p>
+<h2><span id="mock-使用的两种方式">mock 使用的两种方式</span></h2><h3><span id="方式一-代理到-mock-服务器">方式一： 代理到 mock 服务器</span></h3><p>然后将前端的请求转发到这个服务器上，从而完成整个 mock 过程，以下使用 serve 这个 nodejs 开发的服务器作为我们的服务器。</p>
 <p>全局安装 serve：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g serve</span><br></pre></td></tr></table></figure>
 <p>进入资源文件夹，直接执行 serve，就会将改路径下资源托管到 serve ，服务器</p>
@@ -238,7 +277,7 @@
 <p>2、在 src 下创建文件 setupProxy.js,内容如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const proxy = require(&apos;http-proxy-middleware&apos;)</span><br><span class="line"></span><br><span class="line">module.exports = function(app) &#123;</span><br><span class="line">  app.use(proxy(&apos;/api&apos;, &#123; target: &apos;http://localhost:5000/&apos; &#125;))</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 如果请求站点为https，</span><br><span class="line">// 则需要加上这个&quot;changeOrigin&quot;:true</span><br><span class="line">// 需要这样写 app.use(proxy(&apos;/api&apos;, &#123; target: &apos;https://localhost:5000/&apos;,&quot;changeOrigin&quot;:true &#125;))</span><br><span class="line">// 否则则会报错: [HPM] Error occurred while trying to proxy request ***此处省略十万八千个字***......</span><br></pre></td></tr></table></figure>
 <p>3、启动 react 项目，访问 <a href="http://localhost:3000/data.js" target="_blank" rel="noopener">http://localhost:3000/data.js</a> 就能访问到资源目录中的文件内容</p>
-<h3 id="方式二：-直接将-mock-数据放到项目的-public-文件夹"><a href="#方式二：-直接将-mock-数据放到项目的-public-文件夹" class="headerlink" title="方式二： 直接将 mock 数据放到项目的 public 文件夹"></a>方式二： 直接将 mock 数据放到项目的 public 文件夹</h3><p>因为 public 直接将 mock 数据放到项目的 public 文件夹,启动 react 项目，访问 <a href="http://localhost:3000/mock/data.js" target="_blank" rel="noopener">http://localhost:3000/mock/data.js</a> 就能访问到资源目录中的文件内容。因为 public 文件下的内容不会被构建，会被原封不动的打包到最终的整个项目当中，并且是作为一个静态资源来存在的，可以直接被使用。</p>
+<h3><span id="方式二-直接将-mock-数据放到项目的-public-文件夹">方式二： 直接将 mock 数据放到项目的 public 文件夹</span></h3><p>因为 public 直接将 mock 数据放到项目的 public 文件夹,启动 react 项目，访问 <a href="http://localhost:3000/mock/data.js" target="_blank" rel="noopener">http://localhost:3000/mock/data.js</a> 就能访问到资源目录中的文件内容。因为 public 文件下的内容不会被构建，会被原封不动的打包到最终的整个项目当中，并且是作为一个静态资源来存在的，可以直接被使用。</p>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
@@ -257,54 +296,19 @@
 </nav>
 
     <div class="col-md-8 col-md-offset-2 col-sm-24">
-      <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
+      <div id="comments"></div>
 
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
+<script>
+  var gitment = new Gitment({
+    id: "Wed Jan 09 2019 22:02:08 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
 </script>
 
     </div>
@@ -312,41 +316,68 @@
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
+      <!-- ============================ Footer =========================== -->
 
 <footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </footer>
 
 <!-- ============================ END Footer =========================== -->
+
       <!-- Load our scripts -->
 <!-- Resizable 'on-demand' full-height hero -->
 <script type="text/javascript">

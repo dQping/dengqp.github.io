@@ -17,45 +17,80 @@
 <!--<![endif]-->
 
 <head>
-  <title>设计模式-0 | HOME</title>
+  <title>设计模式-0 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="HOME">
-    <meta name="author" content="Demi Deng">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
 
-    <link rel="alternate" href="/atom.xml" title="HOME" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
 
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
 
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
 
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
     <script src="/js/html5shiv.min.js"></script>
     <script src="/js/respond.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-  
-  
-  
+    
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
 </head>
 
 <!--
@@ -158,7 +193,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">HOME</a></li>
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -208,29 +243,33 @@
      | 
   <a href="/categories/设计模式/">设计模式</a>  
 </span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">设计模式的六大原则</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">常用的一些设计模式</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">创建型</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">结构型</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">行为型</span></a></li></ol></li></ol>
+</div>
 
       </div>
     </div>
+
     <div class="col-md-8 col-md-offset-2">
       <p>设计模式是软件设计中经过了大量实际项目验证的可复用的优秀解决方案，它有助于程序员写出可复用和可维护性高的程序。许多优秀的 JavaScript 开源框架都运用了不少设计模式，无论如何，系统地学习设计模式都会令你受益匪浅。 下面主要整理一些我的学习常用 JavaScript 设计模式。</p>
 <a id="more"></a>
-<h2 id="设计模式的六大原则"><a href="#设计模式的六大原则" class="headerlink" title="设计模式的六大原则"></a>设计模式的六大原则</h2><p>1、<strong>单一职责原则</strong>： “就一个类而言，应该只有一个引起他变化的原因。”。其实直白点说就是一个类的功能尽量简单，避免一个类中封装过多的功能方法，在设计类的时候避免让它太过庞大。</p>
+<h2><span id="设计模式的六大原则">设计模式的六大原则</span></h2><p>1、<strong>单一职责原则</strong>： “就一个类而言，应该只有一个引起他变化的原因。”。其实直白点说就是一个类的功能尽量简单，避免一个类中封装过多的功能方法，在设计类的时候避免让它太过庞大。</p>
 <p>2、<strong>开闭原则</strong>：对扩展开放，对修改关闭。也就是说，当需求变更的时候，尽量不要去修改原有代码，而是去增加新的代码。</p>
 <p>3、<strong>里氏代换原则</strong>：在程序中，子类可以替换掉父类并且不会对程序的运行结果造成影响。这里一个比较典型的例子就是鸵鸟是鸟吗？在生物学中，鸵鸟是鸟的一种，但是在面向对象的世界里，鸵鸟不是鸟。因为如果把鸟看成一个类的话，鸟一定会有一个飞的方法，而鸵鸟不会飞，因此鸵鸟不能够继承鸟类。</p>
 <p>4、<strong>依赖倒置原则</strong>：抽象不依赖细节，细节依赖抽象。其实这也就是让我们在程序开发时，面对接口编程而不是实现。</p>
 <p>5、<strong>合成聚合复用原则</strong>：要理解这个原则首先要明白合成和聚合的概念。举个栗子，大雁和翅膀的生命周期是一样的，因此大雁和翅膀属于合成关系。而雁群和大雁则是一种聚合关系。当我们可以使用合成或者聚合的时候，就尽量不要使用继承了，这样其实也是减少了类之间的耦合，避免一个类因为多层继承而显得很庞大。</p>
 <p>6、<strong>迪米特法则（最少知道原则）</strong>：如果两个类不必彼此直接通讯，那么这两个类就不应该直接发生作用。这就要求我们在设计类的时候，尽量降低类的成员的访问权限。它的根本思想其实也是松耦合</p>
-<h2 id="常用的一些设计模式"><a href="#常用的一些设计模式" class="headerlink" title="常用的一些设计模式"></a>常用的一些设计模式</h2><p>主要分为三类型：</p>
-<h3 id="创建型"><a href="#创建型" class="headerlink" title="创建型"></a>创建型</h3><ul>
+<h2><span id="常用的一些设计模式">常用的一些设计模式</span></h2><p>主要分为三类型：</p>
+<h3><span id="创建型">创建型</span></h3><ul>
 <li><a href="/blog/2019/01/22/设计模式-1：工厂模式/">工厂模式</a></li>
 <li><a href="/blog/2019/01/23/设计模式-2：单例模式/">单例模式</a></li>
 <li><a href="/blog/2019/01/26/设计模式-4：原型模式/">原型模式</a></li>
 </ul>
-<h3 id="结构型"><a href="#结构型" class="headerlink" title="结构型"></a>结构型</h3><ul>
+<h3><span id="结构型">结构型</span></h3><ul>
 <li>适配器模式</li>
 <li>代理模式</li>
 </ul>
-<h3 id="行为型"><a href="#行为型" class="headerlink" title="行为型"></a>行为型</h3><ul>
+<h3><span id="行为型">行为型</span></h3><ul>
 <li>策略模式</li>
 <li>迭代器模式</li>
 <li><a href="/blog/2019/01/25/设计模式-3：观察者模式/">观察者模式/发布-订阅模式</a></li>
@@ -255,54 +294,19 @@
 </nav>
 
     <div class="col-md-8 col-md-offset-2 col-sm-24">
-      <script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
+      <div id="comments"></div>
 
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
+<script>
+  var gitment = new Gitment({
+    id: "Tue Jan 22 2019 22:40:06 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
 </script>
 
     </div>
@@ -310,41 +314,68 @@
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
+      <!-- ============================ Footer =========================== -->
 
 <footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By Demi Deng. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </footer>
 
 <!-- ============================ END Footer =========================== -->
+
       <!-- Load our scripts -->
 <!-- Resizable 'on-demand' full-height hero -->
 <script type="text/javascript">
