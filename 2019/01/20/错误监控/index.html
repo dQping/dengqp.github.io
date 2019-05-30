@@ -144,7 +144,7 @@
 				    
 				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(13)</small></a></li>
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(17)</small></a></li>
 				    
 				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
 				    
@@ -153,6 +153,8 @@
 				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/自检清单/" class="animsition-link">自检清单<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
 				    
@@ -274,7 +276,7 @@
 <p>所以如果你的应用用到很多的 Promise 实例的话，特别是你在一些基于 promise 的异步库比如 axios 等一定要小心，因为你不知道什么时候这些异步请求会抛出异常而你并没有处理它，所以你最好添加一个 Promise 全局异常捕获事件 <strong>unhandledrejection。</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&quot;unhandledrejection&quot;, function(e)&#123;</span><br><span class="line">  e.preventDefault()</span><br><span class="line">  console.log(&apos;我知道 promise 的错误了&apos;);</span><br><span class="line">  console.log(e.reason);</span><br><span class="line">  return true;</span><br><span class="line">&#125;);</span><br><span class="line">Promise.reject(&apos;promise error&apos;);</span><br><span class="line"></span><br><span class="line">// 以下是捕获promise错误后的输出：</span><br><span class="line">// 我知道 promise 的错误了</span><br><span class="line">// promise error</span><br></pre></td></tr></table></figure>
 <p>当然，如果你的应用没有做 Promise 全局异常处理的话，那会在控制台报以下错误：</p>
-<p><img src="/blog/img/promiseerror.png" alt="promiseerror"></p>
+<p><img src="/img/promiseerror.png" alt="promiseerror"></p>
 <p><strong>注意：</strong>跨域的 js 运行错误也可以被 window.onerror 捕获，能够获得错误信息(Script error)，但是出错文件、误所在的行数、列数和错误详情都无法拿到，那该怎么办？</p>
 <p>Script error 是浏览器在同源策略限制下产生的，浏览器处于对安全性上的考虑，当页面引用非同域名外部脚本文件时中抛出异常的话，此时本页面是没有权利知道这个报错信息的，取而代之的是输出 Script error 这样的信息。</p>
 <p>使用跨源资源共享机制( CORS )分两个步骤处理：</p>
@@ -288,7 +290,7 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=&quot;./iframe.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.frames[0].onerror = function (msg, url, row, col, error) &#123;</span><br><span class="line">    console.log(&apos;我知道 iframe 的错误了，也知道错误信息&apos;);</span><br><span class="line">    console.log(&#123;</span><br><span class="line">      msg,  url,  row, col, error</span><br><span class="line">    &#125;)</span><br><span class="line">    return true;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>如果你嵌入的 iframe 页面和你的主站不是同个域名的，但是 iframe 内容不属于第三方，是你可以控制的，那么可以通过与 iframe 通信的方式将异常信息抛给主站接收。与 iframe 通信的方式有很多，常用的如：postMessage，hash 或者 name 字段跨域等等，这里就不展开了,感兴趣的话可以看：<a href="/blog//2019/01/07/通信类/">跨域，你需要知道的</a></p>
+<li><p>如果你嵌入的 iframe 页面和你的主站不是同个域名的，但是 iframe 内容不属于第三方，是你可以控制的，那么可以通过与 iframe 通信的方式将异常信息抛给主站接收。与 iframe 通信的方式有很多，常用的如：postMessage，hash 或者 name 字段跨域等等，这里就不展开了,感兴趣的话可以看：<a href="//2019/01/07/通信类/">跨域，你需要知道的</a></p>
 </li>
 <li><p>如果是非同域且网站不受自己控制的话，除了通过控制台看到详细的错误信息外，没办法捕获，这是出于安全性的考虑，你引入了一个百度首页，人家页面报出的错误凭啥让你去监控呢，这会引出很多安全性的问题。</p>
 </li>

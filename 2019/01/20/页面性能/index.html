@@ -144,7 +144,7 @@
 				    
 				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(13)</small></a></li>
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(17)</small></a></li>
 				    
 				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
 				    
@@ -153,6 +153,8 @@
 				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/自检清单/" class="animsition-link">自检清单<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
 				    
@@ -272,7 +274,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script defer src=&quot;myscript.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>有 async，加载和渲染后续文档元素的过程将和 script.js 的加载与执行并行进行（异步）。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script async src=&quot;script.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/blog/img/deferasync.png" alt="async和defer"></p>
+<p><img src="/img/deferasync.png" alt="async和defer"></p>
 <p>蓝色线代表网络读取，红色线代表执行时间，这俩都是针对脚本的；绿色线代表 HTML 解析。</p>
 <h3><span id="defer-和-async-之间的区别">defer 和 async 之间的区别</span></h3><p>几个要点：</p>
 <ul>
@@ -287,7 +289,7 @@
 <p>总的来说，多个 defer 脚本会按照加载顺序来执行,能够保证脚本的执行序；而多个 async 脚本是按照先加载完成先执行的规则来的。</p>
 <h2><span id="利用浏览器缓存">利用浏览器缓存</span></h2><p>简单来说，浏览器缓存就是把一个已经请求过的 Web 资源（如 html 页面，图片，js，数据等）拷贝一份副本储存在浏览器中。缓存会根据进来的请求保存输出内容的副本。当下一个请求来到的时候，如果是相同的 URL，缓存会根据缓存机制决定是直接使用副本响应访问请求，还是向源服务器再次发送请求。</p>
 <p>浏览器后续再次进行请求时:</p>
-<p><img src="/blog/img/cache.png" alt="流程"></p>
+<p><img src="/img/cache.png" alt="流程"></p>
 <ul>
 <li><p>浏览器请求某一资源时，会先获取该资源缓存的 header 信息，然后根据 header 中的 <strong>Cache-Control</strong> 和 <strong>Expires</strong> 来判断是否过期。若没过期则直接从缓存中获取资源信息，包括缓存的 header 的信息，所以此次请求不会与服务器进行通信。这里判断是否过期，则是强缓存相关。</p>
 </li>
@@ -315,7 +317,7 @@
 <p>Etag/If-None-Match 返回的是一个校验码。ETag 可以保证每一个资源是唯一的，资源变化都会导致 ETag 变化。服务器根据浏览器上送的 If-None-Match 值来判断是否命中缓存。与 Last-Modified 不一样的是，当服务器返回 304 Not Modified 的响应时，<strong>由于 ETag 重新生成过，response header 中还会把这个 ETag 返回，即使这个 ETag 跟之前的没有变化。</strong></p>
 <p>Last-Modify/If-Modify-Since 表示资源的最后修改时间，当浏览器再次请求该资源时，request 的请求头中会包含 If-Modify-Since，该值为缓存之前返回的 Last-Modify。服务器收到 If-Modify-Since 后，根据资源的最后修改时间判断是否命中缓存。如果命中缓存，则返回 304，并且不会返回资源内容，<strong>也不会返回 Last-Modify</strong>。</p>
 <h2><span id="使用-cnd">使用 CND</span></h2><p>浏览器缓存始终只是为了提升二次访问的速度，对于首次访问的加速，我们需要从网络层面进行优化，最常见的手段就是 CDN（Content Delivery Network，内容分发网络）加速。CDN 的本质上仍然是一个缓存，将因为通过将静态资源(例如 javascript，css，图片等等）缓存在离用户最近的相同网络运营商的 CDN 节点上，使用户以最快速度获取数据，即所谓网络访问第一跳。CDN 一般缓存的是静态资源，如图片，文件，CSS，Script 脚本，静态网页等，但是这些文件访问频率很高，将其缓存在 CDN 可极大改善网页的打开速度，还能节省服务器的带宽消耗，降低负载</p>
-<h3><span id="cdn-是怎么做到加速的呢">CDN 是怎么做到加速的呢</span></h3><p><img src="/blog/img/cdn.png" alt="cnd部署"></p>
+<h3><span id="cdn-是怎么做到加速的呢">CDN 是怎么做到加速的呢</span></h3><p><img src="/img/cdn.png" alt="cnd部署"></p>
 <p>其实这是 CDN 服务商在全国各个省份部署计算节点，CDN 加速将网站的内容缓存在网络边缘,不同地区的用户就会访问到离自己最近的相同网络线路上的 CDN 节点，当请求达到 CDN 节点后，节点会判断自己的内容缓存是否有效，如果有效，则立即响应缓存内容给用户，从而加快响应速度。如果 CDN 节点的缓存失效，它会根据服务配置去我们的内容源服务器获取最新的资源响应给用户，并将内容缓存下来以便响应给后续访问的用户。因此，一个地区内只要有一个用户先加载资源，在 CDN 中建立了缓存，该地区的其他后续用户都能因此而受益。</p>
 <h2><span id="预解析-dns">预解析 DNS</span></h2><p>在网页体验中我们常会遇到这种情况，即在调用百度联盟、谷歌联盟以及当前网页所在域名外的域名文件时会遇到请求延时非常严重的情况。那么有没有方法去解决这种请求严重延时的现象呢？</p>
 <p>一般来说这种延时的原因不会是对方网站带宽或者负载的原因，那么到底是什么导致了这种情况呢。假设是 DNS 的问题，因为 DNS 解析速度很可能是造成资源延时的最大原因</p>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>判断js数据类型的四种方法 | DEMi&#39;S BLOG</title>
+  <!-- Meta data -->
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
+
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
+
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
+
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <script src="/js/gitment.browser.js"></script>
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
+
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+  <![endif]-->
+
+    
+
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAAs</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Vue-cli项目构建/" class="animsition-link">Vue-cli项目构建<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/antd/" class="animsition-link">antd<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/css/" class="animsition-link">css<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/gulp/" class="animsition-link">gulp<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/javascript/" class="animsition-link">javascript<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/javascript插件/" class="animsition-link">javascript插件<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/react学习/" class="animsition-link">react学习<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(17)</small></a></li>
+				    
+				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/日记/" class="animsition-link">日记<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/自检清单/" class="animsition-link">自检清单<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/调试/" class="animsition-link">调试<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+  <div class="container">
+    <div class="row col-md-offset-2">
+      <div class="col-md-8">
+        <h1>判断js数据类型的四种方法</h1>
+        <span class="post-meta">
+  <time datetime="2019-05-27T08:43:59.000Z" itemprop="datePublished">
+    2019-05-27
+  </time>
+     | 
+  <a href="/categories/前端知识基础/">前端知识基础</a>  
+</span>
+<div class="toc">
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">typeof:可以对基本类型做出准确的判断，但对于引用类型，用它就有点力不从心了</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">instanceof</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">constructor：查看对象对应的构造函数</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">Object.prototype.toString(可以说不管是什么类型，它都可以立即判断出)</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">总结</span></a></li></ol>
+</div>
+
+      </div>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+      <p>判断数据类型的方法一般可以通过：typeof、instanceof、constructor、toString 四种常用方法，下面对这 4 个方法的优缺点简单小结</p>
+<a id="more"></a>
+<p>首先我们简单的说一下 js 中的几种数据类型，数据类型分为基本类型和引用类型：</p>
+<p><code>基本类型</code>：String、Number、Boolean、Null、Undefined、Symbol</p>
+<p><code>引用类型</code>：Object、Array、Date、Function、Error、RegExp、Math、Number、String、Boolean、Globle。</p>
+<h2><span id="typeof可以对基本类型做出准确的判断但对于引用类型用它就有点力不从心了">typeof:可以对基本类型做出准确的判断，但对于引用类型，用它就有点力不从心了</span></h2><p><code>typeof 返回一个表示数据类型的字符串，返回结果包括：number、boolean、string、symbol、object、undefined、function 等 7 种数据类型。</code></p>
+<p>typeof 可以对 JS 基本数据类型做出准确的判断（除了 null），而对于引用类型返回的基本上都是 object, 其实返回 object 也没有错，因为所有对象的原型链最终都指向了 Object,Object 是所有对象的<code>祖宗</code>。 但当我们需要知道某个对象的具体类型时，typeof 就显得有些力不从心了。</p>
+<p><code>注意：typeof null 会返回 object，因为特殊值 null 被认为是一个空的对象引用</code></p>
+<h2><span id="instanceof">instanceof</span></h2><p>instanceof 判断对象和构造函数在原型链上是否有关系，如果有关系，返回真，否则返回假</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">let str = &apos;hello&apos;;</span><br><span class="line">console.log(str instanceof String); //false</span><br><span class="line"></span><br><span class="line">let bool = true;</span><br><span class="line">console.log(bool instanceof Boolean); //false</span><br><span class="line"></span><br><span class="line">let num = 123;</span><br><span class="line">console.log(num instanceof Number);//false</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(null instanceof Object);//false</span><br><span class="line"></span><br><span class="line">console.log(undefined instanceof Object);//false</span><br><span class="line"></span><br><span class="line">let s = Symbol(&quot;aa&quot;)</span><br><span class="line">console.log(s instanceof Symbol) //false</span><br><span class="line"></span><br><span class="line">let oDate = new Date();</span><br><span class="line">console.log(oDate instanceof Date);//true</span><br><span class="line"></span><br><span class="line">let obj = &#123;&#125;;</span><br><span class="line">console.log(obj instanceof Object); //true</span><br><span class="line"></span><br><span class="line">let arr = [];</span><br><span class="line">console.log(arr instanceof Array); //true</span><br><span class="line"></span><br><span class="line">let reg = /a/;</span><br><span class="line">console.log(reg instanceof RegExp); //true</span><br><span class="line"></span><br><span class="line">let fun = function()&#123;&#125;;</span><br><span class="line">console.log(fun instanceof Function); //true</span><br><span class="line"></span><br><span class="line">var error = new Error();</span><br><span class="line">console.log(error instanceof Error);//true</span><br></pre></td></tr></table></figure>
+<p>从上面的运行结果我们可以看到，基本数据类型是没有检测出他们的类型，但是我们使用下面的方式创建 num、str、boolean，是可以检测出类型的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var num = new Number(123);</span><br><span class="line">var str = new String(&apos;abcdef&apos;);</span><br><span class="line">var boolean = new Boolean(true);</span><br></pre></td></tr></table></figure>
+<p><code>instanceof 其实判断的就是 实例对象的 proto 与构造函数的 prototype 是不是引用的同一个地址</code>:<br><a href="/2019/01/06/原型链/">instanceof 原理以及延伸</a></p>
+<h2><span id="constructor查看对象对应的构造函数">constructor：查看对象对应的构造函数</span></h2><p>constructor 在其对应对象的原型下面，是自动生成的。当我们写一个构造函数的时候，程序会自动添加：构造函数名.prototype.constructor = 构造函数名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">let str = &apos;hello&apos;;</span><br><span class="line">console.log(str.constructor == String); //true</span><br><span class="line"></span><br><span class="line">let bool = true;</span><br><span class="line">console.log(bool.constructor == Boolean); //true</span><br><span class="line"></span><br><span class="line">let num = 123;</span><br><span class="line">console.log(num.constructor ==  Number);//true</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(null.constructor ==  Object);//报错 TypeError</span><br><span class="line"></span><br><span class="line">console.log(undefined.constructor ==  Object);//报错 TypeError</span><br><span class="line"></span><br><span class="line">let s = Symbol(&quot;aa&quot;)</span><br><span class="line">console.log(s.constructor ==  Symbol) //true</span><br><span class="line"></span><br><span class="line">let oDate = new Date();</span><br><span class="line">console.log(oDate.constructor ==  Date);//true</span><br><span class="line"></span><br><span class="line">let obj = &#123;&#125;;</span><br><span class="line">console.log(obj.constructor == Object); //true</span><br><span class="line"></span><br><span class="line">let arr = [];</span><br><span class="line">console.log(arr.constructor == Array); //true</span><br><span class="line"></span><br><span class="line">let reg = /a/;</span><br><span class="line">console.log(reg.constructor == RegExp); //true</span><br><span class="line"></span><br><span class="line">let fun = function()&#123;&#125;;</span><br><span class="line">console.log(fun.constructor == Function); //true</span><br><span class="line"></span><br><span class="line">var error = new Error();</span><br><span class="line">console.log(error.constructor == Error);//true</span><br></pre></td></tr></table></figure>
+<p>从上面的测试中我们可以看到，<code>undefined 和 null 是不能够判断出类型的</code>，并且会报错。因为 null 和 undefined 是无效的对象，因此是不会有 constructor 存在的</p>
+<p>同时我们也需要注意到的是：<code>使用 constructor 是不保险的，因为 constructor 属性是可以被修改的</code>，会导致检测出的结果不正确</p>
+<h2><span id="objectprototypetostring可以说不管是什么类型它都可以立即判断出">Object.prototype.toString(可以说不管是什么类型，它都可以立即判断出)</span></h2><p><code>Object.prototype.toString 可以说不管是什么类型，它都可以立即判断出</code></p>
+<p>toString 是 Object 原型对象上的一个方法，该方法默认返回其调用者的具体类型，更严格的讲，是 toString 运行时 this 指向的对象类型, 返回的类型</p>
+<p>格式为[object xxx],<code>xxx</code>是具体的数据类型，其中包括：</p>
+<p>String,Number,Boolean,Undefined,Symbol,Null,Function,Date,Array,RegExp,Error,HTMLDocument,… 基本上所有对象的类型都可以通过这个方法获取到。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">let str = &apos;hello&apos;;</span><br><span class="line">console.log(Object.prototype.toString.call(str));//[object String]</span><br><span class="line"></span><br><span class="line">let bool = true;</span><br><span class="line">console.log(Object.prototype.toString.call(bool))//[object Boolean]</span><br><span class="line"></span><br><span class="line">let num = 123;</span><br><span class="line">console.log(Object.prototype.toString.call(num));//[object Number]</span><br><span class="line"></span><br><span class="line">let nul = null;</span><br><span class="line">console.log(Object.prototype.toString.call(nul));//[object Null]</span><br><span class="line"></span><br><span class="line">let und = undefined;</span><br><span class="line">console.log(Object.prototype.toString.call(und));//[object Undefined]</span><br><span class="line"></span><br><span class="line">let syl = Symbol()</span><br><span class="line">console.log(Object.prototype.toString.call(syl)) //[object Symbol]</span><br><span class="line"></span><br><span class="line">let oDate = new Date();</span><br><span class="line">console.log(Object.prototype.toString.call(oDate));//[object Date]</span><br><span class="line"></span><br><span class="line">let json = &#123;&#125;;</span><br><span class="line">console.log(Object.prototype.toString.call(json));//[object Object]</span><br><span class="line"></span><br><span class="line">let arr = [];</span><br><span class="line">console.log(Object.prototype.toString.call(arr));//[object Array]</span><br><span class="line"></span><br><span class="line">let reg = /a/;</span><br><span class="line">console.log(Object.prototype.toString.call(reg));//[object RegExp]</span><br><span class="line"></span><br><span class="line">let fun = function()&#123;&#125;;</span><br><span class="line">console.log(Object.prototype.toString.call(fun));//[object Function]</span><br><span class="line"></span><br><span class="line">let error = new Error();</span><br><span class="line">console.log(Object.prototype.toString.call(error));//[object Error]</span><br></pre></td></tr></table></figure>
+<p>从这个结果也可以看出，不管是什么类型的，Object.prototype.toString.call();都可以判断出其具体的类型。</p>
+<h2><span id="总结">总结</span></h2><table>
+<thead>
+<tr>
+<th>不同类型的优缺点</th>
+<th>typeof</th>
+<th>instanceof</th>
+<th>constructor</th>
+<th>Object.prototype.toString.call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优点</td>
+<td>能检测出基本类型(除 null)</td>
+<td>能检测出引用类型</td>
+<td>基本能检测所有的类型（除了 null 和 undefined）</td>
+<td>检测出所有的类型</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>对引用类型力不从心</td>
+<td>不能检测出基本类型，且不能跨 iframe</td>
+<td>constructor 易被修改，也不能跨 iframe</td>
+<td>IE6 下，undefined 和 null 均为 Object</td>
+</tr>
+</tbody>
+</table>
+
+      <div class="clearfix"></div>
+      <hr class="nogutter" />
+    </div>
+    <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/05/28/JavaScript数字精度丢失问题总结/" style="float: left;">
+        ← JavaScript数字精度丢失问题总结
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/05/15/babel-plugin-import配置babel按需引入antd模块，编译后报错/">
+        按需引入antd模块，编译报错 →
+    </a>
+    
+</nav>
+
+    <div class="col-md-8 col-md-offset-2 col-sm-24">
+      <div id="comments"></div>
+
+<script>
+  var gitment = new Gitment({
+    id: "Mon May 27 2019 16:43:59 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
+</script>
+
+    </div>
+  </div>
+</section>
+
+
+      <!-- ============================ Footer =========================== -->
+
+<footer>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>

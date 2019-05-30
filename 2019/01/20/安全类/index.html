@@ -144,7 +144,7 @@
 				    
 				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(13)</small></a></li>
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(17)</small></a></li>
 				    
 				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
 				    
@@ -153,6 +153,8 @@
 				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/自检清单/" class="animsition-link">自检清单<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
 				    
@@ -254,7 +256,7 @@
       <p>本篇主要简单总结一下前端安全涉及的两种分类（CSRF 和 XSS),包括其攻击原理、防御措施以及两者之间的区别。</p>
 <a id="more"></a>
 <h2><span id="csrf跨站请求仿造">CSRF(跨站请求仿造)</span></h2><p>CSRF（Cross Site Request Forgery），中文是跨站点请求伪造。CSRF 攻击者在用户已经登录目标网站之后，诱使用户访问一个攻击链接，利用目标网站对用户的信任，以用户身份在攻击页面对目标网站发起伪造用户操作的请求，达到攻击目的。</p>
-<h3><span id="攻击原理">攻击原理</span></h3><p><img src="/blog/img/csrf.png" alt="CSRF攻击原理"></p>
+<h3><span id="攻击原理">攻击原理</span></h3><p><img src="/img/csrf.png" alt="CSRF攻击原理"></p>
 <p>CSRF 攻击的前提是用户必须在网站 A（目标网站）注册登录过，并且目标网站接口存在漏洞,这是实现 CSRF 攻击不可缺少的两大因素。</p>
 <p>CSRF 攻击是源于 <strong>Web 的隐式身份验证机制</strong>！Web 的身份验证机制虽然可以保证一个请求是来自于某个用户的浏览器，但却无法保证该请求是用户批准发送的。CSRF 攻击的一般是由服务端解决。</p>
 <p>举个最简单的例子：</p>

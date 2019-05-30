@@ -144,7 +144,7 @@
 				    
 				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(13)</small></a></li>
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(17)</small></a></li>
 				    
 				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
 				    
@@ -153,6 +153,8 @@
 				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/自检清单/" class="animsition-link">自检清单<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
 				    
@@ -259,7 +261,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int sum = 0, n = 100;     // 执行1次</span><br><span class="line">sum = (1+n)*n/2;          // 执行1次</span><br></pre></td></tr></table></figure>
 <p>第一种算法执行了 1+(n+1)+n=2n+2 次。<br>第二种算法，是 1+1=2 次</p>
 <p>分析一个算法的运行时间时，重要的是把基本操作的数量和输入模式关联起来,<strong>随着 n 的增大，后面的+3 和+1 其实是不影响最终的算法变化曲线的。所以，我们可以忽略这些加法常数</strong></p>
-<p><img src="/blog/img/suanfa1.png" alt="图片1"><br><img src="/blog/img/suanfa2.png" alt="图片2"></p>
+<p><img src="/img/suanfa1.png" alt="图片1"><br><img src="/img/suanfa2.png" alt="图片2"></p>
 <p>这组数据我们看得很清楚，当 n 的值变得非常大的时候，3n+1 已经没法和 2n^2 的结果相比较，最终几乎可以忽略不计。而算法 G 在跟算法 I 基本已经重合了。</p>
 <p>于是我们可以得到这样一个结论，判断一个算法的效率时，函数中的常数和其他次要项常常可以忽略，而更应该关注主项（最高项）的阶数。</p>
 <h3><span id="算法时间复杂度的定义">算法时间复杂度的定义：</span></h3><p>在进行算法分析时，语句总的执行次数 T(n)是关于问题规模 n 的函数，进而分析 T(n)随 n 的变化情况并确定 T(n)的数量级。算法的时间复杂度，也就是算法的时间量度，记作：T(n)= O(f(n))。它表示随问题规模 n 的增大，算法执行时间的增长率和 f(n)的增长率相同，称作算法的渐近时间复杂度，简称为时间复杂度。其中 f(n)是问题规模 n 的某个函数。</p>
@@ -293,7 +295,7 @@
 <ul>
 <li><p>非线性时间比较类排序：通过比较来决定元素间的相对次序，由于其时间复杂度不能突破 O(nlogn)，因此称为非线性时间比较类排序。</p>
 </li>
-<li><p>线性时间非比较类排序：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此称为线性时间非比较类排序。<br><img src="/blog/img/suanfa4.png" alt="图片2"><br><img src="/blog/img/suanfa3.png" alt="图片2"></p>
+<li><p>线性时间非比较类排序：不通过比较来决定元素间的相对次序，它可以突破基于比较排序的时间下界，以线性时间运行，因此称为线性时间非比较类排序。<br><img src="/img/suanfa4.png" alt="图片2"><br><img src="/img/suanfa3.png" alt="图片2"></p>
 <pre><code>术语说明：
 - 稳定：如果 a 原本在 b 前面，而 a=b，排序之后 a 仍然在 b 的前面；
 - 不稳定：如果 a 原本在 b 的前面，而 a=b，排序之后 a 可能会出现在 b 的后面；

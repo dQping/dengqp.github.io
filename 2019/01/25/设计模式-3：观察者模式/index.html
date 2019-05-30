@@ -144,7 +144,7 @@
 				    
 				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(13)</small></a></li>
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(17)</small></a></li>
 				    
 				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
 				    
@@ -153,6 +153,8 @@
 				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/自检清单/" class="animsition-link">自检清单<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
 				    
@@ -273,13 +275,13 @@
 </ol>
 <p>目标和观察者是基类，目标提供维护观察者的一系列方法，观察者提供更新接口。具体观察者和具体目标继承各自的基类，然后具体观察者把自己注册到具体目标里，在具体目标发生变化时候，调度观察者的更新方法。</p>
 <p>比如有个“天气中心”的具体目标 A，专门监听天气变化，而有个显示天气的界面的观察者 B，B 就把自己注册到 A 里，当 A 触发天气变化，就调度 B 的更新方法，并带上自己的上下文。</p>
-<p><img src="/blog/img/gcz.png" alt="观察模式"></p>
+<p><img src="/img/gcz.png" alt="观察模式"></p>
 <ol start="2">
 <li><strong>发布/订阅模式</strong></li>
 </ol>
 <p>订阅者把自己想订阅的事件注册到调度中心，当该事件触发时候，发布者发布该事件到调度中心（顺带上下文），由调度中心统一调度订阅者注册到调度中心的处理代码。</p>
 <p>比如有个界面是实时显示天气，它就订阅天气事件（注册到调度中心，包括处理程序），当天气变化时（定时获取数据），就作为发布者发布天气信息到调度中心，调度中心就调度订阅者的天气处理程序。</p>
-<p><img src="/blog/img/fbdy.png" alt="观察模式"></p>
+<p><img src="/img/fbdy.png" alt="观察模式"></p>
 <h2><span id="实际使用的一些场景">实际使用的一些场景</span></h2><ol>
 <li><strong>网页事件绑定</strong></li>
 <li><strong>Promise</strong></li>
