@@ -106,13 +106,17 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 0;
+  margin-top: 40px;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Hiragino Sans GB",
     "Microsoft YaHei", "Source Han Sans CN", "WenQuanYi Micro Hei", Arial,
     sans-serif;
   font-weight: 400;
   font-weight: normal;
   color: #151515;
+  margin-bottom: 10px;
+}
+h4.title {
+  margin-top: 0;
 }
 h2 {
   text-transform: uppercase;
@@ -2424,9 +2428,9 @@ ul.page-nav i {
 #services .services-intro {
   padding: 40px 15px 70px;
 }
-#services .boxes {
+/* #services .boxes {
   padding-top: 50px;
-}
+} */
 #services .boxes .col-md-3,
 #services .boxes .col-md-6 {
   padding: 15px;
@@ -3733,7 +3737,15 @@ nav.pagination {
   position: fixed;
   left: 20px;
   background-color: #f7f7f7;
-  padding: 30px 0;
+  padding: 30px 10px;
+  min-width: 200px;
+  max-width: 220px;
+  top: 150px;
+  bottom: 50px;
+  overflow-y: auto;
+}
+.toc-title {
+  font-size: 20px;
 }
 .toc-list-item {
   color: #000;
@@ -3753,6 +3765,40 @@ nav.pagination {
   .toc {
     display: none;
   }
+}
+strong {
+  color: #e66336;
+}
+.highlight table th,
+.highlight table td {
+  border: 0;
+}
+.highlight table {
+  border: 0;
+}
+.highlight table tr:nth-of-type(2n + 1) {
+  background-color: none;
+}
+table {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  border-left: none;
+  word-break: normal;
+}
+table th,
+table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  line-height: 20px;
+  vertical-align: middle;
+}
+table tr:nth-of-type(2n + 1) {
+  background-color: hsla(0, 0%, 71%, 0.1);
+}
+.highlight table tr:nth-of-type(2n + 1) {
+  background-color: transparent;
 }
 
 @charset "utf-8";

@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>类型转换 | DEMi&#39;S BLOG</title>
+  <title>CSS水平和垂直居中方案 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -128,7 +128,7 @@
 				    
 				    <li><a href="/categories/antd/" class="animsition-link">antd<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/css/" class="animsition-link">css<small>(1)</small></a></li>
+				    <li><a href="/categories/css/" class="animsition-link">css<small>(3)</small></a></li>
 				    
 				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
 				    
@@ -144,7 +144,7 @@
 				    
 				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(1)</small></a></li>
 				    
-				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(13)</small></a></li>
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(17)</small></a></li>
 				    
 				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
 				    
@@ -153,6 +153,8 @@
 				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
 				    
 				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/自检清单/" class="animsition-link">自检清单<small>(2)</small></a></li>
 				    
 				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
 				    
@@ -235,84 +237,69 @@
   <div class="container">
     <div class="row col-md-offset-2">
       <div class="col-md-8">
-        <h1>类型转换</h1>
+        <h1>CSS水平和垂直居中方案</h1>
         <span class="post-meta">
-  <time datetime="2019-01-01T12:37:10.000Z" itemprop="datePublished">
-    2019-01-01
+  <time datetime="2019-04-29T02:16:42.000Z" itemprop="datePublished">
+    2019-04-29
   </time>
      | 
-  <a href="/categories/前端知识基础/">前端知识基础</a>  
+  <a href="/categories/css/">css</a>  
 </span>
 <div class="toc">
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">显示类型转换：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">Number 函数</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">String 函数</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">Boolean 函数:</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">隐式类型转换：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">常见题目：</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">typeof</span></a></li></ol>
+  <div class="toc-title">目录</div>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">水平居中</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ①</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ②</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ③</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ④</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">垂直居中：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ①</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ②</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ③</span></a></li></ol></li></ol>
 </div>
 
       </div>
     </div>
 
     <div class="col-md-8 col-md-offset-2">
-      <p>数据类型分为原始数据类型和对象数据类型，本篇主要记录显示类型转换的一些相关知识。JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种（ES6 又新增了第七种 Symbol 类型的值）。</p>
-<a id="more"></a>
-<ul>
-<li>原始数据类型：Boolean Null Undefined Number String Symbol</li>
-<li>对象数据类型：Object</li>
-</ul>
-<h3><span id="显示类型转换">显示类型转换：</span></h3><ul>
-<li>Number 函数</li>
-<li>String 函数</li>
-<li>Boolean 函数</li>
-</ul>
-<h4><span id="number-函数">Number 函数</span></h4><p>1、原始类型转换：</p>
-<ul>
-<li>数值： 转换后还是数值</li>
-<li>字符串： 如果可以被解析为数值，则转换为相应的数值，否则得到 NaN, 空字符串转为 0</li>
-<li>boolean： true 转换为 1， false 转成 0</li>
-<li>undefined：转成 NaN</li>
-<li>null：转成 0</li>
-</ul>
-<p>2、对象类型转换：</p>
-<p>先调用对象自身的 valueOf 方法，如果返回原始类型的值，再使用 Number();如果返回复合类型，再调用自身的 toString()</p>
-<p>如果 toString() 返回原始类型， 再使用 Number() ，如果返回的还是复合类型，则报错。</p>
-<h4><span id="string-函数">String 函数</span></h4><p>1、原始类型转换：</p>
-<ul>
-<li>数值： 转换后是相应的字符串</li>
-<li>字符串： 转换后还是原来的值</li>
-<li>boolean： true 转换为 “true”， false 转成 “false”</li>
-<li>undefined：转成 “undefined”</li>
-<li>null：转成 “null”</li>
-</ul>
-<p>2、对象类型转换：</p>
-<p>先调用对象自身的 toString() 方法，如果返回原始类型的值，再使用 String();如果返回复合类型，再调用自身的 valueOf()</p>
-<p>如果 valueOf() 返回原始类型， 再使用 String() ，如果返回的还是复合类型，则报错。</p>
-<h4><span id="boolean-函数">Boolean 函数:</span></h4><p>1、原始类型转换：</p>
-<p>undefined null +0 -0 空字符串 NaN 返回 false，其他值为 true</p>
-<h3><span id="隐式类型转换">隐式类型转换：</span></h3><ul>
-<li>四则运算</li>
-<li>判断语句</li>
-<li>Native 调用（console.log(),alert()）</li>
-</ul>
-<h4><span id="常见题目">常见题目：</span></h4><p>1、[]+[] // “”<br>2、[]+{} // “[object Object]”<br>3、{}+[] // 0<br>4、{}+{} // “[object Object][object object]”<br>5、true + true // 2<br>6、1+{a:1} // “1[object Object]”</p>
-<h3><span id="typeof">typeof</span></h3><ul>
-<li>Undefine -&gt; “undefined”</li>
-<li>Null -&gt; “object”</li>
-<li>Boolean -&gt; “boolean”</li>
-<li>Number -&gt; “number”</li>
-<li>String -&gt; “string”</li>
-<li>Symbol -&gt; “symbol”</li>
-<li>Hot object -&gt; “Implementation-dependent”</li>
-<li>Function object -&gt; “function”</li>
-<li>Any other object -&gt; “object”</li>
-</ul>
+      <p>我们在网页布局的时候，经常会碰到需要居中的情况，那下面就来总结一下有哪几种目前比较常用的居中方案，它们的优点和缺点分别又是什么。</p>
+ <a id="more"></a>
+<h2><span id="水平居中">水平居中</span></h2><h3><span id="方法-1">方法 ①</span></h3><p><strong>（父元素）text-align，（子元素）inline-block</strong></p>
+<p>这个是比较传统的做法，而且代码量也相对比较少，它的特点是可以很好地兼容 IE6 等低版本浏览器。至于缺点也比较明显，是需要把父元素和子元素都做成一个整体，并且上同时设置 CSS</p>
+<p><code>优点</code>：兼容性好，支持低版本浏览器，支持居中多个子元素的情况<br><code>缺点</code>：需要同时在父元素和子元素上设置<br>适用场景：需要兼容低版本浏览器时使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">      text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">      display: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="方法-2">方法 ②</span></h3><p><strong>（子元素）display:table;margin:auto;（左右 auto 即可）</strong></p>
+<p>这个方法利用 display:table 这个样式把子元素转化成类表格元素，从而可以用 margin:auto 来自动居中。方案的优点是只需要在子元素上加 CSS，但 <code>display:table 在 IE8 以上浏览器才有效果</code>，所以本方法只适合用在较高版本浏览器中。</p>
+<p><code>优点</code>：只需要在子元素设置。<br><code>缺点</code>：不兼容 IE6 和 IE7<br>适用场景：子元素数量多，不方便修改父元素的属性，对浏览器版本要求相对较低时使用</p>
+<p><strong>（子元素）display:block;margin:0 auto;（左右 auto 即可）</strong></p>
+<p>没有以上兼容问题，基本场景都适用</p>
+<h3><span id="方法-3">方法 ③</span></h3><p><strong>(父元素）position:relative，（子元素）absolute+left+transform（translateX(-50%)）/margin-left</strong></p>
+<p>这个的方法看起来就比较现代化了。没错，它的核心是利用了 CSS3 里的水平偏移，由于设置了 absolute，所以对其他元素基本不会造成影响</p>
+<p><code>优点</code>：不影响其他元素<br><code>缺点</code>，transform 兼容性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: #ccc;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以下这种方法不会有兼容问题，但必须知道子元素的宽度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 100px;</span><br><span class="line">background-color: #ccc;</span><br><span class="line">position: absolute;</span><br><span class="line">left: 50%;</span><br><span class="line">margin-left: -50px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="方法-4">方法 ④</span></h3><p><strong>flex+justify-content/margin</strong></p>
+<p>这个方法利用了 display:flex 对 Grid 操作的强大，分别有两种设置方法。</p>
+<p>一种是（父元素）display:flex;justify-content:center;</p>
+<p><code>优点</code>：只设父元素,适用多个子元素<br><code>缺点</code>：flex 兼容性差，而且比较耗资源</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">      display: flex;</span><br><span class="line">      justify-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另一种是（父元素）display:flex;（子元素）margin:0 auto;</p>
+<p><code>优点</code>：代码简单<br><code>缺点</code>：污染父元素，flex 兼容性问题</p>
+<h2><span id="垂直居中">垂直居中：</span></h2><h3><span id="方法-1">方法 ①</span></h3><p><strong>（父）table-cell + vertical-align</strong></p>
+<p><code>优点</code>：兼容性比较好，换成 table 可以兼容 IE6,7<br><code>缺点</code>：table-cell 会不能和 float、position:absolute 同时设置。（只能在外 parent 外套一层 div.wrap 才能设置 float）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  height: 200px;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: #ccc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="方法-2">方法 ②</span></h3><p><strong>（父）position:relative；（子）absolute +top+ transform/margin</strong></p>
+<p>这个方法和水平居中的 left+transform 类似，这里就不再赘述了<br><code>优点</code>：基本只设置子元素，不影响其他元素<br><code>缺点</code>：transform 兼容性问题</p>
+<h3><span id="方法-3">方法 ③</span></h3><p><strong>（父）flex + align-items</strong></p>
+<p>方法和水平居中的 flex 很类似吧<br><code>优点</code>：只要设置父元素<br><code>缺点</code>：flex 和 align-items 的兼容性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  height: 200px;</span><br><span class="line">  align-items: center;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: #ccc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/01/06/Http协议类/" style="float: left;">
-        ← Http协议类
+    <a class="pull-left" href="/2019/04/30/javascript中symbol类型的应用场景-意义-和使用方法/" style="float: left;">
+        ← javascript中symbol类型的应用场景和使用方法
     </a>
     
+    
+    <a class="pull-right" href="/2019/04/25/纯CSS画的基本图形/">
+        纯CSS画的基本图形 →
+    </a>
     
 </nav>
 
@@ -321,7 +308,7 @@
 
 <script>
   var gitment = new Gitment({
-    id: "Tue Jan 01 2019 20:37:10 GMT+0800",
+    id: "Mon Apr 29 2019 10:16:42 GMT+0800",
     owner: "dQping",
     repo: "dqping.github.io",
     oauth: {
