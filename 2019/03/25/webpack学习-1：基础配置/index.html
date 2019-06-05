@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<!--<![endif]-->
+
+<head>
+  <title>webpack学习-1：基础配置 | DEMi&#39;S BLOG</title>
+  <!-- Meta data -->
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="DEMi'S BLOG" />
+  <meta name="author" content="Demi Deng" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <!-- Favicon, (keep icon in root folder) -->
+  <link
+    rel="Shortcut Icon"
+    href="/img/favicon.ico"
+    type="image/ico"
+  />
+
+  <link
+    rel="alternate"
+    href="/atom.xml"
+    title="DEMi&#39;S BLOG"
+    type="application/atom+xml"
+  />
+  <link
+    rel="stylesheet"
+    href="/css/all.css"
+    media="screen"
+    type="text/css"
+  />
+  <!-- <link
+    rel="stylesheet"
+    href="/css/gitment.css"
+    media="screen"
+    type="text/css"
+  /> -->
+  
+  <link
+    rel="stylesheet"
+    href="/highlightjs/vs.css"
+    type="text/css"
+  />
+  
+  <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css" />
+
+  <!--[if IE 8]>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/ie8.css"
+    />
+  <![endif]-->
+
+  <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+  <script src="/js/jquery-1.11.1.min.js"></script>
+  <!-- <script src="/js/gitment.browser.js"></script> -->
+  <script src="https://billts.site/js/gitment.js"></script>
+
+  <script src="/js/busuanzi.js"></script>
+  <script>
+    window.jQuery ||
+      document.write('<script src="js/jquery-1.11.1.min.js"><\/script>');
+  </script>
+
+  <!-- Load these in the <head> for quicker IE8+ load times -->
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+  <![endif]-->
+
+    
+
+  <style>
+    .col-md-8.col-md-offset-2.opening-statement img {
+      display: none;
+    }
+  </style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAAs</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/Vue-cli项目构建/" class="animsition-link">Vue-cli项目构建<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/antd/" class="animsition-link">antd<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/css/" class="animsition-link">css<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/git/" class="animsition-link">git<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/gulp/" class="animsition-link">gulp<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/javascript/" class="animsition-link">javascript<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/javascript插件/" class="animsition-link">javascript插件<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/npm/" class="animsition-link">npm<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/react学习/" class="animsition-link">react学习<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(17)</small></a></li>
+				    
+				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/日记/" class="animsition-link">日记<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/移动端javascript/" class="animsition-link">移动端javascript<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/算法/" class="animsition-link">算法<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/自检清单/" class="animsition-link">自检清单<small>(2)</small></a></li>
+				    
+				    <li><a href="/categories/设计模式/" class="animsition-link">设计模式<small>(6)</small></a></li>
+				    
+				    <li><a href="/categories/调试/" class="animsition-link">调试<small>(1)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+  <div class="container">
+    <div class="row col-md-offset-2">
+      <div class="col-md-8">
+        <h1>webpack学习-1：基础配置</h1>
+        <span class="post-meta">
+  <time datetime="2019-03-25T08:33:33.000Z" itemprop="datePublished">
+    2019-03-25
+  </time>
+    | 
+  <a href="/tags/自动化构建工具/">自动化构建工具</a>     | 
+  <a href="/categories/webpack/">webpack</a>  
+</span>
+<div class="toc">
+  <div class="toc-title">目录</div>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">安装</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">快速开始</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">样式打包</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">css 打包</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">sass 打包</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">less 打包</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">添加浏览器厂商前缀</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">打包字体文件</span></a></li></ol></li></ol>
+</div>
+
+      </div>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+      <p>本篇根据个人学习过程纪录 webpack 的一些基础配置内容。包含了解和掌握 webpack 提供的各种工具和功能，大多数都是起点内容。</p>
+<a id="more"></a>
+<h2><span id="安装">安装</span></h2><p>webpack 用于编译 JavaScript 模块。安装后，您可以通过其 <code>CLI</code> 或 API 与 webpack 连接。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir webpack-study</span><br><span class="line"><span class="built_in">cd</span> webpack-study</span><br><span class="line">npm init -y</span><br><span class="line">npm install webpack webpack-cli --save-dev</span><br></pre></td></tr></table></figure>
+<p><code>webpack-cli 使我们可以在命令行中正确的使用 webpack 命令</code></p>
+<h2><span id="快速开始">快速开始</span></h2><p>目录结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">webpack-demo</span><br><span class="line">|- package.json</span><br><span class="line">|- webpack.config.js</span><br><span class="line">|- /src</span><br><span class="line">  |- js</span><br><span class="line">    |- index.js</span><br><span class="line">|- /node_modules</span><br></pre></td></tr></table></figure>
+<p>配置入口和出口文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  entry: &apos;./src/js/index.js&apos;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    filename: &apos;bundle.js&apos;,</span><br><span class="line">    // __dirname 表示当前文件（wenpack.config.js所在的目录路径）</span><br><span class="line">    path: path.resolve(__dirname, &apos;dist&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>添加一个 npm 脚本来调整我们的 package.json：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"></span><br><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;build&quot;: &quot;webpack&quot;</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>运行 npm 脚本: <code>npm run build</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">Hash: 9e26f378422173e779ea</span><br><span class="line">Version: webpack 4.32.2</span><br><span class="line">Time: 89ms</span><br><span class="line">Built at: 2019-06-04 16:52:37</span><br><span class="line">    Asset       Size  Chunks             Chunk Names</span><br><span class="line">bundle.js  946 bytes       0  [emitted]  main</span><br><span class="line">Entrypoint main = bundle.js</span><br><span class="line">[0] ./src/js/index.js 18 bytes &#123;0&#125; [built]</span><br></pre></td></tr></table></figure>
+<hr>
+<h2><span id="样式打包">样式打包</span></h2><h3><span id="css-打包">css 打包</span></h3><p>要从 JavaScript 模块中导入 CSS 文件，您需要在模块配置中安装并添加 <code>style-loader</code> 和 <code>css-loader</code></p>
+<ul>
+<li><code>css-loader</code> 会帮我们分析出几个 css 文件之间的关系，最终帮我们合并成一个 css 文件</li>
+<li><code>style-loader</code> 在得到 css-loader 生存的内容后，会把这段内容通过<code>&lt;style&gt;</code>标记将插入到 html 文件的<code>&lt;head&gt;</code>中。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev style-loader css-loader</span><br></pre></td></tr></table></figure>
+<p>loader 配置:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: /\.css$/,</span><br><span class="line">      use: [&quot;style-loader&quot;, &quot;css-loader&quot;]</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当运行该模块时，带有字符串化 css 的<code>&lt;style&gt;</code>标记将插入到 html 文件的<code>&lt;head&gt;</code>中。</p>
+<h3><span id="sass-打包">sass 打包</span></h3><p><code>sass-loader</code> 需要 webpack 作为 <a href="https://docs.npmjs.com/files/package.json#peerdependencies" target="_blank" rel="noopener">peerDependency</a>，它要求你自己安装 <code>Node Sass</code> 或 <code>Dart Sass</code>。这允许您控制所有依赖项的版本，并选择要使用的 Sass 实现。</p>
+<ul>
+<li><code>sass-loader</code> 将 Sass 编译为 CSS</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install sass-loader node-sass --save-dev</span><br></pre></td></tr></table></figure>
+<p>loader 配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">   rules: [</span><br><span class="line">     // 打包 scss 文件</span><br><span class="line">     &#123;</span><br><span class="line">       test: /\.scss$/,</span><br><span class="line">        use: [</span><br><span class="line">          &quot;style-loader&quot;,</span><br><span class="line">          // 指定 文件中 @import 的文件在引入之前也需要走 2 个 loader</span><br><span class="line">          &#123; loader: &quot;css-loader&quot;, options: &#123; importLoaders: 2 &#125; &#125;,</span><br><span class="line">          &quot;sass-loader&quot;,</span><br><span class="line">          &quot;postcss-loader&quot;</span><br><span class="line">        ]</span><br><span class="line">     &#125;</span><br><span class="line">   ]</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p><code>importLoaders：2</code> 指定文件中通过 @import 引入的 sass 文件 也要通过 postcss-loader 和 sass-loader 的处理</p>
+<h3><span id="less-打包">less 打包</span></h3><p>首先，需要安装 <code>less-loader</code>。less-loader 需要 <code>less</code> 作为 <a href="https://docs.npmjs.com/files/package.json#peerdependencies" target="_blank" rel="noopener">peerDependency</a>。因此，您可以准确地控制版本。</p>
+<ul>
+<li><code>less-loader</code> 将 Less 编译为 CSS</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install less-loader less --save-dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 打包 less 文件</span><br><span class="line">  &#123;</span><br><span class="line">    test: /\.less$/,</span><br><span class="line">    use: [</span><br><span class="line">      &quot;style-loader&quot;,</span><br><span class="line">      // 指定 文件中 @import 的文件在引入之前也需要走 1 个 loader</span><br><span class="line">      &#123; loader: &quot;css-loader&quot;, options: &#123; importLoaders: 1 &#125; &#125;,</span><br><span class="line">      ,</span><br><span class="line">      &quot;less-loader&quot;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p><code>importLoaders：1</code> 指定文件中通过 @import 引入的 less 文件 也要通过 less-loader 的处理</p>
+<h3><span id="添加浏览器厂商前缀">添加浏览器厂商前缀</span></h3><p>在写样式时，为了更好的兼容，一些 css 新属性我们会加上浏览器厂商浅醉，例如 transform: translate(100px, 100px)，我们可以通过配置，在打包的时候自动加上前缀。</p>
+<p>首先，需要安装 <code>postcss-loader</code>，和 <code>autoprefixer</code> 插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install postcss-loader autoprefixer -D</span><br></pre></td></tr></table></figure>
+<p>在目录中使用 <code>postcss.config.js</code> 文件。配置会查找从 path.dirname（文件）开始，然后向上遍历文件树，直到找到配置文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// postcss.config.js 配置内容</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">  plugins: [require(&quot;autoprefixer&quot;)]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//  webpack.config.js 配置内容</span><br><span class="line">     &#123;</span><br><span class="line">       test: /\.less$/,</span><br><span class="line">       use: [</span><br><span class="line">         &quot;style-loader&quot;,</span><br><span class="line">         &#123; loader: &quot;css-loader&quot;, options: &#123; importLoaders: 2 &#125; &#125;,</span><br><span class="line">         ,</span><br><span class="line">         &quot;less-loader&quot;,</span><br><span class="line">         &quot;postcss-loader&quot;</span><br><span class="line">       ]</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<h3><span id="打包字体文件">打包字体文件</span></h3><p>首先，需要安装 <code>file-loader</code>。</p>
+<ul>
+<li><code>file-loader</code> 负责将文件上的 import / require（）解析为 url，并将文件发送到输出目录中。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install file-loader -D</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 打包 字体 文件</span><br><span class="line">&#123;</span><br><span class="line">  test: /\.(eot|svg|ttf|woff|woff2)$/,</span><br><span class="line">  use: [&quot;file-loader&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>##</p>
+
+      <div class="clearfix"></div>
+      <hr class="nogutter" />
+    </div>
+    <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    <a class="pull-left" href="/2019/03/27/gulp学习/" style="float: left;">
+        ← gulp学习
+    </a>
+    
+    
+    <a class="pull-right" href="/2019/03/18/数组和对象的拷贝和扩展/">
+        数组和对象的拷贝和合并 →
+    </a>
+    
+</nav>
+
+    <div class="col-md-8 col-md-offset-2 col-sm-24">
+      <div id="comments"></div>
+
+<script>
+  var gitment = new Gitment({
+    id: "Mon Mar 25 2019 16:33:33 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "c2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
+</script>
+
+    </div>
+  </div>
+</section>
+
+
+      <!-- ============================ Footer =========================== -->
+
+<footer>
+  <div class="container">
+    <div class="copy">
+      <p>
+        &copy; 2014<script>
+          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+      </p>
+      <p>
+        Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a>
+      </p>
+    </div>
+    <div class="social">
+      <ul>
+        
+        <li>
+          <a href="https://github.com/" title="Github" target="_blank"
+            ><i class="icon-github"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://twitter.com/" title="Twitter" target="_blank"
+            ><i class="icon-twitter"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://www.facebook.com/" title="Facebook" target="_blank"
+            ><i class="icon-facebook"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="https://google.com/" title="Google-Plus" target="_blank"
+            ><i class="icon-google-plus"></i></a
+          >&nbsp;
+        </li>
+         
+        <li>
+          <a href="http://weibo.com/" title="Sina-Weibo" target="_blank"
+            ><i class="icon-sina-weibo"></i></a
+          >&nbsp;
+        </li>
+        
+      </ul>
+      <p>
+        <!-- <span id="busuanzi_container_site_uv">
+          本站访客数<span id="busuanzi_value_site_uv"></span>人次
+        </span> -->
+        <span id="busuanzi_container_site_pv"
+          >总访问量<span id="busuanzi_value_site_pv"></span>次</span
+        >
+      </p>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+      
+</body>
+</html>
