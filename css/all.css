@@ -3800,6 +3800,9 @@ table tr:nth-of-type(2n + 1) {
 .highlight table tr:nth-of-type(2n + 1) {
   background-color: transparent;
 }
+.gitment-footer-container {
+  display: none !important;
+}
 
 @charset "utf-8";
 /* CSS Document */
