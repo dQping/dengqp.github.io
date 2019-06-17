@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Tag: Date常用操作方法 | DEMi&#39;S BLOG</title>
+  <title>项目工程化概念理解 | DEMi&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -97,7 +97,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -235,93 +235,78 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-  <div
-    class="container-fluid element-img"
-    style="background: url(/img/3.jpg) no-repeat center center fixed;background-size: cover"
-  >
-    <div class="row">
-      <div
-        class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center"
-      >
-        <div
-          class="center-me animateme"
-          data-when="exit"
-          data-from="0"
-          data-to="0.6"
-          data-opacity="0"
-          data-translatey="100"
-        >
-          <div>
-            
-            <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-            <!-- <p></p> -->
-            
-            <h2></h2>
-            <!-- <p>每一个不曾起舞的日子都是对生命的辜负。</p> -->
-            
-          </div>
-        </div>
-      </div>
-      <!-- // .col-md-12 -->
-    </div>
-    <div class="herofade beige-dk"></div>
-  </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
- 
-<section id="services">
+      
+<section id="intro">
   <div class="container">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="row boxes">
-           
-        </div>
-        <div class="row boxes">
-          
-          <div
-            class=" wow fadeInUp"
-            data-wow-delay="0.3s"
-            style="position: relative;"
-          >
-            <!-- col-xs-12 col-sm-3 col-md-3 col-lg-3 -->
-            
-            <h4 class="title">
-              <a href="/2019/03/15/js日期时间的常用方法/"
-                >1. js日期时间的常用方法</a
-              >
-            </h4>
-            
-            <p style="position: absolute;right:0;top:0">
-              <time datetime="2019-03-15T10:35:51.000Z"
-                ><a href="/2019/03/15/js日期时间的常用方法/"
-                  >2019-03-15</a
-                ></time
-              >
-            </p>
-          </div>
-          
-        </div>
+    <div class="row col-md-offset-2">
+      <div class="col-md-8">
+        <h1>项目工程化概念理解</h1>
+        <span class="post-meta">
+  <time datetime="2019-06-15T02:12:54.000Z" itemprop="datePublished">
+    2019-06-15
+  </time>
+     | 
+  <a href="/categories/日记/">日记</a>  
+</span>
+<div class="toc">
+  <div class="toc-title">目录</div>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">解决的问题</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">如何解决以上两个问题？</span></a></li></ol>
+</div>
+
       </div>
+    </div>
+
+    <div class="col-md-8 col-md-offset-2">
+      <p>对项目工程化的理解每个人的想法、思路可能不同，但是总体的方向大体是一致的。下面谈谈我的理解。</p>
+<a id="more"></a>
+<h2><span id="解决的问题">解决的问题</span></h2><p>既然做项目工程化，那肯定帮助我们解决一些问题，做些事情，我觉得项目工程化主要为我们解决以下两个问题：</p>
+<ol>
+<li>提高开发效率</li>
+<li>降低维护难度</li>
+</ol>
+<h2><span id="如何解决以上两个问题">如何解决以上两个问题？</span></h2><p>为了提高开发效率和降低维护难度，主要通过以下措施：</p>
+<ol>
+<li>项目架构设计：后期做的很多公共机制，都需要依赖于前期的设计，因此，前期的架构设计也非常重要</li>
+<li>目录结构定义：尽量能够让人一看就明白每个目录的作用</li>
+<li>指定项目开发规范（ESLint 规范）</li>
+<li>模块化、组件化：模块化是组件化更小的颗粒</li>
+<li>前后端接口规范</li>
+<li>性能优化、自动化部署（压缩、合并、打包）</li>
+</ol>
+<p>所以说，项目工程化实际上可以把它理解成流水化，各自负责各自的模块，把每一个模块做到最佳。</p>
+
+      <div class="clearfix"></div>
+      <hr class="nogutter" />
+    </div>
+    <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2019/06/13/Set和Map数据结构/">
+        Set和Map数据结构 →
+    </a>
+    
+</nav>
+
+    <div class="col-md-8 col-md-offset-2 col-sm-24">
+      <div id="comments"></div>
+
+<script>
+  var gitment = new Gitment({
+    id: "Sat Jun 15 2019 10:12:54 GMT+0800",
+    owner: "dQping",
+    repo: "dqping.github.io",
+    oauth: {
+      client_id: "c2de462c28c32f89059f",
+      client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
+    }
+  });
+  gitment.render("comments");
+</script>
+
     </div>
   </div>
 </section>
 
-<section id="statement">
-  <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-    <div class="row">
-      <p></p>
-    </div>
-  </div>
-</section>
 
       <!-- ============================ Footer =========================== -->
 
