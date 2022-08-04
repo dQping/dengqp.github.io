@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>自检清单-2：HTML和CSS | DEMi&#39;S BLOG</title>
+  <title>自检清单-2：HTML和CSS | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -250,7 +250,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">HTML</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">CSS</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#HTML"><span class="toc-list-text">HTML</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#CSS"><span class="toc-list-text">CSS</span></a></li></ol>
 </div>
 
       </div>
@@ -258,32 +258,48 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>HTML 和 CSS 基础自检 — start! 通过列出需要掌握的 html 和 css 的基础知识点，时刻提醒自己知识体系部分的缺口在哪里。</p>
- <a id="more"></a>
-<h2><span id="html">HTML</span></h2><p>HTML 需要掌握的基础内容：</p>
+ <span id="more"></span>
+
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>HTML 需要掌握的基础内容：</p>
 <ol>
-<li>从规范的角度理解 HTML，从分类和语义的角度使用标签</li>
-<li>常用页面标签的默认样式、自带属性、不同浏览器的差异、处理浏览器兼容问题的方式</li>
-<li>元信息类标签(head、title、meta)的使用目的和配置方法</li>
-<li>HTML5 离线缓存原理</li>
+<li><p>从规范的角度理解 HTML，从分类和语义的角度使用标签</p>
+</li>
+<li><p>常用页面标签的默认样式、自带属性、不同浏览器的差异、处理浏览器兼容问题的方式</p>
+</li>
+<li><p>元信息类标签(head、title、meta)的使用目的和配置方法</p>
+</li>
+<li><p>HTML5 离线缓存原理</p>
+</li>
 <li><p>可以使用 Canvas API、SVG 等绘制高性能的动画 <code>待学习</code></p>
-<p><a href="https://segmentfault.com/a/1190000004279791" target="_blank" rel="noopener">HTML meta 标签总结与属性使用介绍</a><br><a href="https://blog.csdn.net/u013084331/article/details/51133052" target="_blank" rel="noopener">HTML5 之离线缓存技术</a></p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000004279791">HTML meta 标签总结与属性使用介绍</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/u013084331/article/details/51133052">HTML5 之离线缓存技术</a></p>
 </li>
 </ol>
-<h2><span id="css">CSS</span></h2><p>CSS 需要掌握的基础内容：</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>CSS 需要掌握的基础内容：</p>
 <ol>
-<li>CSS 盒模型，在不同浏览器的差异？<br>盒子模型有两种，分别是 <code>ie 盒子模型</code>和<code>标准 w3c 盒子模型</code></li>
-<li>CSS 所有选择器及其优先级、使用场景，哪些可以继承?</li>
-<li>CSS 伪类和伪元素有哪些，它们的区别和实际应用</li>
-<li>HTML 文档流的排版规则，CSS 几种定位的规则、定位参照物、对文档流的影响，如何选择最好的定位方式，雪碧图实现原理</li>
-<li>水平垂直居中的方案、可以实现 6 种以上并对比它们的优缺点</li>
-<li>BFC 实现原理，可以解决的问题，如何创建 BFC</li>
-<li>可使用 CSS 函数复用代码，实现特殊效果</li>
-<li>PostCSS、Sass、Less 的异同，以及使用配置，至少掌握一种</li>
-<li>CSS 模块化方案、如何配置按需加载、如何防止 CSS 阻塞渲染</li>
-<li>熟练使用 CSS 实现常见动画，如渐变、移动、旋转、缩放等等</li>
-<li>CSS 浏览器兼容性写法，了解不同 API 在不同浏览器下的兼容性情况</li>
+<li><p>CSS 盒模型，在不同浏览器的差异？<br>盒子模型有两种，分别是 <code>ie 盒子模型</code>和<code>标准 w3c 盒子模型</code></p>
+</li>
+<li><p>CSS 所有选择器及其优先级、使用场景，哪些可以继承?</p>
+</li>
+<li><p>CSS 伪类和伪元素有哪些，它们的区别和实际应用</p>
+</li>
+<li><p>HTML 文档流的排版规则，CSS 几种定位的规则、定位参照物、对文档流的影响，如何选择最好的定位方式，雪碧图实现原理</p>
+</li>
+<li><p>水平垂直居中的方案、可以实现 6 种以上并对比它们的优缺点</p>
+</li>
+<li><p>BFC 实现原理，可以解决的问题，如何创建 BFC</p>
+</li>
+<li><p>可使用 CSS 函数复用代码，实现特殊效果</p>
+</li>
+<li><p>PostCSS、Sass、Less 的异同，以及使用配置，至少掌握一种</p>
+</li>
+<li><p>CSS 模块化方案、如何配置按需加载、如何防止 CSS 阻塞渲染</p>
+</li>
+<li><p>熟练使用 CSS 实现常见动画，如渐变、移动、旋转、缩放等等</p>
+</li>
+<li><p>CSS 浏览器兼容性写法，了解不同 API 在不同浏览器下的兼容性情况</p>
+</li>
 <li><p>掌握一套完整的响应式布局方案</p>
-<p><a href="https://www.cnblogs.com/s-z-y/p/4425862.html" target="_blank" rel="noopener">css 选择器总结</a><br><a href="https://www.cnblogs.com/ranyonsue/p/9204986.html" target="_blank" rel="noopener">BFC 原理剖析</a><br><a href="/2019/04/29/CSS水平和垂直居中方案/">css 水平和垂直居中方案</a><br><a href="/2019/05/30/自检清单-2：HTML和CSS/">纯 CSS 画的基本图形</a><br><a href="https://www.jianshu.com/p/fced4640d77c" target="_blank" rel="noopener">纯 css3 实现曲线运动——贝塞尔曲线</a><br><a href="https://github.com/dQping/layout" target="_blank" rel="noopener">实现三栏布局的六种方式</a><br><a href="/2019/05/31/Floxbox布局/">Floxbox 布局</a><br><a href="/2019/06/01/网格布局/">Grid 布局</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/s-z-y/p/4425862.html">css 选择器总结</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/ranyonsue/p/9204986.html">BFC 原理剖析</a><br><a href="/2019/04/29/CSS%E6%B0%B4%E5%B9%B3%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%96%B9%E6%A1%88/">css 水平和垂直居中方案</a><br><a href="/2019/05/30/%E8%87%AA%E6%A3%80%E6%B8%85%E5%8D%95-2%EF%BC%9AHTML%E5%92%8CCSS/">纯 CSS 画的基本图形</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/fced4640d77c">纯 css3 实现曲线运动——贝塞尔曲线</a><br><a target="_blank" rel="noopener" href="https://github.com/dQping/layout">实现三栏布局的六种方式</a><br><a href="/2019/05/31/Floxbox%E5%B8%83%E5%B1%80/">Floxbox 布局</a><br><a href="/2019/06/01/%E7%BD%91%E6%A0%BC%E5%B8%83%E5%B1%80/">Grid 布局</a></p>
 </li>
 </ol>
 
@@ -292,12 +308,12 @@
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/05/31/Floxbox布局/" style="float: left;">
+    <a class="pull-left" href="/2019/05/31/Floxbox%E5%B8%83%E5%B1%80/" style="float: left;">
         ← Floxbox布局
     </a>
     
     
-    <a class="pull-right" href="/2019/05/30/JavaScript 基本类型的装箱与拆箱/">
+    <a class="pull-right" href="/2019/05/30/JavaScript%20%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%A3%85%E7%AE%B1%E4%B8%8E%E6%8B%86%E7%AE%B1/">
         JavaScript 基本类型的装箱与拆箱 →
     </a>
     
@@ -331,7 +347,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>事件监听器-禁止浏览器的默认事件 | DEMi&#39;S BLOG</title>
+  <title>事件监听器-禁止浏览器的默认事件 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -251,7 +251,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">addEventListener()参数</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">应用</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#addEventListener-%E5%8F%82%E6%95%B0"><span class="toc-list-text">addEventListener()参数</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%BA%94%E7%94%A8"><span class="toc-list-text">应用</span></a></li></ol>
 </div>
 
       </div>
@@ -259,31 +259,37 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>很多移动端的页面都会监听 touchstart 等 touch 事件，我们会使用 e.preventDafault();禁止掉浏览器的默认事件。那它的默认行为是什么呢，通常来说就是滚动当前页面（还可能是缩放页面），如果它的默认行为被阻止了，页面就必须静止不动。但浏览器无法预先知道一个监听器会不会调用 preventDefault()，它能做的只有等监听器执行完后再去执行默认行为，而监听器执行是要耗时的，有些甚至耗时很明显，这样就会导致页面卡顿。即便监听器是个空函数，也会产生一定的卡顿，毕竟空函数的执行也会耗时。</p>
- <a id="more"></a>
+ <span id="more"></span>
+
 <p>有 80% 的滚动事件监听器是不会阻止默认行为的，也就是说大部分情况下，浏览器是白等了。所以，passive 监听器诞生了，passive 的意思是“顺从的”，表示它不会对事件的默认行为说 no，浏览器知道了一个监听器是 passive 的，它就可以在两个线程里同时执行监听器中的 JavaScript 代码和浏览器的默认行为了。</p>
-<h2><span id="addeventlistener参数">addEventListener()参数</span></h2><p>很久以前，addEventListener() 的参数约定是这样的：</p>
+<h2 id="addEventListener-参数"><a href="#addEventListener-参数" class="headerlink" title="addEventListener()参数"></a>addEventListener()参数</h2><p>很久以前，addEventListener() 的参数约定是这样的：</p>
 <pre><code>addEventListener(type, listener, useCapture)
-</code></pre><p>后来，最后一个参数，也就是控制监听器是在捕获阶段执行还是在冒泡阶段执行的 useCapture 参数，变成了可选参数（传 true 的情况太少了），成了：</p>
+</code></pre>
+<p>后来，最后一个参数，也就是控制监听器是在捕获阶段执行还是在冒泡阶段执行的 useCapture 参数，变成了可选参数（传 true 的情况太少了），成了：</p>
 <pre><code>addEventListener(type, listener[, useCapture ])
-</code></pre><p>再后来， DOM 规范做了修订：addEventListener() 的第三个参数可以是个对象值了，也就是说第三个参数现在可以是两种类型的值了：</p>
+</code></pre>
+<p>再后来， DOM 规范做了修订：addEventListener() 的第三个参数可以是个对象值了，也就是说第三个参数现在可以是两种类型的值了：</p>
 <pre><code>addEventListener(type, listener[, useCapture ])
 addEventListener(type, listener[, options ])
 这个修订是为了扩展新的选项，从而自定义更多的行为，目前规范中 options 对象可用的属性有三个：
 
-addEventListener(type, listener, {
+addEventListener(type, listener, &#123;
     capture: false,
     passive: false,
     once: false
-})
+&#125;)
 
 capture: 表示函数是否捕获执行,
 passive: 表示是否执行默认事件，true执行，false不执行
 once: 是否是单次事件，如果是true，执行完事件就被销毁
-</code></pre><h2><span id="应用">应用</span></h2><p>1、 在移动端可以禁掉浏览器左右滑动的前进和后退</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 禁止页面滑动</span><br><span class="line">document.addEventListener(&quot;touchmove&quot;, function (e) &#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">&#125;, &#123; passive: false, capture: false &#125;);</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>1、 在移动端可以禁掉浏览器左右滑动的前进和后退</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 禁止页面滑动</span><br><span class="line">document.addEventListener(&quot;touchmove&quot;, function (e) &#123;</span><br><span class="line">    e.preventDefault();</span><br><span class="line">&#125;, &#123; passive: false, capture: false &#125;);</span><br></pre></td></tr></table></figure>
+
 <p>2、使用 passiveListener 使浏览器的滚动更加流畅。</p>
 <p>假如有人不小心在 passive 的监听器里调用了 preventDefault()，也无妨，因为 preventDefault() 不会产生任何效果。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let event = new Event(&quot;foo&quot;, &#123;  // 创建一个 type 为 foo 的事件对象，可以被阻止默认行为</span><br><span class="line">  &quot;cancelable&quot;: true</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">document.addEventListener(&quot;foo&quot;, function(event) &#123; // 在 document 上绑定 foo 事件的监听函数</span><br><span class="line">  console.log(event.defaultPrevented) // false</span><br><span class="line">  event.preventDefault()</span><br><span class="line">  console.log(event.defaultPrevented) // 还是 false，preventDefault() 无效</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  passive: true</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">document.dispatchEvent(event) // 派发自定义事件</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let event = new Event(&quot;foo&quot;, &#123;  // 创建一个 type 为 foo 的事件对象，可以被阻止默认行为</span><br><span class="line">  &quot;cancelable&quot;: true</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">document.addEventListener(&quot;foo&quot;, function(event) &#123; // 在 document 上绑定 foo 事件的监听函数</span><br><span class="line">  console.log(event.defaultPrevented) // false</span><br><span class="line">  event.preventDefault()</span><br><span class="line">  console.log(event.defaultPrevented) // 还是 false，preventDefault() 无效</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  passive: true</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">document.dispatchEvent(event) // 派发自定义事件</span><br></pre></td></tr></table></figure>
+
 <p>同时，浏览器的开发者工具也会发出警告：</p>
 <p><strong>passive 监听器能保证的只有一点，那就是调用 preventDefault() 无效</strong></p>
 
@@ -292,12 +298,12 @@ once: 是否是单次事件，如果是true，执行完事件就被销毁
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/03/10/vue排坑日记/" style="float: left;">
+    <a class="pull-left" href="/2019/03/10/vue%E6%8E%92%E5%9D%91%E6%97%A5%E8%AE%B0/" style="float: left;">
         ← vue排坑日记
     </a>
     
     
-    <a class="pull-right" href="/2019/03/06/pointer-events的应用场景/">
+    <a class="pull-right" href="/2019/03/06/pointer-events%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/">
         pointer-events: none 的应用场景 →
     </a>
     
@@ -331,7 +337,7 @@ once: 是否是单次事件，如果是true，执行完事件就被销毁
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

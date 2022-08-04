@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>vue实践(1)：vue create my-project目录结构 | DEMi&#39;S BLOG</title>
+  <title>vue实践(1)：vue create my-project目录结构 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -251,7 +251,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">项目构建</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">目录结构</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA"><span class="toc-list-text">项目构建</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-list-text">目录结构</span></a></li></ol>
 </div>
 
       </div>
@@ -259,10 +259,12 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>Vue.js 作为一门轻量级、易上手的前端框架，从入门难度和学习曲线上相对其他框架来说算是占据优势的，那么接下来我想分享一下我从零开始构建一个 Vue 项目的过程。</p>
-<a id="more"></a>
-<h2><span id="项目构建">项目构建</span></h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># my-project 是你的项目名称</span></span><br><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<h2 id="项目构建"><a href="#项目构建" class="headerlink" title="项目构建"></a>项目构建</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># my-project 是你的项目名称</span></span><br><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
+
 <p>执行完上述命令后，会出现一系列的选择项，我们可以根据自己的需要进行选择，如果你只想构建一个基础的 Vue 项目，那么使用 Babel、Router、Vuex、CSS Pre-processors 就足够了。</p>
-<h2><span id="目录结构">目录结构</span></h2><p>最后脚手架生成的目录结构如下，构建过程中选择不同，生成的目录也会不同:</p>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>最后脚手架生成的目录结构如下，构建过程中选择不同，生成的目录也会不同:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">├── node_modules     <span class="comment"># 项目依赖包目录</span></span><br><span class="line">├── public</span><br><span class="line">│   ├── favicon.ico  <span class="comment"># ico图标</span></span><br><span class="line">│   └── index.html   <span class="comment"># 首页模板</span></span><br><span class="line">├── src </span><br><span class="line">│   ├── assets       <span class="comment"># 样式图片目录</span></span><br><span class="line">│   ├── components   <span class="comment"># 组件目录</span></span><br><span class="line">│   ├── views        <span class="comment"># 页面目录</span></span><br><span class="line">│   ├── App.vue      <span class="comment"># 父组件</span></span><br><span class="line">│   ├── main.js      <span class="comment"># 入口文件</span></span><br><span class="line">│   ├── router.js    <span class="comment"># 路由配置文件</span></span><br><span class="line">│   └── store.js     <span class="comment"># vuex状态管理文件</span></span><br><span class="line">├── .gitignore       <span class="comment"># git忽略文件</span></span><br><span class="line">├── .postcssrc.js    <span class="comment"># postcss配置文件</span></span><br><span class="line">├── babel.config.js  <span class="comment"># babel配置文件</span></span><br><span class="line">├── package.json     <span class="comment"># 包管理文件</span></span><br><span class="line">└── yarn.lock        <span class="comment"># yarn依赖信息文件</span></span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
@@ -270,12 +272,12 @@
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/02/23/vue从入门到放弃-2/" style="float: left;">
+    <a class="pull-left" href="/2019/02/23/vue%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83-2/" style="float: left;">
         ← vue实践(2)：vue.config.js配置
     </a>
     
     
-    <a class="pull-right" href="/2019/02/23/写js插件的日子/">
+    <a class="pull-right" href="/2019/02/23/%E5%86%99js%E6%8F%92%E4%BB%B6%E7%9A%84%E6%97%A5%E5%AD%90/">
         写js插件的日子 →
     </a>
     
@@ -309,7 +311,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>webpack总结 | DEMi&#39;S BLOG</title>
+  <title>webpack总结 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -251,7 +251,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">常用的 loader</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">常用的 plugin</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">webpack 的几种用途配置</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">Library 打包</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">webapck 打包 react 代码</span></a></li></ol></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84-loader"><span class="toc-list-text">常用的 loader</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84-plugin"><span class="toc-list-text">常用的 plugin</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#webpack-%E7%9A%84%E5%87%A0%E7%A7%8D%E7%94%A8%E9%80%94%E9%85%8D%E7%BD%AE"><span class="toc-list-text">webpack 的几种用途配置</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#Library-%E6%89%93%E5%8C%85"><span class="toc-list-text">Library 打包</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#webapck-%E6%89%93%E5%8C%85-react-%E4%BB%A3%E7%A0%81"><span class="toc-list-text">webapck 打包 react 代码</span></a></li></ol></li></ol>
 </div>
 
       </div>
@@ -259,9 +259,10 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>webpack 其实就是一个模块打包工具, webpack 能够正确的识别 ES Module 、CommonJS 、CMD 、ADM 的模块引入规范,配置相应的 loader 就可以对任何类型的文件做打包处理。</p>
-<a id="more"></a>
-<p><a href="/2019/03/28/webpack学习-1：基础配置/">关于常用的配置 loader 和 plugin 基础配置</a><br><a href="/2019/03/29/webpack 学习-2：高级概念/">优化配置项</a><br><a href="/2019/07/02/webpack学习-3：如何编写一个loader/">如何编写一个 loader</a><br><a href="/2019/07/03/webpack学习-4：如何编写一个plugin/">如何编写一个 plugin</a></p>
-<h2><span id="常用的-loader">常用的 loader</span></h2><p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时<strong>预处理文件</strong>。因此，loader 类似于 gulp 构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。</p>
+<span id="more"></span>
+
+<p><a href="/2019/03/28/webpack%E5%AD%A6%E4%B9%A0-1%EF%BC%9A%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/">关于常用的配置 loader 和 plugin 基础配置</a><br>[优化配置项](&#x2F;2019&#x2F;03&#x2F;29&#x2F;webpack 学习-2：高级概念&#x2F;)<br><a href="/2019/07/02/webpack%E5%AD%A6%E4%B9%A0-3%EF%BC%9A%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AAloader/">如何编写一个 loader</a><br><a href="/2019/07/03/webpack%E5%AD%A6%E4%B9%A0-4%EF%BC%9A%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AAplugin/">如何编写一个 plugin</a></p>
+<h2 id="常用的-loader"><a href="#常用的-loader" class="headerlink" title="常用的 loader"></a>常用的 loader</h2><p>loader 用于对模块的源代码进行转换。loader 可以使你在 import 或”加载”模块时<strong>预处理文件</strong>。因此，loader 类似于 gulp 构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。</p>
 <pre><code>常用的 loader
 - file-loader : 将文件打包到输出文件夹并返回地址
 - url-loader: 类似 file-loader ，但是打包文件内容并入到 bundle.js 中了，可配置 limit 限制文件大小
@@ -270,13 +271,15 @@
 - sass-loader: 加载Sass / SCSS文件并将其编译为CSS。
 - postcss-loader: 使用PostCSS处理CSS的webpack的加载器， 需要使用 postcss.config.js 配置文件做相应配置
 - babel-loader: 此包允许使用Babel和webpack转换JavaScript文件。
-</code></pre><p><strong>babel-loader</strong> 只是允许了 webpack 使用 Babel 来转换 JavaScript 文件，abel-loader 本身并没有转换 JavaScript 文件的功能，因此，还需要加载 <strong>@babel/core @babel/preset-env</strong> 这两个包；@babel/core 编译的依赖包，这个包的作用是把 js 代码分析成 ast，方便各个插件分析语法进行相应的处理；@babel/preset-env 中包含所有了 ES6+ 转 ES5 的规则。项目中最好使用一个 .babelrc 文件管理 babel 的配置而不是放在 babel-loader 的 options 中。</p>
-<p><strong>@babel/polyfill 与 @babel/plugin-transform-runtime 作用的区别</strong></p>
+</code></pre>
+<p><strong>babel-loader</strong> 只是允许了 webpack 使用 Babel 来转换 JavaScript 文件，abel-loader 本身并没有转换 JavaScript 文件的功能，因此，还需要加载 <strong>@babel&#x2F;core @babel&#x2F;preset-env</strong> 这两个包；@babel&#x2F;core 编译的依赖包，这个包的作用是把 js 代码分析成 ast，方便各个插件分析语法进行相应的处理；@babel&#x2F;preset-env 中包含所有了 ES6+ 转 ES5 的规则。项目中最好使用一个 .babelrc 文件管理 babel 的配置而不是放在 babel-loader 的 options 中。</p>
+<p><strong>@babel&#x2F;polyfill 与 @babel&#x2F;plugin-transform-runtime 作用的区别</strong></p>
 <p>polyfill 包含一个自定义的运行时再生器和 core-js，这将模拟完整的 ES2015 +环境，这意味着我们可以使用新的内置函数（如 Promise 或 WeakMap），静态方法（如 Array.from 或 Object.assign），实例方法（如 Array.prototype.includes）和生成器函数。为了做到这一点，polyfill 将这些添加到<strong>全局变量中</strong>。</p>
-<p>所以，如果我们使用 @babel/polyfill 去配置开发一些公用类库，会造成全局变量污染，因为在开发类库或一些开源 ui 的时候，我们并无法准确控制使用者的代码运行环境，这时使用 polyfill 就会出现问题。对于这种情况，我们会选择使用 @babel/plugin-transform-runtime 来配置开发，因为 transform-runtime 是以闭包的形式来添加我们需要的新语法。</p>
+<p>所以，如果我们使用 @babel&#x2F;polyfill 去配置开发一些公用类库，会造成全局变量污染，因为在开发类库或一些开源 ui 的时候，我们并无法准确控制使用者的代码运行环境，这时使用 polyfill 就会出现问题。对于这种情况，我们会选择使用 @babel&#x2F;plugin-transform-runtime 来配置开发，因为 transform-runtime 是以闭包的形式来添加我们需要的新语法。</p>
 <p>.babelrc 文件内容示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">// @babel/polyfill 配置</span><br><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;@babel/preset-env&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;targets&quot;: &#123;</span><br><span class="line">          &quot;edge&quot;: &quot;17&quot;,</span><br><span class="line">          &quot;firefox&quot;: &quot;60&quot;,</span><br><span class="line">          &quot;chrome&quot;: &quot;67&quot;,</span><br><span class="line">          &quot;safari&quot;: &quot;11.1&quot;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;useBuiltIns&quot;: &quot;usage&quot;,  //  在文件需要的位置单独按需引入</span><br><span class="line">        &quot;corejs&quot;: 3</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// @babel/plugin-transform-runtime 配置</span><br><span class="line">&#123;</span><br><span class="line">    &quot;plugins&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;@babel/plugin-transform-runtime&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;absoluteRuntime&quot;: false,</span><br><span class="line">        &quot;corejs&quot;: 2,</span><br><span class="line">        &quot;helpers&quot;: true,</span><br><span class="line">        &quot;regenerator&quot;: true,</span><br><span class="line">        &quot;useESModules&quot;: false</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="常用的-plugin">常用的 plugin</span></h2><p>webpack 的插件功能类似 vue 或者 react 的生命周期钩子，会在打包运行过程的某个阶段，执行我们配置的某个插件，从而实现一些功能。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">// @babel/polyfill 配置</span><br><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;@babel/preset-env&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;targets&quot;: &#123;</span><br><span class="line">          &quot;edge&quot;: &quot;17&quot;,</span><br><span class="line">          &quot;firefox&quot;: &quot;60&quot;,</span><br><span class="line">          &quot;chrome&quot;: &quot;67&quot;,</span><br><span class="line">          &quot;safari&quot;: &quot;11.1&quot;,</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;useBuiltIns&quot;: &quot;usage&quot;,  //  在文件需要的位置单独按需引入</span><br><span class="line">        &quot;corejs&quot;: 3</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// @babel/plugin-transform-runtime 配置</span><br><span class="line">&#123;</span><br><span class="line">    &quot;plugins&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;@babel/plugin-transform-runtime&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;absoluteRuntime&quot;: false,</span><br><span class="line">        &quot;corejs&quot;: 2,</span><br><span class="line">        &quot;helpers&quot;: true,</span><br><span class="line">        &quot;regenerator&quot;: true,</span><br><span class="line">        &quot;useESModules&quot;: false</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="常用的-plugin"><a href="#常用的-plugin" class="headerlink" title="常用的 plugin"></a>常用的 plugin</h2><p>webpack 的插件功能类似 vue 或者 react 的生命周期钩子，会在打包运行过程的某个阶段，执行我们配置的某个插件，从而实现一些功能。</p>
 <pre><code>常用的webpack插件
 - HtmlWebpackPlugin : 编译完成后根据指定 html 模版 生成 html 文件，并引入编译好的 js.
 - CleanWebpackPlugin : 编译前清除 output 中指定文件夹中的文件.
@@ -284,25 +287,30 @@
 - SplitChunksPlugin : webpack自带的，不需要额外再安装,用于做 code splitting
 - MiniCssExtractPlugin : 此插件将CSS提取到单独的文件中，不配置默认会被放到js文件中
 - optimize-css-assets-webpack-plugin : 压缩css文件
-</code></pre><h2><span id="webpack-的几种用途配置">webpack 的几种用途配置</span></h2><h3><span id="library-打包">Library 打包</span></h3><p>用 webpack 打包一个函数库或组件库的时候，需要在 output 中加上<code>library</code> 和 <code>libraryTarget</code> 两个配置项</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  mode: &quot;production&quot;,</span><br><span class="line">  entry: &quot;./src/index.js&quot;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, &quot;dist&quot;),</span><br><span class="line">    filename: &quot;util.js&quot;,</span><br><span class="line">    // 配置支持 &lt;script&gt; 标签引入</span><br><span class="line">+   library: &quot;myutil&quot;,</span><br><span class="line">    // libraryTarget 配置支持引入的方式 cmd amd es6</span><br><span class="line">+   libraryTarget: &quot;umd&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  // ... 省略以下其他各种配置项</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="webpack-的几种用途配置"><a href="#webpack-的几种用途配置" class="headerlink" title="webpack 的几种用途配置"></a>webpack 的几种用途配置</h2><h3 id="Library-打包"><a href="#Library-打包" class="headerlink" title="Library 打包"></a>Library 打包</h3><p>用 webpack 打包一个函数库或组件库的时候，需要在 output 中加上<code>library</code> 和 <code>libraryTarget</code> 两个配置项</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  mode: &quot;production&quot;,</span><br><span class="line">  entry: &quot;./src/index.js&quot;,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, &quot;dist&quot;),</span><br><span class="line">    filename: &quot;util.js&quot;,</span><br><span class="line">    // 配置支持 &lt;script&gt; 标签引入</span><br><span class="line">+   library: &quot;myutil&quot;,</span><br><span class="line">    // libraryTarget 配置支持引入的方式 cmd amd es6</span><br><span class="line">+   libraryTarget: &quot;umd&quot;</span><br><span class="line">  &#125;</span><br><span class="line">  // ... 省略以下其他各种配置项</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>根据具体情况修改 package.json 的 <code>name</code> 、 <code>main</code>、<code>license</code>，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;webpack-library-ping&quot;,</span><br><span class="line">  ...</span><br><span class="line">  &quot;main&quot;: &quot;./dist/util.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;build&quot;: &quot;webpack&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [],</span><br><span class="line">  &quot;author&quot;: &quot;Demi&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;MIT&quot;,</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体代码放在我的 github 上：<a href="https://github.com/dQping/webpack-study/tree/master/%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/webpack-library" target="_blank" rel="noopener">点击查看</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;webpack-library-ping&quot;,</span><br><span class="line">  ...</span><br><span class="line">  &quot;main&quot;: &quot;./dist/util.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;build&quot;: &quot;webpack&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;keywords&quot;: [],</span><br><span class="line">  &quot;author&quot;: &quot;Demi&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;MIT&quot;,</span><br><span class="line">   ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>具体代码放在我的 github 上：<a target="_blank" rel="noopener" href="https://github.com/dQping/webpack-study/tree/master/%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/webpack-library">点击查看</a></p>
 <p>在 npm 上发布：</p>
 <ol>
-<li>登录 npm 官网：<a href="https://www.npmjs.com/" target="_blank" rel="noopener">https://www.npmjs.com/</a></li>
+<li>登录 npm 官网：<a target="_blank" rel="noopener" href="https://www.npmjs.com/">https://www.npmjs.com/</a></li>
 <li>进入项目目录执行 npm adduser ,按提示添加用户名和密码</li>
 <li>执行 npm publish 就可以把自己的项目发不到 npm 仓库上了</li>
 <li>别人需要使用直接 npm install webpack-library-ping（你的库名）</li>
 </ol>
-<h3><span id="webapck-打包-react-代码">webapck 打包 react 代码</span></h3><p>详细配置查看：Webpack React 小书:<a href="https://fakefish.github.io/react-webpack-cookbook/index.html" target="_blank" rel="noopener">https://fakefish.github.io/react-webpack-cookbook/index.html</a></p>
-<p><a href="https://babeljs.io/docs/en/babel-preset-react" target="_blank" rel="noopener">https://babeljs.io/docs/en/babel-preset-react</a></p>
+<h3 id="webapck-打包-react-代码"><a href="#webapck-打包-react-代码" class="headerlink" title="webapck 打包 react 代码"></a>webapck 打包 react 代码</h3><p>详细配置查看：Webpack React 小书:<a target="_blank" rel="noopener" href="https://fakefish.github.io/react-webpack-cookbook/index.html">https://fakefish.github.io/react-webpack-cookbook/index.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://babeljs.io/docs/en/babel-preset-react">https://babeljs.io/docs/en/babel-preset-react</a></p>
 <p>react 代码编译时还需要使用 <code>@babel/preset-react</code> 插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev @babel/preset-react</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev @babel/preset-react</span><br></pre></td></tr></table></figure>
+
 <p>.bablerc 文件配置如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;@babel/preset-env&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;targets&quot;: &#123;</span><br><span class="line">          &quot;edge&quot;: &quot;17&quot;,</span><br><span class="line">          &quot;firefox&quot;: &quot;60&quot;,</span><br><span class="line">          &quot;chrome&quot;: &quot;67&quot;,</span><br><span class="line">          &quot;safari&quot;: &quot;11.1&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;useBuiltIns&quot;: &quot;usage&quot;,</span><br><span class="line">        &quot;corejs&quot;: 3</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;@babel/preset-react&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>具体代码放在我的 github 上：<a href="https://github.com/dQping/webpack-study/tree/master/%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/webpack-react" target="_blank" rel="noopener">点击查看</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;presets&quot;: [</span><br><span class="line">    [</span><br><span class="line">      &quot;@babel/preset-env&quot;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;targets&quot;: &#123;</span><br><span class="line">          &quot;edge&quot;: &quot;17&quot;,</span><br><span class="line">          &quot;firefox&quot;: &quot;60&quot;,</span><br><span class="line">          &quot;chrome&quot;: &quot;67&quot;,</span><br><span class="line">          &quot;safari&quot;: &quot;11.1&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;useBuiltIns&quot;: &quot;usage&quot;,</span><br><span class="line">        &quot;corejs&quot;: 3</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;@babel/preset-react&quot;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>具体代码放在我的 github 上：<a target="_blank" rel="noopener" href="https://github.com/dQping/webpack-study/tree/master/%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B/webpack-react">点击查看</a></p>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
@@ -310,7 +318,7 @@
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
     
-    <a class="pull-right" href="/2019/07/03/webpack学习-4：如何编写一个plugin/">
+    <a class="pull-right" href="/2019/07/03/webpack%E5%AD%A6%E4%B9%A0-4%EF%BC%9A%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AAplugin/">
         webpack学习-4：如何编写一个plugin →
     </a>
     
@@ -344,7 +352,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

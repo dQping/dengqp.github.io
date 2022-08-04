@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>javascript中symbol类型的应用场景和使用方法 | DEMi&#39;S BLOG</title>
+  <title>javascript中symbol类型的应用场景和使用方法 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -250,7 +250,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">场景一：使用 Symbol 来作为对象属性名(key)</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">场景二：使用 Symbol 来替代常量</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">场景三：设置私有属性</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">场景四：注册和获取全局 Symbol</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">场景五：iterator 迭代器</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%9C%BA%E6%99%AF%E4%B8%80%EF%BC%9A%E4%BD%BF%E7%94%A8-Symbol-%E6%9D%A5%E4%BD%9C%E4%B8%BA%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7%E5%90%8D-key"><span class="toc-list-text">场景一：使用 Symbol 来作为对象属性名(key)</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%9C%BA%E6%99%AF%E4%BA%8C%EF%BC%9A%E4%BD%BF%E7%94%A8-Symbol-%E6%9D%A5%E6%9B%BF%E4%BB%A3%E5%B8%B8%E9%87%8F"><span class="toc-list-text">场景二：使用 Symbol 来替代常量</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%9C%BA%E6%99%AF%E4%B8%89%EF%BC%9A%E8%AE%BE%E7%BD%AE%E7%A7%81%E6%9C%89%E5%B1%9E%E6%80%A7"><span class="toc-list-text">场景三：设置私有属性</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%9C%BA%E6%99%AF%E5%9B%9B%EF%BC%9A%E6%B3%A8%E5%86%8C%E5%92%8C%E8%8E%B7%E5%8F%96%E5%85%A8%E5%B1%80-Symbol"><span class="toc-list-text">场景四：注册和获取全局 Symbol</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%9C%BA%E6%99%AF%E4%BA%94%EF%BC%9Aiterator-%E8%BF%AD%E4%BB%A3%E5%99%A8"><span class="toc-list-text">场景五：iterator 迭代器</span></a></li></ol>
 </div>
 
       </div>
@@ -258,26 +258,31 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>不需要对外操作和访问的属性使用 Symbol 来定义,使用 JSON.stringify()将对象转换成 JSON 字符串的时候，Symbol 属性也会被排除在输出内容之外。利用这一特点来更好的设计我们的数据对象，让“对内操作”和“对外选择性输出”变得更加优雅</p>
- <a id="more"></a>
-<h2><span id="场景一使用-symbol-来作为对象属性名key">场景一：使用 Symbol 来作为对象属性名(key)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">let obj=&#123;</span><br><span class="line">    [Symbol(&quot;name&quot;)]:&quot;jack&quot;,</span><br><span class="line">    age:&quot;18&quot;,</span><br><span class="line">    study_id:&apos;010&apos;,</span><br><span class="line">    [Symbol(&quot;color&quot;)]:&quot;white&quot;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.getOwnPropertySymbols(obj)  // [Symbol(name), Symbol(color)]</span><br><span class="line"></span><br><span class="line">// 使用新增的反射API</span><br><span class="line">Reflect.ownKeys(obj) // [&quot;age&quot;, &quot;study_id&quot;, Symbol(name), Symbol(color)]</span><br><span class="line"></span><br><span class="line">Object.keys(obj) // [&quot;age&quot;, &quot;study_id&quot;]</span><br><span class="line"></span><br><span class="line">for(let key in obj)&#123;console.log(key)&#125;  // age study_id</span><br><span class="line"></span><br><span class="line">Object.getOwnPropertyNames(obj)  // [&quot;age&quot;, &quot;study_id&quot;]</span><br></pre></td></tr></table></figure>
+ <span id="more"></span>
+
+<h2 id="场景一：使用-Symbol-来作为对象属性名-key"><a href="#场景一：使用-Symbol-来作为对象属性名-key" class="headerlink" title="场景一：使用 Symbol 来作为对象属性名(key)"></a>场景一：使用 Symbol 来作为对象属性名(key)</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">let obj=&#123;</span><br><span class="line">    [Symbol(&quot;name&quot;)]:&quot;jack&quot;,</span><br><span class="line">    age:&quot;18&quot;,</span><br><span class="line">    study_id:&#x27;010&#x27;,</span><br><span class="line">    [Symbol(&quot;color&quot;)]:&quot;white&quot;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Object.getOwnPropertySymbols(obj)  // [Symbol(name), Symbol(color)]</span><br><span class="line"></span><br><span class="line">// 使用新增的反射API</span><br><span class="line">Reflect.ownKeys(obj) // [&quot;age&quot;, &quot;study_id&quot;, Symbol(name), Symbol(color)]</span><br><span class="line"></span><br><span class="line">Object.keys(obj) // [&quot;age&quot;, &quot;study_id&quot;]</span><br><span class="line"></span><br><span class="line">for(let key in obj)&#123;console.log(key)&#125;  // age study_id</span><br><span class="line"></span><br><span class="line">Object.getOwnPropertyNames(obj)  // [&quot;age&quot;, &quot;study_id&quot;]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>Symbol 类型的 key 是不能通过 Object.keys()或者 for…in 来枚举的；Object.getOwnPropertyNames(obj) 也获取不到 symbol</p>
-<h2><span id="场景二使用-symbol-来替代常量">场景二：使用 Symbol 来替代常量</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const TYPE_AUDIO = Symbol()</span><br><span class="line">const TYPE_VIDEO = Symbol()</span><br><span class="line">const TYPE_IMAGE = Symbol()</span><br></pre></td></tr></table></figure>
-<h2><span id="场景三设置私有属性">场景三：设置私有属性</span></h2><p>实例上访问不到 symbol 属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">const PASSWORD = Symbol()</span><br><span class="line"></span><br><span class="line">class Login &#123;</span><br><span class="line">  constructor(username, password) &#123;</span><br><span class="line">    this.username = username</span><br><span class="line">    this[PASSWORD] = password</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  checkPassword(pwd) &#123;</span><br><span class="line">      return this[PASSWORD] === pwd</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const login = new Login(&apos;admin&apos;, &apos;123456&apos;)</span><br><span class="line"></span><br><span class="line">login.checkPassword(&apos;123456&apos;)  // true</span><br><span class="line"></span><br><span class="line">login.PASSWORD  // oh!no!</span><br><span class="line">login[PASSWORD] // oh!no!</span><br><span class="line">login[&quot;PASSWORD&quot;] // oh!no!</span><br></pre></td></tr></table></figure>
-<h2><span id="场景四注册和获取全局-symbol">场景四：注册和获取全局 Symbol</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let gs1 = Symbol.for(&apos;global_symbol_1&apos;)  //注册一个全局Symbol</span><br><span class="line">let gs2 = Symbol.for(&apos;global_symbol_1&apos;)  //获取全局Symbol</span><br><span class="line"></span><br><span class="line">gs1 === gs2  // true</span><br></pre></td></tr></table></figure>
-<h2><span id="场景五iterator-迭代器">场景五：iterator 迭代器</span></h2><p>Symbol.iterator 的理解:<a href="https://blog.csdn.net/margin_0px/article/details/82971545" target="_blank" rel="noopener">https://blog.csdn.net/margin_0px/article/details/82971545</a></p>
+<h2 id="场景二：使用-Symbol-来替代常量"><a href="#场景二：使用-Symbol-来替代常量" class="headerlink" title="场景二：使用 Symbol 来替代常量"></a>场景二：使用 Symbol 来替代常量</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const TYPE_AUDIO = Symbol()</span><br><span class="line">const TYPE_VIDEO = Symbol()</span><br><span class="line">const TYPE_IMAGE = Symbol()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="场景三：设置私有属性"><a href="#场景三：设置私有属性" class="headerlink" title="场景三：设置私有属性"></a>场景三：设置私有属性</h2><p>实例上访问不到 symbol 属性</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const PASSWORD = Symbol()</span><br><span class="line"></span><br><span class="line">class Login &#123;</span><br><span class="line">  constructor(username, password) &#123;</span><br><span class="line">    this.username = username</span><br><span class="line">    this[PASSWORD] = password</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  checkPassword(pwd) &#123;</span><br><span class="line">      return this[PASSWORD] === pwd</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const login = new Login(&#x27;admin&#x27;, &#x27;123456&#x27;)</span><br><span class="line"></span><br><span class="line">login.checkPassword(&#x27;123456&#x27;)  // true</span><br><span class="line"></span><br><span class="line">login.PASSWORD  // oh!no!</span><br><span class="line">login[PASSWORD] // oh!no!</span><br><span class="line">login[&quot;PASSWORD&quot;] // oh!no!</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="场景四：注册和获取全局-Symbol"><a href="#场景四：注册和获取全局-Symbol" class="headerlink" title="场景四：注册和获取全局 Symbol"></a>场景四：注册和获取全局 Symbol</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let gs1 = Symbol.for(&#x27;global_symbol_1&#x27;)  //注册一个全局Symbol</span><br><span class="line">let gs2 = Symbol.for(&#x27;global_symbol_1&#x27;)  //获取全局Symbol</span><br><span class="line"></span><br><span class="line">gs1 === gs2  // true</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="场景五：iterator-迭代器"><a href="#场景五：iterator-迭代器" class="headerlink" title="场景五：iterator 迭代器"></a>场景五：iterator 迭代器</h2><p>Symbol.iterator 的理解:<a target="_blank" rel="noopener" href="https://blog.csdn.net/margin_0px/article/details/82971545">https://blog.csdn.net/margin_0px/article/details/82971545</a></p>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/05/08/如何实现一个-Virtual-DOM-算法/" style="float: left;">
+    <a class="pull-left" href="/2019/05/08/%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA-Virtual-DOM-%E7%AE%97%E6%B3%95/" style="float: left;">
         ← 如何实现一个 Virtual DOM 算法
     </a>
     
     
-    <a class="pull-right" href="/2019/04/29/CSS水平和垂直居中方案/">
+    <a class="pull-right" href="/2019/04/29/CSS%E6%B0%B4%E5%B9%B3%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%96%B9%E6%A1%88/">
         CSS水平和垂直居中方案 →
     </a>
     
@@ -311,7 +316,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>类型转换 | DEMi&#39;S BLOG</title>
+  <title>类型转换 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -250,7 +250,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">显示类型转换：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">Number 函数</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">String 函数</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">Boolean 函数:</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">隐式类型转换：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">常见题目：</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">typeof</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%98%BE%E7%A4%BA%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="toc-list-text">显示类型转换：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Number-%E5%87%BD%E6%95%B0"><span class="toc-list-text">Number 函数</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#String-%E5%87%BD%E6%95%B0"><span class="toc-list-text">String 函数</span></a></li><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#Boolean-%E5%87%BD%E6%95%B0"><span class="toc-list-text">Boolean 函数:</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E9%9A%90%E5%BC%8F%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="toc-list-text">隐式类型转换：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-4"><a class="toc-list-link" href="#%E5%B8%B8%E8%A7%81%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-list-text">常见题目：</span></a></li></ol></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#typeof"><span class="toc-list-text">typeof</span></a></li></ol>
 </div>
 
       </div>
@@ -258,17 +258,18 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>数据类型分为原始数据类型和对象数据类型，本篇主要记录显示类型转换的一些相关知识。JavaScript 语言的每一个值，都属于某一种数据类型。JavaScript 的数据类型，共有六种（ES6 又新增了第七种 Symbol 类型的值）。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <ul>
 <li>原始数据类型：Boolean Null Undefined Number String Symbol</li>
 <li>对象数据类型：Object</li>
 </ul>
-<h3><span id="显示类型转换">显示类型转换：</span></h3><ul>
+<h3 id="显示类型转换："><a href="#显示类型转换：" class="headerlink" title="显示类型转换："></a>显示类型转换：</h3><ul>
 <li>Number 函数</li>
 <li>String 函数</li>
 <li>Boolean 函数</li>
 </ul>
-<h4><span id="number-函数">Number 函数</span></h4><p>1、原始类型转换：</p>
+<h4 id="Number-函数"><a href="#Number-函数" class="headerlink" title="Number 函数"></a>Number 函数</h4><p>1、原始类型转换：</p>
 <ul>
 <li>数值： 转换后还是数值</li>
 <li>字符串： 如果可以被解析为数值，则转换为相应的数值，否则得到 NaN, 空字符串转为 0</li>
@@ -279,7 +280,7 @@
 <p>2、对象类型转换：</p>
 <p>先调用对象自身的 valueOf 方法，如果返回原始类型的值，再使用 Number();如果返回复合类型，再调用自身的 toString()</p>
 <p>如果 toString() 返回原始类型， 再使用 Number() ，如果返回的还是复合类型，则报错。</p>
-<h4><span id="string-函数">String 函数</span></h4><p>1、原始类型转换：</p>
+<h4 id="String-函数"><a href="#String-函数" class="headerlink" title="String 函数"></a>String 函数</h4><p>1、原始类型转换：</p>
 <ul>
 <li>数值： 转换后是相应的字符串</li>
 <li>字符串： 转换后还是原来的值</li>
@@ -290,15 +291,15 @@
 <p>2、对象类型转换：</p>
 <p>先调用对象自身的 toString() 方法，如果返回原始类型的值，再使用 String();如果返回复合类型，再调用自身的 valueOf()</p>
 <p>如果 valueOf() 返回原始类型， 再使用 String() ，如果返回的还是复合类型，则报错。</p>
-<h4><span id="boolean-函数">Boolean 函数:</span></h4><p>1、原始类型转换：</p>
+<h4 id="Boolean-函数"><a href="#Boolean-函数" class="headerlink" title="Boolean 函数:"></a>Boolean 函数:</h4><p>1、原始类型转换：</p>
 <p>undefined null +0 -0 空字符串 NaN 返回 false，其他值为 true</p>
-<h3><span id="隐式类型转换">隐式类型转换：</span></h3><ul>
+<h3 id="隐式类型转换："><a href="#隐式类型转换：" class="headerlink" title="隐式类型转换："></a>隐式类型转换：</h3><ul>
 <li>四则运算</li>
 <li>判断语句</li>
 <li>Native 调用（console.log(),alert()）</li>
 </ul>
-<h4><span id="常见题目">常见题目：</span></h4><p>1、[]+[] // “”<br>2、[]+{} // “[object Object]”<br>3、{}+[] // 0<br>4、{}+{} // “[object Object][object object]”<br>5、true + true // 2<br>6、1+{a:1} // “1[object Object]”</p>
-<h3><span id="typeof">typeof</span></h3><ul>
+<h4 id="常见题目："><a href="#常见题目：" class="headerlink" title="常见题目："></a>常见题目：</h4><p>1、[]+[] &#x2F;&#x2F; “”<br>2、[]+{} &#x2F;&#x2F; “[object Object]”<br>3、{}+[] &#x2F;&#x2F; 0<br>4、{}+{} &#x2F;&#x2F; “[object Object][object object]”<br>5、true + true &#x2F;&#x2F; 2<br>6、1+{a:1} &#x2F;&#x2F; “1[object Object]”</p>
+<h3 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h3><ul>
 <li>Undefine -&gt; “undefined”</li>
 <li>Null -&gt; “object”</li>
 <li>Boolean -&gt; “boolean”</li>
@@ -315,12 +316,12 @@
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/02/23/Array的常用方法/" style="float: left;">
+    <a class="pull-left" href="/2019/02/23/Array%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/" style="float: left;">
         ← Array的常用方法
     </a>
     
     
-    <a class="pull-right" href="/2019/01/29/快速排序/">
+    <a class="pull-right" href="/2019/01/29/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/">
         快速排序 →
     </a>
     
@@ -354,7 +355,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

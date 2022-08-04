@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>设计模式-4：原型模式 | DEMi&#39;S BLOG</title>
+  <title>设计模式-4：原型模式 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -258,16 +258,17 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>用原型实例指定创建对象的种类，并且通过<strong>拷贝</strong>这些原型创建新的对象。在 JavaScript 中，实现原型模式是在 ECMAScript5 中，提出的 <strong>Object.create</strong> 方法，使用现有的对象来提供新创建的对象的<strong>proto</strong>。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p>简单实现代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var prototype = &#123;</span><br><span class="line">    name: &apos;Jack&apos;,</span><br><span class="line">    getName: function() &#123;</span><br><span class="line">        return this.name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = Object.create(prototype, &#123;</span><br><span class="line">    job: &#123;</span><br><span class="line">        value: &apos;IT&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(obj.getName())  // Jack</span><br><span class="line">console.log(obj.job)  // IT</span><br><span class="line">console.log(obj.__proto__ === prototype)  //true</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var prototype = &#123;</span><br><span class="line">    name: &#x27;Jack&#x27;,</span><br><span class="line">    getName: function() &#123;</span><br><span class="line">        return this.name</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var obj = Object.create(prototype, &#123;</span><br><span class="line">    job: &#123;</span><br><span class="line">        value: &#x27;IT&#x27;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(obj.getName())  // Jack</span><br><span class="line">console.log(obj.job)  // IT</span><br><span class="line">console.log(obj.__proto__ === prototype)  //true</span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/01/26/设计模式-5：适配器模式/" style="float: left;">
+    <a class="pull-left" href="/2019/01/26/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-5%EF%BC%9A%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/" style="float: left;">
         ← 设计模式-5：适配器模式
     </a>
     
@@ -306,7 +307,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

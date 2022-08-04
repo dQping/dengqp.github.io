@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>冒泡排序 | DEMi&#39;S BLOG</title>
+  <title>冒泡排序 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -251,7 +251,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">算法分析</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">js 实现</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-list-text">算法分析</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#js-%E5%AE%9E%E7%8E%B0"><span class="toc-list-text">js 实现</span></a></li></ol>
 </div>
 
       </div>
@@ -259,16 +259,17 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>冒泡排序可谓是最经典的排序算法了，它是基于比较的排序算法，时间复杂度为 O(n^2)，其优点是实现简单，n 较小时性能较好</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p><img src="/img/maopao.gif" alt="冒泡排序"></p>
-<h2><span id="算法分析">算法分析</span></h2><p>算法原理：</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>算法原理：</p>
 <p>相邻的数据进行两两比较，小数放在前面，大数放在后面，这样一趟下来，最大的数就被排在了最后一位，第二趟也是如此，如此类推，直到所有的数据排序完成。</p>
 <p>算法描述：</p>
 <ul>
-<li><1>比较相邻的元素。如果第一个比第二个大，就交换它们两个；</1></li>
-<li><2>对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</2></li>
-<li><3>针对所有的元素重复以上的步骤，除了最后一个；</3></li>
-<li><4>重复步骤 1~3，直到排序完成。</4></li>
+<li>&lt;1&gt;比较相邻的元素。如果第一个比第二个大，就交换它们两个；</li>
+<li>&lt;2&gt;对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对，这样在最后的元素应该会是最大的数；</li>
+<li>&lt;3&gt;针对所有的元素重复以上的步骤，除了最后一个；</li>
+<li>&lt;4&gt;重复步骤 1~3，直到排序完成。</li>
 </ul>
 <p>算法分析：所有排序操作都在内存中完成</p>
 <pre><code>时间复杂度
@@ -281,22 +282,24 @@
 
 稳定性
 - 稳定
-</code></pre><h2><span id="js-实现">js 实现</span></h2><p>最基本的实现方法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function bubbleSort(arr) &#123;</span><br><span class="line">  let len = arr.length;</span><br><span class="line">  for (i = len - 1; i &gt; 0; i--) &#123;</span><br><span class="line">    for (j = 0; j &lt; i; j++) &#123;</span><br><span class="line">      if (arr[j] &gt; arr[j + 1]) &#123;</span><br><span class="line">        let temp = arr[j];</span><br><span class="line">        arr[j] = arr[j + 1];</span><br><span class="line">        arr[j + 1] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="js-实现"><a href="#js-实现" class="headerlink" title="js 实现"></a>js 实现</h2><p>最基本的实现方法:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function bubbleSort(arr) &#123;</span><br><span class="line">  let len = arr.length;</span><br><span class="line">  for (i = len - 1; i &gt; 0; i--) &#123;</span><br><span class="line">    for (j = 0; j &lt; i; j++) &#123;</span><br><span class="line">      if (arr[j] &gt; arr[j + 1]) &#123;</span><br><span class="line">        let temp = arr[j];</span><br><span class="line">        arr[j] = arr[j + 1];</span><br><span class="line">        arr[j + 1] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>设置一个标志性变量 pos，用于记录每趟排序中最后一次进行交换的位置，由于 pos 位置之后的记录均已交换到位，故在进行下一趟排序是只要扫描到 pos 位置即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 改进版:</span><br><span class="line"></span><br><span class="line">bubbleSort(arr) &#123;</span><br><span class="line">  let i = arr.length - 1;</span><br><span class="line">  while (i &gt; 0) &#123;</span><br><span class="line">    let pos = 0;</span><br><span class="line">    for (let j = 0; j &lt; i; j++) &#123;</span><br><span class="line">      if (arr[j] &gt; arr[j + 1]) &#123;</span><br><span class="line">        pos = j;</span><br><span class="line">        let temp = arr[j];</span><br><span class="line">        arr[j] = arr[j + 1];</span><br><span class="line">        arr[j + 1] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    i = pos;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// 改进版:</span><br><span class="line"></span><br><span class="line">bubbleSort(arr) &#123;</span><br><span class="line">  let i = arr.length - 1;</span><br><span class="line">  while (i &gt; 0) &#123;</span><br><span class="line">    let pos = 0;</span><br><span class="line">    for (let j = 0; j &lt; i; j++) &#123;</span><br><span class="line">      if (arr[j] &gt; arr[j + 1]) &#123;</span><br><span class="line">        pos = j;</span><br><span class="line">        let temp = arr[j];</span><br><span class="line">        arr[j] = arr[j + 1];</span><br><span class="line">        arr[j + 1] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    i = pos;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/01/29/选择排序/" style="float: left;">
+    <a class="pull-left" href="/2019/01/29/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/" style="float: left;">
         ← 选择排序
     </a>
     
     
-    <a class="pull-right" href="/2019/01/29/递归算法/">
+    <a class="pull-right" href="/2019/01/29/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95/">
         递归算法 →
     </a>
     
@@ -330,7 +333,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>安全类 | DEMi&#39;S BLOG</title>
+  <title>安全类 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -250,7 +250,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">CSRF(跨站请求仿造)</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">攻击原理</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">防御措施</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">XSS(跨站脚本)</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">攻击原理</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">防御措施</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">CSRF 和 XSS 区别</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#CSRF-%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BB%BF%E9%80%A0"><span class="toc-list-text">CSRF(跨站请求仿造)</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%94%BB%E5%87%BB%E5%8E%9F%E7%90%86"><span class="toc-list-text">攻击原理</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E9%98%B2%E5%BE%A1%E6%8E%AA%E6%96%BD"><span class="toc-list-text">防御措施</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#XSS-%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC"><span class="toc-list-text">XSS(跨站脚本)</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%94%BB%E5%87%BB%E5%8E%9F%E7%90%86-1"><span class="toc-list-text">攻击原理</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E9%98%B2%E5%BE%A1%E6%8E%AA%E6%96%BD-1"><span class="toc-list-text">防御措施</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#CSRF-%E5%92%8C-XSS-%E5%8C%BA%E5%88%AB"><span class="toc-list-text">CSRF 和 XSS 区别</span></a></li></ol>
 </div>
 
       </div>
@@ -258,18 +258,21 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>本篇主要简单总结一下前端安全涉及的两种分类（CSRF 和 XSS),包括其攻击原理、防御措施以及两者之间的区别。</p>
-<a id="more"></a>
-<h2><span id="csrf跨站请求仿造">CSRF(跨站请求仿造)</span></h2><p>CSRF（Cross Site Request Forgery），中文是跨站点请求伪造。CSRF 攻击者在用户已经登录目标网站之后，诱使用户访问一个攻击链接，利用目标网站对用户的信任，以用户身份在攻击页面对目标网站发起伪造用户操作的请求，达到攻击目的。</p>
-<h3><span id="攻击原理">攻击原理</span></h3><p><img src="/img/csrf.png" alt="CSRF攻击原理"></p>
+<span id="more"></span>
+
+<h2 id="CSRF-跨站请求仿造"><a href="#CSRF-跨站请求仿造" class="headerlink" title="CSRF(跨站请求仿造)"></a>CSRF(跨站请求仿造)</h2><p>CSRF（Cross Site Request Forgery），中文是跨站点请求伪造。CSRF 攻击者在用户已经登录目标网站之后，诱使用户访问一个攻击链接，利用目标网站对用户的信任，以用户身份在攻击页面对目标网站发起伪造用户操作的请求，达到攻击目的。</p>
+<h3 id="攻击原理"><a href="#攻击原理" class="headerlink" title="攻击原理"></a>攻击原理</h3><p><img src="/img/csrf.png" alt="CSRF攻击原理"></p>
 <p>CSRF 攻击的前提是用户必须在网站 A（目标网站）注册登录过，并且目标网站接口存在漏洞,这是实现 CSRF 攻击不可缺少的两大因素。</p>
 <p>CSRF 攻击是源于 <strong>Web 的隐式身份验证机制</strong>！Web 的身份验证机制虽然可以保证一个请求是来自于某个用户的浏览器，但却无法保证该请求是用户批准发送的。CSRF 攻击的一般是由服务端解决。</p>
 <p>举个最简单的例子：</p>
 <p>假设博客有个加关注的 GET 接口，blogUserId 参数很明显是关注人 Id，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.dengqp.com/blog?blogUserId=4e8c33d0-77fe-df11-ac81-842b2b196315</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.dengqp.com/blog?blogUserId=4e8c33d0-77fe-df11-ac81-842b2b196315</span><br></pre></td></tr></table></figure>
+
 <p>那么我只需要在我的一篇博文中写一个 img 标签：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img style=&quot;width:0;&quot; src=&quot;http://www.dengqp.com/blog?blogUserId=4e8c33d0-77fe-df11-ac81-842b2b196315&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img style=&quot;width:0;&quot; src=&quot;http://www.dengqp.com/blog?blogUserId=4e8c33d0-77fe-df11-ac81-842b2b196315&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
 <p>那么只要有人打开我这篇博文，就会自动关注我。</p>
-<h3><span id="防御措施">防御措施</span></h3><p><strong>1. Referer 验证</strong></p>
+<h3 id="防御措施"><a href="#防御措施" class="headerlink" title="防御措施"></a>防御措施</h3><p><strong>1. Referer 验证</strong></p>
 <p>Referer Check 在 Web 最常见的应用就是“防止图片盗链”。同理，Referer Check 也可以被用于<strong>检查请求是否来自合法的“源”</strong>（Referer 值是否是指定页面，或者网站的域），如果都不是，那么就极可能是 CSRF 攻击。</p>
 <p>但是因为服务器并不是什么时候都能取到 Referer，所以也无法作为 CSRF 防御的主要手段。但是用 Referer Check 来监控 CSRF 攻击的发生，倒是一种可行的方法。</p>
 <p><strong>2. Token 验证</strong></p>
@@ -284,9 +287,9 @@
 <p><strong>CSRF 的 Token 仅仅用于对抗 CSRF 攻击</strong>。当网站同时存在 XSS 漏洞时候，那这个方案也是空谈。所以 XSS 带来的问题，应该使用 XSS 的防御方案予以解决。</p>
 <p><strong>3. 隐藏令牌</strong></p>
 <p>类似与 Token，将令牌隐藏在 http 请求头 head 中，用于验证是否是真实用户发起的请求。</p>
-<h2><span id="xss跨站脚本">XSS(跨站脚本)</span></h2><p>跨站脚本（cross site script）为了避免与样式 css 混淆，所以简称为 XSS。</p>
-<h3><span id="攻击原理">攻击原理</span></h3><p>XSS 是指恶意攻击者利用网站没有对用户提交数据进行转义处理或者过滤不足的缺点，进而添加一些代码，嵌入到 web 页面中去。使别的用户访问都会执行相应的嵌入代码。从而盗取用户资料、利用用户身份进行某种动作或者对访问者进行病毒侵害的一种攻击方式。</p>
-<h3><span id="防御措施">防御措施</span></h3><p>不信任任何客户端提交的数据，只要是客户端提交的数据就应该先进行相应的过滤处理然后方可进行下一步的操作。</p>
+<h2 id="XSS-跨站脚本"><a href="#XSS-跨站脚本" class="headerlink" title="XSS(跨站脚本)"></a>XSS(跨站脚本)</h2><p>跨站脚本（cross site script）为了避免与样式 css 混淆，所以简称为 XSS。</p>
+<h3 id="攻击原理-1"><a href="#攻击原理-1" class="headerlink" title="攻击原理"></a>攻击原理</h3><p>XSS 是指恶意攻击者利用网站没有对用户提交数据进行转义处理或者过滤不足的缺点，进而添加一些代码，嵌入到 web 页面中去。使别的用户访问都会执行相应的嵌入代码。从而盗取用户资料、利用用户身份进行某种动作或者对访问者进行病毒侵害的一种攻击方式。</p>
+<h3 id="防御措施-1"><a href="#防御措施-1" class="headerlink" title="防御措施"></a>防御措施</h3><p>不信任任何客户端提交的数据，只要是客户端提交的数据就应该先进行相应的过滤处理然后方可进行下一步的操作。</p>
 <p>XSS 漏洞的起因就是没有对用户提交的数据进行严格的过滤处理。因此在思考解决 XSS 漏洞的时候，我们应该重点把握如何才能更好的将用户提交的数据进行安全过滤。</p>
 <ul>
 <li><p>将重要的 cookie 标记为 http only, 这样的话 Javascript 中的 document.cookie 语句就不能获取到 cookie 了.</p>
@@ -297,22 +300,22 @@
 </li>
 <li><p>过滤或移除特殊的 Html 标签</p>
 </li>
-<li><p>过滤 JavaScript 事件的标签。例如 “onclick=”, “onfocus” 等等。</p>
+<li><p>过滤 JavaScript 事件的标签。例如 “onclick&#x3D;”, “onfocus” 等等。</p>
 </li>
 </ul>
-<h2><span id="csrf-和-xss-区别">CSRF 和 XSS 区别</span></h2><p>XXS 是向页面注入 js 去运行，通过注入的 js 去做攻击;CSRF 是利用网站·本身的漏洞，去伪造请求存在漏洞的接口，两者的攻击方式是不一样的，而且 CSRF 依赖于用户需要登录目标网站。</p>
+<h2 id="CSRF-和-XSS-区别"><a href="#CSRF-和-XSS-区别" class="headerlink" title="CSRF 和 XSS 区别"></a>CSRF 和 XSS 区别</h2><p>XXS 是向页面注入 js 去运行，通过注入的 js 去做攻击;CSRF 是利用网站·本身的漏洞，去伪造请求存在漏洞的接口，两者的攻击方式是不一样的，而且 CSRF 依赖于用户需要登录目标网站。</p>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/01/20/渲染机制/" style="float: left;">
+    <a class="pull-left" href="/2019/01/20/%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6/" style="float: left;">
         ← 渲染机制
     </a>
     
     
-    <a class="pull-right" href="/2019/01/19/react学习-5:   React组件绑定this的四种方式/">
+    <a class="pull-right" href="/2019/01/19/react%E5%AD%A6%E4%B9%A0-5:%20%20%20React%E7%BB%84%E4%BB%B6%E7%BB%91%E5%AE%9Athis%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F/">
         react学习-5： React组件绑定this的四种方式 →
     </a>
     
@@ -346,7 +349,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

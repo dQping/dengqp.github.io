@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>CSS水平和垂直居中方案 | DEMi&#39;S BLOG</title>
+  <title>CSS水平和垂直居中方案 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -250,7 +250,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">水平居中</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ①</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ②</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ③</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ④</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">垂直居中：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ①</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ②</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">方法 ③</span></a></li></ol></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD"><span class="toc-list-text">水平居中</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%96%B9%E6%B3%95-%E2%91%A0"><span class="toc-list-text">方法 ①</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%96%B9%E6%B3%95-%E2%91%A1"><span class="toc-list-text">方法 ②</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%96%B9%E6%B3%95-%E2%91%A2"><span class="toc-list-text">方法 ③</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%96%B9%E6%B3%95-%E2%91%A3"><span class="toc-list-text">方法 ④</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%EF%BC%9A"><span class="toc-list-text">垂直居中：</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%96%B9%E6%B3%95-%E2%91%A0-1"><span class="toc-list-text">方法 ①</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%96%B9%E6%B3%95-%E2%91%A1-1"><span class="toc-list-text">方法 ②</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%96%B9%E6%B3%95-%E2%91%A2-1"><span class="toc-list-text">方法 ③</span></a></li></ol></li></ol>
 </div>
 
       </div>
@@ -258,49 +258,55 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>我们在网页布局的时候，经常会碰到需要居中的情况，那下面就来总结一下有哪几种目前比较常用的居中方案，它们的优点和缺点分别又是什么。</p>
- <a id="more"></a>
-<h2><span id="水平居中">水平居中</span></h2><h3><span id="方法-1">方法 ①</span></h3><p><strong>（父元素）text-align，（子元素）inline-block</strong></p>
+ <span id="more"></span>
+
+<h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><h3 id="方法-①"><a href="#方法-①" class="headerlink" title="方法 ①"></a>方法 ①</h3><p><strong>（父元素）text-align，（子元素）inline-block</strong></p>
 <p>这个是比较传统的做法，而且代码量也相对比较少，它的特点是可以很好地兼容 IE6 等低版本浏览器。至于缺点也比较明显，是需要把父元素和子元素都做成一个整体，并且上同时设置 CSS</p>
 <p><code>优点</code>：兼容性好，支持低版本浏览器，支持居中多个子元素的情况<br><code>缺点</code>：需要同时在父元素和子元素上设置<br>适用场景：需要兼容低版本浏览器时使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">      text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">      display: inline-block;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="方法-2">方法 ②</span></h3><p><strong>（子元素）display:table;margin:auto;（左右 auto 即可）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">      text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">      display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="方法-②"><a href="#方法-②" class="headerlink" title="方法 ②"></a>方法 ②</h3><p><strong>（子元素）display:table;margin:auto;（左右 auto 即可）</strong></p>
 <p>这个方法利用 display:table 这个样式把子元素转化成类表格元素，从而可以用 margin:auto 来自动居中。方案的优点是只需要在子元素上加 CSS，但 <code>display:table 在 IE8 以上浏览器才有效果</code>，所以本方法只适合用在较高版本浏览器中。</p>
 <p><code>优点</code>：只需要在子元素设置。<br><code>缺点</code>：不兼容 IE6 和 IE7<br>适用场景：子元素数量多，不方便修改父元素的属性，对浏览器版本要求相对较低时使用</p>
 <p><strong>（子元素）display:block;margin:0 auto;（左右 auto 即可）</strong></p>
 <p>没有以上兼容问题，基本场景都适用</p>
-<h3><span id="方法-3">方法 ③</span></h3><p><strong>(父元素）position:relative，（子元素）absolute+left+transform（translateX(-50%)）/margin-left</strong></p>
+<h3 id="方法-③"><a href="#方法-③" class="headerlink" title="方法 ③"></a>方法 ③</h3><p><strong>(父元素）position:relative，（子元素）absolute+left+transform（translateX(-50%)）&#x2F;margin-left</strong></p>
 <p>这个的方法看起来就比较现代化了。没错，它的核心是利用了 CSS3 里的水平偏移，由于设置了 absolute，所以对其他元素基本不会造成影响</p>
 <p><code>优点</code>：不影响其他元素<br><code>缺点</code>，transform 兼容性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: #ccc;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform: translateX(-50%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: #ccc;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform: translateX(-50%);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>以下这种方法不会有兼容问题，但必须知道子元素的宽度</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 100px;</span><br><span class="line">background-color: #ccc;</span><br><span class="line">position: absolute;</span><br><span class="line">left: 50%;</span><br><span class="line">margin-left: -50px</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="方法-4">方法 ④</span></h3><p><strong>flex+justify-content/margin</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">position: relative;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">width: 100px;</span><br><span class="line">height: 100px;</span><br><span class="line">background-color: #ccc;</span><br><span class="line">position: absolute;</span><br><span class="line">left: 50%;</span><br><span class="line">margin-left: -50px</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="方法-④"><a href="#方法-④" class="headerlink" title="方法 ④"></a>方法 ④</h3><p><strong>flex+justify-content&#x2F;margin</strong></p>
 <p>这个方法利用了 display:flex 对 Grid 操作的强大，分别有两种设置方法。</p>
 <p>一种是（父元素）display:flex;justify-content:center;</p>
 <p><code>优点</code>：只设父元素,适用多个子元素<br><code>缺点</code>：flex 兼容性差，而且比较耗资源</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">      display: flex;</span><br><span class="line">      justify-content: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">      display: flex;</span><br><span class="line">      justify-content: center;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>另一种是（父元素）display:flex;（子元素）margin:0 auto;</p>
 <p><code>优点</code>：代码简单<br><code>缺点</code>：污染父元素，flex 兼容性问题</p>
-<h2><span id="垂直居中">垂直居中：</span></h2><h3><span id="方法-1">方法 ①</span></h3><p><strong>（父）table-cell + vertical-align</strong></p>
+<h2 id="垂直居中："><a href="#垂直居中：" class="headerlink" title="垂直居中："></a>垂直居中：</h2><h3 id="方法-①-1"><a href="#方法-①-1" class="headerlink" title="方法 ①"></a>方法 ①</h3><p><strong>（父）table-cell + vertical-align</strong></p>
 <p><code>优点</code>：兼容性比较好，换成 table 可以兼容 IE6,7<br><code>缺点</code>：table-cell 会不能和 float、position:absolute 同时设置。（只能在外 parent 外套一层 div.wrap 才能设置 float）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  height: 200px;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: #ccc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="方法-2">方法 ②</span></h3><p><strong>（父）position:relative；（子）absolute +top+ transform/margin</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: table-cell;</span><br><span class="line">  height: 200px;</span><br><span class="line">  vertical-align: middle;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: #ccc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法-②-1"><a href="#方法-②-1" class="headerlink" title="方法 ②"></a>方法 ②</h3><p><strong>（父）position:relative；（子）absolute +top+ transform&#x2F;margin</strong></p>
 <p>这个方法和水平居中的 left+transform 类似，这里就不再赘述了<br><code>优点</code>：基本只设置子元素，不影响其他元素<br><code>缺点</code>：transform 兼容性问题</p>
-<h3><span id="方法-3">方法 ③</span></h3><p><strong>（父）flex + align-items</strong></p>
+<h3 id="方法-③-1"><a href="#方法-③-1" class="headerlink" title="方法 ③"></a>方法 ③</h3><p><strong>（父）flex + align-items</strong></p>
 <p>方法和水平居中的 flex 很类似吧<br><code>优点</code>：只要设置父元素<br><code>缺点</code>：flex 和 align-items 的兼容性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  height: 200px;</span><br><span class="line">  align-items: center;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: #ccc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  height: 200px;</span><br><span class="line">  align-items: center;</span><br><span class="line">&#125;</span><br><span class="line">.inner-div &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: #ccc;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/04/30/javascript中symbol类型的应用场景-意义-和使用方法/" style="float: left;">
+    <a class="pull-left" href="/2019/04/30/javascript%E4%B8%ADsymbol%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF-%E6%84%8F%E4%B9%89-%E5%92%8C%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/" style="float: left;">
         ← javascript中symbol类型的应用场景和使用方法
     </a>
     
     
-    <a class="pull-right" href="/2019/04/25/纯CSS画的基本图形/">
+    <a class="pull-right" href="/2019/04/25/%E7%BA%AFCSS%E7%94%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2/">
         纯CSS画的基本图形 →
     </a>
     
@@ -334,7 +340,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

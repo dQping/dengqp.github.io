@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>react学习-2：Props 和 State | DEMi&#39;S BLOG</title>
+  <title>react学习-2：Props 和 State | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -250,18 +250,19 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">如何定义 State</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">修改 State</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">State 的更新是异步的</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">State 与 Immutable</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">状态的类型是不可变类型（数字，字符串，布尔值，null， undefined）</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">状态的类型是数组</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">状态的类型是简单对象(Plain Object)</span></a></li></ol></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89-State"><span class="toc-list-text">如何定义 State</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E4%BF%AE%E6%94%B9-State"><span class="toc-list-text">修改 State</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#State-%E7%9A%84%E6%9B%B4%E6%96%B0%E6%98%AF%E5%BC%82%E6%AD%A5%E7%9A%84"><span class="toc-list-text">State 的更新是异步的</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#State-%E4%B8%8E-Immutable"><span class="toc-list-text">State 与 Immutable</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%8A%B6%E6%80%81%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%98%AF%E4%B8%8D%E5%8F%AF%E5%8F%98%E7%B1%BB%E5%9E%8B%EF%BC%88%E6%95%B0%E5%AD%97%EF%BC%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%8C%E5%B8%83%E5%B0%94%E5%80%BC%EF%BC%8Cnull%EF%BC%8C-undefined%EF%BC%89"><span class="toc-list-text">状态的类型是不可变类型（数字，字符串，布尔值，null， undefined）</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%8A%B6%E6%80%81%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%98%AF%E6%95%B0%E7%BB%84"><span class="toc-list-text">状态的类型是数组</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E7%8A%B6%E6%80%81%E7%9A%84%E7%B1%BB%E5%9E%8B%E6%98%AF%E7%AE%80%E5%8D%95%E5%AF%B9%E8%B1%A1-Plain-Object"><span class="toc-list-text">状态的类型是简单对象(Plain Object)</span></a></li></ol></li></ol>
 </div>
 
       </div>
     </div>
 
     <div class="col-md-8 col-md-offset-2">
-      <p>React 的核心思想是组件化的思想，而 React 组件的定义可以通过下面的公式描述：UI = Component(props, state)。组件根据 props 和 state 两个参数，计算得到对应界面的 UI。可见，props 和 state 是组件的两个重要数据源。</p>
- <a id="more"></a>
+      <p>React 的核心思想是组件化的思想，而 React 组件的定义可以通过下面的公式描述：UI &#x3D; Component(props, state)。组件根据 props 和 state 两个参数，计算得到对应界面的 UI。可见，props 和 state 是组件的两个重要数据源。</p>
+ <span id="more"></span>
+
 <p><strong>一句话概括，props 是组件对外的接口，state 是组件对内的接口。</strong>组件内可以引用其他组件，组件之间的引用形成了一个树状结构（组件树），如果下层组件需要使用上层组件的数据或方法，上层组件就可以通过下层组件的 props 属性进行传递，因此 props 是组件对外的接口。组件除了使用上层组件传递的数据外，自身也可能需要维护管理数据，这就是组件对内的接口 state。根据对外接口 props 和对内接口 state，组件计算出对应界面的 UI。</p>
 <p>组件的 props 和 state 都和组件最终渲染出的 UI 直接相关。两者的主要区别是：state 是可变的，是组件内部维护的一组用于反映组件 UI 变化的状态集合；而 props 是组件的只读属性，组件内部不能直接修改 props，要想修改 props，只能在该组件的上层组件中修改。在组件状态上移的场景中，父组件正是通过子组件的 props，传递给子组件其所需要的状态。</p>
-<h2><span id="如何定义-state">如何定义 State</span></h2><p>State 是代表 UI 的<strong>完整</strong>且<strong>最小</strong>的状态集合。组件中用到的一个变量是不是应该作为组件 state，可以通过下面的 4 条依据进行判断：</p>
+<h2 id="如何定义-State"><a href="#如何定义-State" class="headerlink" title="如何定义 State"></a>如何定义 State</h2><p>State 是代表 UI 的<strong>完整</strong>且<strong>最小</strong>的状态集合。组件中用到的一个变量是不是应该作为组件 state，可以通过下面的 4 条依据进行判断：</p>
 <ul>
 <li>这个变量是否是通过 props 从父组件中获取？如果是，那么它不是一个状态。</li>
 <li>这个变量是否在组件的整个生命周期中都保持不变？如果是，那么它不是一个状态。</li>
@@ -269,49 +270,58 @@
 <li>这个变量是否在组件的 render 方法中使用？如果不是，那么它不是一个状态。这种情况下，这个变量更适合定义为组件的一个普通属性（除了 props 和 state 以外的组件属性 ），例如组件中用到的定时器，就应该直接定义为 this.timer，而不是 this.state.timer。</li>
 </ul>
 <p><strong>并不是组件中用到的所有变量都是组件的状态！当存在多个组件共同依赖同一个状态时，一般的做法是状态上移</strong>，将这个状态放到这几个组件的公共父组件中。</p>
-<h2><span id="修改-state">修改 State</span></h2><p>直接修改 state，组件并不会重新重发 render</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 错误</span><br><span class="line">this.state.title = &apos;React&apos;;</span><br></pre></td></tr></table></figure>
+<h2 id="修改-State"><a href="#修改-State" class="headerlink" title="修改 State"></a>修改 State</h2><p>直接修改 state，组件并不会重新重发 render</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 错误</span><br><span class="line">this.state.title = &#x27;React&#x27;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>正确的修改方式是使用<strong>setState()</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 正确</span><br><span class="line">this.setState(&#123;title: &apos;React&apos;&#125;);</span><br></pre></td></tr></table></figure>
-<h2><span id="state-的更新是异步的">State 的更新是异步的</span></h2><p>调用 setState，组件的 state 并不会立即改变，setState 只是把要修改的状态放入一个队列中，React 会优化真正的执行时机，并且 React 会出于性能原因，可能会将多次 setState 的状态修改合并成一次状态修改。所以不能依赖当前的 state，计算下个 state。当真正执行状态修改时，依赖的 this.state 并不能保证是最新的 state，因为 React 会把多次 state 的修改合并成一次，这时，this.state 还是等于这几次修改发生前的 state。另外需要注意，同样不能依赖当前的 props 计算下个 state，因为 props 的更新也是异步的。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 正确</span><br><span class="line">this.setState(&#123;title: &#x27;React&#x27;&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="State-的更新是异步的"><a href="#State-的更新是异步的" class="headerlink" title="State 的更新是异步的"></a>State 的更新是异步的</h2><p>调用 setState，组件的 state 并不会立即改变，setState 只是把要修改的状态放入一个队列中，React 会优化真正的执行时机，并且 React 会出于性能原因，可能会将多次 setState 的状态修改合并成一次状态修改。所以不能依赖当前的 state，计算下个 state。当真正执行状态修改时，依赖的 this.state 并不能保证是最新的 state，因为 React 会把多次 state 的修改合并成一次，这时，this.state 还是等于这几次修改发生前的 state。另外需要注意，同样不能依赖当前的 props 计算下个 state，因为 props 的更新也是异步的。</p>
 <p>举个例子，对于一个电商类应用，在我们的购物车中，当点击一次购买按钮，购买的数量就会加 1，如果我们连续点击了两次按钮，就会连续调用两次 this.setState({quantity: this.state.quantity + 1})，在 React 合并多次修改为一次的情况下，相当于等价执行了如下代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Object.assign(</span><br><span class="line">  previousState,</span><br><span class="line">  &#123;quantity: this.state.quantity + 1&#125;,</span><br><span class="line">  &#123;quantity: this.state.quantity + 1&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Object.assign(</span><br><span class="line">  previousState,</span><br><span class="line">  &#123;quantity: this.state.quantity + 1&#125;,</span><br><span class="line">  &#123;quantity: this.state.quantity + 1&#125;</span><br><span class="line">)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>于是乎，后面的操作覆盖掉了前面的操作，最终购买的数量只增加了 1 个。</p>
 <p>如果你真的有这样的需求，可以使用另一个<strong>接收一个函数作为参数</strong>的 setState，这个函数有两个参数，第一个参数是组件的前一个 state（本次组件状态修改成功前的 state），第二个参数是组件当前最新的 props。如下所示：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 正确</span><br><span class="line">this.setState((preState, props) =&gt; (&#123;</span><br><span class="line">  counter: preState.quantity + 1;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 正确</span><br><span class="line">this.setState((preState, props) =&gt; (&#123;</span><br><span class="line">  counter: preState.quantity + 1;</span><br><span class="line">&#125;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p><strong>State 的更新是一个浅合并（Shallow Merge）的过程。</strong>当调用 setState 修改组件状态时，只需要传入发生改变的状态变量，而不是组件完整的 state，因为组件 state 的更新是一个浅合并（Shallow Merge）的过程。</p>
-<h2><span id="state-与-immutable">State 与 Immutable</span></h2><p>React 官方建议把 state 当作不可变对象，一方面是如果直接修改 this.state，组件并不会重新 render；另一方面 state 中包含的所有状态都应该是不可变对象。当 state 中的某个状态发生变化，我们应该重新创建一个新状态，而不是直接修改原来的状态。那么，当状态发生变化时，如何创建新的状态呢？根据状态的类型，可以分成三种情况：</p>
+<h2 id="State-与-Immutable"><a href="#State-与-Immutable" class="headerlink" title="State 与 Immutable"></a>State 与 Immutable</h2><p>React 官方建议把 state 当作不可变对象，一方面是如果直接修改 this.state，组件并不会重新 render；另一方面 state 中包含的所有状态都应该是不可变对象。当 state 中的某个状态发生变化，我们应该重新创建一个新状态，而不是直接修改原来的状态。那么，当状态发生变化时，如何创建新的状态呢？根据状态的类型，可以分成三种情况：</p>
 <ul>
 <li>状态的类型是不可变类型（数字，字符串，布尔值，null， undefined）</li>
 <li>状态的类型是数组</li>
 <li>状态的类型是简单对象(Plain Object)</li>
 </ul>
-<h3><span id="状态的类型是不可变类型数字字符串布尔值null-undefined">状态的类型是不可变类型（数字，字符串，布尔值，null， undefined）</span></h3><p>这种情况最简单，因为状态是不可变类型，直接给要修改的状态赋一个新值即可。如要修改 count（数字类型）、title（字符串类型）、success（布尔类型）三个状态：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">this.setState(&#123;</span><br><span class="line">  count: 1,</span><br><span class="line">  title: &apos;Redux&apos;,</span><br><span class="line">  success: true</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3><span id="状态的类型是数组">状态的类型是数组</span></h3><p>如有一个数组类型的状态 todos，当向 todos 中增加一个 todo 时，使用数组的 concat 方法或 ES6 的数组扩展语法（spread syntax）：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 方法一：使用preState、concat创建新数组</span><br><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  todos: preState.todos.concat([&#123;id:this.count++,text:&quot;学习React&quot;,completed:false&#125;]);</span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line">// 方法二：ES6 spread syntax</span><br><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  todos: [...preState.todos, &#123;id:this.count++,text:&quot;学习React&quot;,completed:false&#125;];</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<h3 id="状态的类型是不可变类型（数字，字符串，布尔值，null，-undefined）"><a href="#状态的类型是不可变类型（数字，字符串，布尔值，null，-undefined）" class="headerlink" title="状态的类型是不可变类型（数字，字符串，布尔值，null， undefined）"></a>状态的类型是不可变类型（数字，字符串，布尔值，null， undefined）</h3><p>这种情况最简单，因为状态是不可变类型，直接给要修改的状态赋一个新值即可。如要修改 count（数字类型）、title（字符串类型）、success（布尔类型）三个状态：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.setState(&#123;</span><br><span class="line">  count: 1,</span><br><span class="line">  title: &#x27;Redux&#x27;,</span><br><span class="line">  success: true</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="状态的类型是数组"><a href="#状态的类型是数组" class="headerlink" title="状态的类型是数组"></a>状态的类型是数组</h3><p>如有一个数组类型的状态 todos，当向 todos 中增加一个 todo 时，使用数组的 concat 方法或 ES6 的数组扩展语法（spread syntax）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 方法一：使用preState、concat创建新数组</span><br><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  todos: preState.todos.concat([&#123;id:this.count++,text:&quot;学习React&quot;,completed:false&#125;]);</span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line">// 方法二：ES6 spread syntax</span><br><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  todos: [...preState.todos, &#123;id:this.count++,text:&quot;学习React&quot;,completed:false&#125;];</span><br><span class="line">&#125;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>注意不要使用 push、pop、shift、unshift、splice 等方法修改数组类型的状态，因为这些方法都是在原数组的基础上修改，而 concat、slice、filter 会返回一个新的数组。</p>
-<h3><span id="状态的类型是简单对象plain-object">状态的类型是简单对象(Plain Object)</span></h3><p>如 state 中有一个状态 owner，结构如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.state = &#123;</span><br><span class="line">  owner = &#123;</span><br><span class="line">    name: &apos;老干部&apos;,</span><br><span class="line">    age: 30</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="状态的类型是简单对象-Plain-Object"><a href="#状态的类型是简单对象-Plain-Object" class="headerlink" title="状态的类型是简单对象(Plain Object)"></a>状态的类型是简单对象(Plain Object)</h3><p>如 state 中有一个状态 owner，结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">this.state = &#123;</span><br><span class="line">  owner = &#123;</span><br><span class="line">    name: &#x27;老干部&#x27;,</span><br><span class="line">    age: 30</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>当修改 state 时，有如下两种方式：</p>
 <p><strong>1) 使用 ES6 的 Object.assgin 方法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  owner: Object.assign(&#123;&#125;, preState.owner, &#123;name: &apos;Jason&apos;&#125;);</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  owner: Object.assign(&#123;&#125;, preState.owner, &#123;name: &#x27;Jason&#x27;&#125;);</span><br><span class="line">&#125;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p><strong>2) 使用对象扩展语法（object spread properties）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  owner: &#123;...preState.owner, name: &apos;Jason&apos;&#125;;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">this.setState(preState =&gt; (&#123;</span><br><span class="line">  owner: &#123;...preState.owner, name: &#x27;Jason&#x27;&#125;;</span><br><span class="line">&#125;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>创建新的状态的关键是，避免使用会直接修改原对象的方法，而是使用可以返回一个新对象的方法。当然，也可以使用一些 Immutable 的 JS 库，如 Immutable.js，实现类似的效果。</p>
-<p>那么，为什么 React 推荐组件的状态是不可变对象呢？一方面是因为不可变对象方便管理和调试，了解更多可<a href="https://redux.js.org/faq/immutable-data#benefits-of-immutability" target="_blank" rel="noopener">参考这里</a>；另一方面是出于性能考虑，当组件状态都是不可变对象时，我们在组件的 shouldComponentUpdate 方法中，仅需要比较状态的引用就可以判断状态是否真的改变，从而避免不必要的 render 方法的调用。当我们使用 React 提供的 PureComponent 时，更是要保证组件状态是不可变对象，否则在组件的 shouldComponentUpdate 方法中，状态比较就可能出现错误。</p>
+<p>那么，为什么 React 推荐组件的状态是不可变对象呢？一方面是因为不可变对象方便管理和调试，了解更多可<a target="_blank" rel="noopener" href="https://redux.js.org/faq/immutable-data#benefits-of-immutability">参考这里</a>；另一方面是出于性能考虑，当组件状态都是不可变对象时，我们在组件的 shouldComponentUpdate 方法中，仅需要比较状态的引用就可以判断状态是否真的改变，从而避免不必要的 render 方法的调用。当我们使用 React 提供的 PureComponent 时，更是要保证组件状态是不可变对象，否则在组件的 shouldComponentUpdate 方法中，状态比较就可能出现错误。</p>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/01/10/react学习-3：Redux/" style="float: left;">
+    <a class="pull-left" href="/2019/01/10/react%E5%AD%A6%E4%B9%A0-3%EF%BC%9ARedux/" style="float: left;">
         ← react学习-3：Redux
     </a>
     
     
-    <a class="pull-right" href="/2019/01/09/react学习-1：创建项目和使用mock/">
+    <a class="pull-right" href="/2019/01/09/react%E5%AD%A6%E4%B9%A0-1%EF%BC%9A%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE%E5%92%8C%E4%BD%BF%E7%94%A8mock/">
         react学习-1：创建项目和使用mock →
     </a>
     
@@ -345,7 +355,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>chrome 怎样查看为一个元素绑定的事件 | DEMi&#39;S BLOG</title>
+  <title>chrome 怎样查看为一个元素绑定的事件 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -250,7 +250,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">Event Listeners</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">getEventListeners(node)</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">监控元素上的命令</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#Event-Listeners"><span class="toc-list-text">Event Listeners</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#getEventListeners-node"><span class="toc-list-text">getEventListeners(node)</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E7%9B%91%E6%8E%A7%E5%85%83%E7%B4%A0%E4%B8%8A%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="toc-list-text">监控元素上的命令</span></a></li></ol>
 </div>
 
       </div>
@@ -258,22 +258,23 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>在前端开发中，偶尔需要验证下某个元素上到底绑定了哪些事件，以及监控某个元素上的事件触发情况。之前面对这种情况，一般采取的措施就是在各个事件里写 console.info，然后进行点击等操作触发事件，或者在控制台 trigger 元素上的事件，或者 dispatchEvent。这种方法比较繁琐，而且假如触发这个事件之前需要做大量操作，触发时间后需要重新来过，真的是浪费时间啊。</p>
- <a id="more"></a>
-<h2><span id="event-listeners">Event Listeners</span></h2><p>chrome 自带，Event Listeners, 选择 Select Node Only</p>
-<h2><span id="geteventlistenersnode">getEventListeners(node)</span></h2><p>chrome 控制台输入 getEventListeners(node)</p>
-<h2><span id="监控元素上的命令">监控元素上的命令</span></h2><p>监控和取消监控元素上的事件命令： monitorEvents(node) 和 unmonitorEvents(node)</p>
+ <span id="more"></span>
+
+<h2 id="Event-Listeners"><a href="#Event-Listeners" class="headerlink" title="Event Listeners"></a>Event Listeners</h2><p>chrome 自带，Event Listeners, 选择 Select Node Only</p>
+<h2 id="getEventListeners-node"><a href="#getEventListeners-node" class="headerlink" title="getEventListeners(node)"></a>getEventListeners(node)</h2><p>chrome 控制台输入 getEventListeners(node)</p>
+<h2 id="监控元素上的命令"><a href="#监控元素上的命令" class="headerlink" title="监控元素上的命令"></a>监控元素上的命令</h2><p>监控和取消监控元素上的事件命令： monitorEvents(node) 和 unmonitorEvents(node)</p>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/03/06/pointer-events的应用场景/" style="float: left;">
+    <a class="pull-left" href="/2019/03/06/pointer-events%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF/" style="float: left;">
         ← pointer-events: none 的应用场景
     </a>
     
     
-    <a class="pull-right" href="/2019/02/24/插件封装你可以这么做/">
+    <a class="pull-right" href="/2019/02/24/%E6%8F%92%E4%BB%B6%E5%B0%81%E8%A3%85%E4%BD%A0%E5%8F%AF%E4%BB%A5%E8%BF%99%E4%B9%88%E5%81%9A/">
         js插件封装你可以这么做 →
     </a>
     
@@ -307,7 +308,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

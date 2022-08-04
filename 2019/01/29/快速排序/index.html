@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>快速排序 | DEMi&#39;S BLOG</title>
+  <title>快速排序 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -250,7 +250,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">算法分析</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">js 实现</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-list-text">算法分析</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#js-%E5%AE%9E%E7%8E%B0"><span class="toc-list-text">js 实现</span></a></li></ol>
 </div>
 
       </div>
@@ -258,14 +258,15 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>快速排序(Quick Sort)是一种分治思想，现在各种语言中自带的排序库很多使用的都是快速排序。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p><img src="/img/kuaisu.gif" alt="快速排序"></p>
-<h2><span id="算法分析">算法分析</span></h2><p>算法原理：快速排序(Quick Sort)是对冒泡排序的一种改进，基本思想是选取元素作为标尺，经过一趟排序，将整段序列分为两个部分，其中一部分的值都小于标尺，另一部分都大于标尺。然后继续对这两部分继续进行排序，从而使整个序列达到有序。</p>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>算法原理：快速排序(Quick Sort)是对冒泡排序的一种改进，基本思想是选取元素作为标尺，经过一趟排序，将整段序列分为两个部分，其中一部分的值都小于标尺，另一部分都大于标尺。然后继续对这两部分继续进行排序，从而使整个序列达到有序。</p>
 <p>算法描述：</p>
 <ul>
-<li><1>以第一个元素为标尺，和后面的所有元素进行一轮比较，比标尺小的分成一组 left，比标尺大的分成一组 right；</1></li>
-<li><2>将第一轮获得的两组分别在重复以便 1 中的操作；</2></li>
-<li><3>同 2，将每一轮获得的两组重复 1 ，直到每组元素个数小余 2；</3></li>
+<li>&lt;1&gt;以第一个元素为标尺，和后面的所有元素进行一轮比较，比标尺小的分成一组 left，比标尺大的分成一组 right；</li>
+<li>&lt;2&gt;将第一轮获得的两组分别在重复以便 1 中的操作；</li>
+<li>&lt;3&gt;同 2，将每一轮获得的两组重复 1 ，直到每组元素个数小余 2；</li>
 </ul>
 <p>算法分析：所有排序操作都在内存中完成</p>
 <pre><code>时间复杂度
@@ -281,23 +282,25 @@
 稳定性
 
 - 不稳定
-</code></pre><h2><span id="js-实现">js 实现</span></h2><p>基本实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr) &#123;</span><br><span class="line">  let len = arr.length;</span><br><span class="line">  let left = [],</span><br><span class="line">    right = [];</span><br><span class="line">  if (len &gt; 1) &#123;</span><br><span class="line">    let flag = arr[0];</span><br><span class="line">    for (let i = 1; i &lt; arr.length; i++) &#123;</span><br><span class="line">      let item = arr[i];</span><br><span class="line">      item &lt;= flag ? left.push(item) : right.push(item);</span><br><span class="line">    &#125;</span><br><span class="line">    return quickSort(left).concat(flag, quickSort(right));</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return arr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="js-实现"><a href="#js-实现" class="headerlink" title="js 实现"></a>js 实现</h2><p>基本实现：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr) &#123;</span><br><span class="line">  let len = arr.length;</span><br><span class="line">  let left = [],</span><br><span class="line">    right = [];</span><br><span class="line">  if (len &gt; 1) &#123;</span><br><span class="line">    let flag = arr[0];</span><br><span class="line">    for (let i = 1; i &lt; arr.length; i++) &#123;</span><br><span class="line">      let item = arr[i];</span><br><span class="line">      item &lt;= flag ? left.push(item) : right.push(item);</span><br><span class="line">    &#125;</span><br><span class="line">    return quickSort(left).concat(flag, quickSort(right));</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return arr;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>但是以上的做法，在每次递归时，都要额外内存，left 和 right 数组；</p>
 <p>优化后实现：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr) &#123;</span><br><span class="line">  // 交换两个元素</span><br><span class="line">  let swap = (arr, leftIdx, rightIdx) =&gt; &#123;</span><br><span class="line">    let temp = arr[leftIdx];</span><br><span class="line">    arr[leftIdx] = arr[rightIdx];</span><br><span class="line">    arr[rightIdx] = temp;</span><br><span class="line">  &#125;;</span><br><span class="line">  // 将元素分为两组，并返回标尺元素的位置</span><br><span class="line">  let findCenter = (arr, leftIdx, rightIdx) =&gt; &#123;</span><br><span class="line">    let flag = arr[leftIdx],</span><br><span class="line">      pos = leftIdx + 1;</span><br><span class="line">    for (let i = pos; i &lt;= rightIdx; i++) &#123;</span><br><span class="line">      if (flag &gt; arr[i]) &#123;</span><br><span class="line">        swap(arr, pos, i);</span><br><span class="line">        pos++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(arr, leftIdx, pos - 1);</span><br><span class="line">    return pos - 1;</span><br><span class="line">  &#125;;</span><br><span class="line">  // 排序</span><br><span class="line">  let mySort = (arr, leftIdx, rightIdx) =&gt; &#123;</span><br><span class="line">    if (rightIdx &gt; leftIdx) &#123;</span><br><span class="line">      let center = findCenter(arr, leftIdx, rightIdx);</span><br><span class="line">      mySort(arr, leftIdx, center);</span><br><span class="line">      mySort(arr, center + 1, rightIdx);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  mySort(arr, 0, arr.length - 1);</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr) &#123;</span><br><span class="line">  // 交换两个元素</span><br><span class="line">  let swap = (arr, leftIdx, rightIdx) =&gt; &#123;</span><br><span class="line">    let temp = arr[leftIdx];</span><br><span class="line">    arr[leftIdx] = arr[rightIdx];</span><br><span class="line">    arr[rightIdx] = temp;</span><br><span class="line">  &#125;;</span><br><span class="line">  // 将元素分为两组，并返回标尺元素的位置</span><br><span class="line">  let findCenter = (arr, leftIdx, rightIdx) =&gt; &#123;</span><br><span class="line">    let flag = arr[leftIdx],</span><br><span class="line">      pos = leftIdx + 1;</span><br><span class="line">    for (let i = pos; i &lt;= rightIdx; i++) &#123;</span><br><span class="line">      if (flag &gt; arr[i]) &#123;</span><br><span class="line">        swap(arr, pos, i);</span><br><span class="line">        pos++;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(arr, leftIdx, pos - 1);</span><br><span class="line">    return pos - 1;</span><br><span class="line">  &#125;;</span><br><span class="line">  // 排序</span><br><span class="line">  let mySort = (arr, leftIdx, rightIdx) =&gt; &#123;</span><br><span class="line">    if (rightIdx &gt; leftIdx) &#123;</span><br><span class="line">      let center = findCenter(arr, leftIdx, rightIdx);</span><br><span class="line">      mySort(arr, leftIdx, center);</span><br><span class="line">      mySort(arr, center + 1, rightIdx);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  mySort(arr, 0, arr.length - 1);</span><br><span class="line">  return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/02/01/类型转换/" style="float: left;">
+    <a class="pull-left" href="/2019/02/01/%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2/" style="float: left;">
         ← 类型转换
     </a>
     
     
-    <a class="pull-right" href="/2019/01/29/选择排序/">
+    <a class="pull-right" href="/2019/01/29/%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/">
         选择排序 →
     </a>
     
@@ -331,7 +334,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

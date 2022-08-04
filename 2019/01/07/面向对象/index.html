@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>面向对象 | DEMi&#39;S BLOG</title>
+  <title>面向对象 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -250,7 +250,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">类与继承</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E7%B1%BB%E4%B8%8E%E7%BB%A7%E6%89%BF"><span class="toc-list-text">类与继承</span></a></li></ol>
 </div>
 
       </div>
@@ -258,27 +258,31 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>JS 作为面向对象的弱类型语言，继承也是其非常强大的特性之一。那么如何在 JS 中实现继承呢？本篇主要总结一下类继承的几种方式以及相应的优缺点。</p>
-<a id="more"></a>
-<h2><span id="类与继承">类与继承</span></h2><p><strong><em>借助构造函数实现继承：</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;</span><br><span class="line">    this.name = &apos;person&apos;</span><br><span class="line">&#125;</span><br><span class="line">function Child()&#123;</span><br><span class="line">    Person.call(this)</span><br><span class="line">    this.type = &apos;child&apos;</span><br><span class="line">&#125;</span><br><span class="line">// 缺点 Person 的原型链上的东西并没有被 Child 所继承</span><br><span class="line">// 所以，借助构造函数实现继承只能实现部分继承</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<h2 id="类与继承"><a href="#类与继承" class="headerlink" title="类与继承"></a>类与继承</h2><p><strong><em>借助构造函数实现继承：</em></strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;</span><br><span class="line">    this.name = &#x27;person&#x27;</span><br><span class="line">&#125;</span><br><span class="line">function Child()&#123;</span><br><span class="line">    Person.call(this)</span><br><span class="line">    this.type = &#x27;child&#x27;</span><br><span class="line">&#125;</span><br><span class="line">// 缺点 Person 的原型链上的东西并没有被 Child 所继承</span><br><span class="line">// 所以，借助构造函数实现继承只能实现部分继承</span><br></pre></td></tr></table></figure>
+
 <p><strong><em>借助原型链实现继承：</em></strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;</span><br><span class="line">    this.name = &apos;person&apos;,</span><br><span class="line">    this.arr = [1,2,3]</span><br><span class="line">&#125;</span><br><span class="line">function Child()&#123;</span><br><span class="line">    this.type = &apos;child&apos;</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = new Person();</span><br><span class="line"></span><br><span class="line">// 缺点是实例的原型对象共用，改动一个实例，会造成所有实例数据改变</span><br><span class="line"></span><br><span class="line">var p1 = new Child();</span><br><span class="line">var p2 = new Child();</span><br><span class="line"></span><br><span class="line">p1.arr.push(4);</span><br><span class="line">console.log(p2.arr)   // [1,2,3,4]</span><br><span class="line"></span><br><span class="line">p1.__proto__ === p2.__proto__  // true</span><br></pre></td></tr></table></figure>
-<p><strong><em>组合方式实现继承：</em></strong>这是使用 ES5 通常实现继承的通用的方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;</span><br><span class="line">    this.name = &apos;person&apos;</span><br><span class="line">&#125;</span><br><span class="line">function Child()&#123;</span><br><span class="line">    Person.call(this)</span><br><span class="line">    this.type = &apos;child&apos;</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = new Person();</span><br><span class="line"></span><br><span class="line">// 缺点 Person() 执行了两次</span><br><span class="line"></span><br><span class="line"># 组合继承的优化方式</span><br><span class="line">function Person()&#123;</span><br><span class="line">    this.name = &apos;person&apos;</span><br><span class="line">&#125;</span><br><span class="line">function Child()&#123;</span><br><span class="line">    Person.call(this)</span><br><span class="line">    this.type = &apos;child&apos;</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = Object.create(Person.prototype);</span><br><span class="line">Child.prototype.constructor = Child;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;</span><br><span class="line">    this.name = &#x27;person&#x27;,</span><br><span class="line">    this.arr = [1,2,3]</span><br><span class="line">&#125;</span><br><span class="line">function Child()&#123;</span><br><span class="line">    this.type = &#x27;child&#x27;</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = new Person();</span><br><span class="line"></span><br><span class="line">// 缺点是实例的原型对象共用，改动一个实例，会造成所有实例数据改变</span><br><span class="line"></span><br><span class="line">var p1 = new Child();</span><br><span class="line">var p2 = new Child();</span><br><span class="line"></span><br><span class="line">p1.arr.push(4);</span><br><span class="line">console.log(p2.arr)   // [1,2,3,4]</span><br><span class="line"></span><br><span class="line">p1.__proto__ === p2.__proto__  // true</span><br></pre></td></tr></table></figure>
+
+<p>**<em>组合方式实现继承：</em>**这是使用 ES5 通常实现继承的通用的方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function Person()&#123;</span><br><span class="line">    this.name = &#x27;person&#x27;</span><br><span class="line">&#125;</span><br><span class="line">function Child()&#123;</span><br><span class="line">    Person.call(this)</span><br><span class="line">    this.type = &#x27;child&#x27;</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = new Person();</span><br><span class="line"></span><br><span class="line">// 缺点 Person() 执行了两次</span><br><span class="line"></span><br><span class="line"># 组合继承的优化方式</span><br><span class="line">function Person()&#123;</span><br><span class="line">    this.name = &#x27;person&#x27;</span><br><span class="line">&#125;</span><br><span class="line">function Child()&#123;</span><br><span class="line">    Person.call(this)</span><br><span class="line">    this.type = &#x27;child&#x27;</span><br><span class="line">&#125;</span><br><span class="line">Child.prototype = Object.create(Person.prototype);</span><br><span class="line">Child.prototype.constructor = Child;</span><br></pre></td></tr></table></figure>
+
 <p><strong><em>ES6 class 实现继承：</em></strong><br>需要在支持 es6 的运行环境中使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Person(name)&#123;</span><br><span class="line">    constuctor()&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Child extend Person(name,age)&#123;</span><br><span class="line">    constuctor()&#123;</span><br><span class="line">        super(name)</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Person(name)&#123;</span><br><span class="line">    constuctor()&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Child extend Person(name,age)&#123;</span><br><span class="line">    constuctor()&#123;</span><br><span class="line">        super(name)</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/01/07/通信类/" style="float: left;">
+    <a class="pull-left" href="/2019/01/07/%E9%80%9A%E4%BF%A1%E7%B1%BB/" style="float: left;">
         ← 通信类
     </a>
     
     
-    <a class="pull-right" href="/2019/01/06/原型链/">
+    <a class="pull-right" href="/2019/01/06/%E5%8E%9F%E5%9E%8B%E9%93%BE/">
         原型链 →
     </a>
     
@@ -312,7 +316,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

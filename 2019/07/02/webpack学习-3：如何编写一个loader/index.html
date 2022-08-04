@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>webpack学习-3：如何编写一个loader | DEMi&#39;S BLOG</title>
+  <title>webpack学习-3：如何编写一个loader | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -251,7 +251,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">同步 loader</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">给 loader 传配置参数</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">返回多个处理结果</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">异步 loader</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%90%8C%E6%AD%A5-loader"><span class="toc-list-text">同步 loader</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E7%BB%99-loader-%E4%BC%A0%E9%85%8D%E7%BD%AE%E5%8F%82%E6%95%B0"><span class="toc-list-text">给 loader 传配置参数</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E8%BF%94%E5%9B%9E%E5%A4%9A%E4%B8%AA%E5%A4%84%E7%90%86%E7%BB%93%E6%9E%9C"><span class="toc-list-text">返回多个处理结果</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%BC%82%E6%AD%A5-loader"><span class="toc-list-text">异步 loader</span></a></li></ol>
 </div>
 
       </div>
@@ -259,42 +259,55 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p><code>loader</code> 实际上就是一个导出为<code>函数</code>的 JavaScript 模块。loader runner 会调用这个函数，然后把上一个 loader 产生的结果或者资源文件(resource file)传入进去。函数的 <code>this</code> 上下文将由 webpack 填充，并且 loader runner 具有一些有用方法，可以使 loader 改变为异步调用方式，或者获取 query 参数。</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p><strong>注意：通过 module.exports 导出的函数不能用箭头函数，因为 webpack 在调用 loader 的时候，会改变函数执行的上下文 this 指向，由 webpack 填冲的 this 具有一些有用方法和属性</strong></p>
-<h2><span id="同步-loader">同步 loader</span></h2><p>第一个 loader 的传入参数只有一个：<code>资源文件(resource file)的内容</code>。compiler 需要得到最后一个 loader 产生的处理结果。这个处理结果应该是 <code>String</code> 或者 <code>Buffer</code>（被转换为一个 string），代表了模块的 JavaScript 源码。另外还可以传递一个<code>可选的 SourceMap 结果</code>（格式为 JSON 对象）。</p>
+<h2 id="同步-loader"><a href="#同步-loader" class="headerlink" title="同步 loader"></a>同步 loader</h2><p>第一个 loader 的传入参数只有一个：<code>资源文件(resource file)的内容</code>。compiler 需要得到最后一个 loader 产生的处理结果。这个处理结果应该是 <code>String</code> 或者 <code>Buffer</code>（被转换为一个 string），代表了模块的 JavaScript 源码。另外还可以传递一个<code>可选的 SourceMap 结果</code>（格式为 JSON 对象）。</p>
 <p>示例：</p>
-<p>loader/replaceLoader.js 文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 这里不能写成一个箭头函数，因为 webpack 在调用 loader 的时候，会对 this 指向进行变更</span><br><span class="line">// source 为文件内容</span><br><span class="line">module.exports = function(source) &#123;</span><br><span class="line">    // 将文件中的 hello 改成 hi</span><br><span class="line">    return  source.replace(&quot;hello&quot;, &quot;hi&quot;);</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>loader&#x2F;replaceLoader.js 文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// 这里不能写成一个箭头函数，因为 webpack 在调用 loader 的时候，会对 this 指向进行变更</span><br><span class="line">// source 为文件内容</span><br><span class="line">module.exports = function(source) &#123;</span><br><span class="line">    // 将文件中的 hello 改成 hi</span><br><span class="line">    return  source.replace(&quot;hello&quot;, &quot;hi&quot;);</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>webpack.config.js 文件中使用自己编写的 loader：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    const path = require(&quot;path&quot;);</span><br><span class="line"></span><br><span class="line">    module.exports = &#123;</span><br><span class="line">        mode: &quot;development&quot;,</span><br><span class="line">        entry: &quot;./src/index.js&quot;,</span><br><span class="line">        output: &#123;</span><br><span class="line">            path: path.resolve(__dirname, &quot;dist&quot;),</span><br><span class="line">            filename: &quot;[name].js&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">+       // 配置在使用 loader 时先去 node_modules 找，再在 ./loaders 路径下找</span><br><span class="line">+       resolveLoader: &#123;</span><br><span class="line">+           modules: [&quot;node_modules&quot;, &quot;./loaders&quot;]</span><br><span class="line">+       &#125;,</span><br><span class="line">        module: &#123;</span><br><span class="line">            rules: [</span><br><span class="line">+               &#123;</span><br><span class="line">+                   test: /.js$/,</span><br><span class="line">+                   use: [&quot;replaceLoader.js&quot;]</span><br><span class="line">+               &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-<h2><span id="给-loader-传配置参数">给 loader 传配置参数</span></h2><p>如果这个 loader 配置了 <code>options 对象</code>的话，<code>this.query</code> 就指向这个 option 对象。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">    const path = require(&quot;path&quot;);</span><br><span class="line"></span><br><span class="line">    module.exports = &#123;</span><br><span class="line">        mode: &quot;development&quot;,</span><br><span class="line">        entry: &quot;./src/index.js&quot;,</span><br><span class="line">        output: &#123;</span><br><span class="line">            path: path.resolve(__dirname, &quot;dist&quot;),</span><br><span class="line">            filename: &quot;[name].js&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">+       // 配置在使用 loader 时先去 node_modules 找，再在 ./loaders 路径下找</span><br><span class="line">+       resolveLoader: &#123;</span><br><span class="line">+           modules: [&quot;node_modules&quot;, &quot;./loaders&quot;]</span><br><span class="line">+       &#125;,</span><br><span class="line">        module: &#123;</span><br><span class="line">            rules: [</span><br><span class="line">+               &#123;</span><br><span class="line">+                   test: /.js$/,</span><br><span class="line">+                   use: [&quot;replaceLoader.js&quot;]</span><br><span class="line">+               &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="给-loader-传配置参数"><a href="#给-loader-传配置参数" class="headerlink" title="给 loader 传配置参数"></a>给 loader 传配置参数</h2><p>如果这个 loader 配置了 <code>options 对象</code>的话，<code>this.query</code> 就指向这个 option 对象。</p>
 <p>示例：</p>
-<p>loader/replaceLoader.js 文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">module.exports = function(source) &#123;</span><br><span class="line">+ return source.replace(&quot;hello&quot;, this.query.name);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>loader&#x2F;replaceLoader.js 文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">module.exports = function(source) &#123;</span><br><span class="line">+ return source.replace(&quot;hello&quot;, this.query.name);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>webpack.config.js 文件中使用自己编写的 loader：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">    const path = require(&quot;path&quot;);</span><br><span class="line"></span><br><span class="line">    module.exports = &#123;</span><br><span class="line">    mode: &quot;development&quot;,</span><br><span class="line">    entry: &quot;./src/index.js&quot;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, &quot;dist&quot;),</span><br><span class="line">        filename: &quot;[name].js&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    resolveLoader: &#123;</span><br><span class="line">        modules: [&quot;node_modules&quot;, &quot;./loaders&quot;]</span><br><span class="line">    &#125;,</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">        &#123;</span><br><span class="line">            test: /.js$/,</span><br><span class="line">+           use: &#123;</span><br><span class="line">+             loader: &quot;replaceLoader.js&quot;,</span><br><span class="line">+             options: &#123;</span><br><span class="line">+               name: &quot;Hi&quot;</span><br><span class="line">+             &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">    const path = require(&quot;path&quot;);</span><br><span class="line"></span><br><span class="line">    module.exports = &#123;</span><br><span class="line">    mode: &quot;development&quot;,</span><br><span class="line">    entry: &quot;./src/index.js&quot;,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, &quot;dist&quot;),</span><br><span class="line">        filename: &quot;[name].js&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    resolveLoader: &#123;</span><br><span class="line">        modules: [&quot;node_modules&quot;, &quot;./loaders&quot;]</span><br><span class="line">    &#125;,</span><br><span class="line">    module: &#123;</span><br><span class="line">        rules: [</span><br><span class="line">        &#123;</span><br><span class="line">            test: /.js$/,</span><br><span class="line">+           use: &#123;</span><br><span class="line">+             loader: &quot;replaceLoader.js&quot;,</span><br><span class="line">+             options: &#123;</span><br><span class="line">+               name: &quot;Hi&quot;</span><br><span class="line">+             &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>如果 loader 中没有 options，而是以 query <code>字符串</code>作为参数调用时，this.query 就是一个以 ? 开头的字符串。所以官方推荐我们使用 <code>loader-utils</code>，帮我我们分析传入的参数，用<code>loader-utils</code> 中提供的 <code>getOptions</code> 方法 来提取给定 loader 的 option</p>
 <p>安装 <code>loader-utils</code>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install loader-utils --save-dev</span><br></pre></td></tr></table></figure>
-<p>loader/replaceLoader.js 文件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const loaderUtils = require(&quot;loader-utils&quot;);</span><br><span class="line"></span><br><span class="line">module.exports = function(source) &#123;</span><br><span class="line">  const options = loaderUtils.getOptions(this);</span><br><span class="line">  return source.replace(&quot;hello&quot;, options.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="返回多个处理结果">返回多个处理结果</span></h2><p>如果是单个处理结果(例如需要返回 SourceMap 结果的时候)，可以在同步模式中直接返回。如果有多个处理结果，则必须调用<code>this.callback()</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install loader-utils --save-dev</span><br></pre></td></tr></table></figure>
+
+<p>loader&#x2F;replaceLoader.js 文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const loaderUtils = require(&quot;loader-utils&quot;);</span><br><span class="line"></span><br><span class="line">module.exports = function(source) &#123;</span><br><span class="line">  const options = loaderUtils.getOptions(this);</span><br><span class="line">  return source.replace(&quot;hello&quot;, options.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="返回多个处理结果"><a href="#返回多个处理结果" class="headerlink" title="返回多个处理结果"></a>返回多个处理结果</h2><p>如果是单个处理结果(例如需要返回 SourceMap 结果的时候)，可以在同步模式中直接返回。如果有多个处理结果，则必须调用<code>this.callback()</code></p>
 <p>一个可以同步或者异步调用的可以返回多个结果的函数。预期的参数是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.callback(</span><br><span class="line">  err: Error | null,</span><br><span class="line">  content: string | Buffer,</span><br><span class="line">  sourceMap?: SourceMap,</span><br><span class="line">  meta?: any</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">this.callback(</span><br><span class="line">  err: Error | null,</span><br><span class="line">  content: string | Buffer,</span><br><span class="line">  sourceMap?: SourceMap,</span><br><span class="line">  meta?: any</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li>第一个参数必须是 Error 或者 null</li>
-<li>第二个参数是一个 string 或者 Buffer,就是文件内容处理后的结果</li>
-<li>可选的：第三个参数必须是一个可以被这个模块解析的 source map。</li>
+<li><p>第一个参数必须是 Error 或者 null</p>
+</li>
+<li><p>第二个参数是一个 string 或者 Buffer,就是文件内容处理后的结果</p>
+</li>
+<li><p>可选的：第三个参数必须是一个可以被这个模块解析的 source map。</p>
+</li>
 <li><p>可选的：第四个选项，会被 webpack 忽略，可以是任何东西（例如一些元数据）。</p>
 <p><code>可以将抽象语法树(abstract syntax tree - AST)（例如 ESTree）作为第四个参数（meta），如果你想在多个 loader 之间共享通用的 AST，这样做有助于加速编译时间。</code></p>
 <p>如果这个函数被调用的话，你应该返回 undefined 从而避免含糊的 loader 结果。</p>
 </li>
 </ul>
-<p>loader/replaceLoader.js 文件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    const loaderUtils = require(&quot;loader-utils&quot;);</span><br><span class="line"></span><br><span class="line">    module.exports = function(source) &#123;</span><br><span class="line">        const options = loaderUtils.getOptions(this);</span><br><span class="line">        const result = source.replace(&quot;hello&quot;, options.name);</span><br><span class="line">+       this.callback(null, result);</span><br><span class="line">+       return undefined</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="异步-loader">异步 loader</span></h2><p>在异步模式中，必须调用 <code>this.async()</code>，来指示 loader runner 等待异步结果，<code>它会返回 this.callback()</code> 回调函数，随后 loader 必须返回 undefined 并且调用该回调函数。</p>
-<p>loader/replaceLoader.js 文件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    const loaderUtils = require(&quot;loader-utils&quot;);</span><br><span class="line"></span><br><span class="line">    module.exports = function(source) &#123;</span><br><span class="line">    const options = loaderUtils.getOptions(this);</span><br><span class="line">+   const callback = this.async();</span><br><span class="line">+   setTimeout(() =&gt; &#123;</span><br><span class="line">        const result = source.replace(&quot;hello&quot;, options.name);</span><br><span class="line">+       callback(null, result);</span><br><span class="line">+   &#125;, 5000);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>loader&#x2F;replaceLoader.js 文件:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">    const loaderUtils = require(&quot;loader-utils&quot;);</span><br><span class="line"></span><br><span class="line">    module.exports = function(source) &#123;</span><br><span class="line">        const options = loaderUtils.getOptions(this);</span><br><span class="line">        const result = source.replace(&quot;hello&quot;, options.name);</span><br><span class="line">+       this.callback(null, result);</span><br><span class="line">+       return undefined</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="异步-loader"><a href="#异步-loader" class="headerlink" title="异步 loader"></a>异步 loader</h2><p>在异步模式中，必须调用 <code>this.async()</code>，来指示 loader runner 等待异步结果，<code>它会返回 this.callback()</code> 回调函数，随后 loader 必须返回 undefined 并且调用该回调函数。</p>
+<p>loader&#x2F;replaceLoader.js 文件:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    const loaderUtils = require(&quot;loader-utils&quot;);</span><br><span class="line"></span><br><span class="line">    module.exports = function(source) &#123;</span><br><span class="line">    const options = loaderUtils.getOptions(this);</span><br><span class="line">+   const callback = this.async();</span><br><span class="line">+   setTimeout(() =&gt; &#123;</span><br><span class="line">        const result = source.replace(&quot;hello&quot;, options.name);</span><br><span class="line">+       callback(null, result);</span><br><span class="line">+   &#125;, 5000);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <p>自己编写 loader 的业务场景：</p>
 <ol>
@@ -302,19 +315,19 @@
 <li>多语言版本适配：在 loader 中分析代码，获取 node 的全局变量，通过全局变量判断语言版本，进而显示对应的语言</li>
 <li>……</li>
 </ol>
-<p>如果我们发现我们的源代码需要做一些包装，这个时候，就可以考虑是否使用 loader。更多配置参考官方文档:<a href="https://webpack.docschina.org/api/loaders/" target="_blank" rel="noopener">https://webpack.docschina.org/api/loaders/</a></p>
+<p>如果我们发现我们的源代码需要做一些包装，这个时候，就可以考虑是否使用 loader。更多配置参考官方文档:<a target="_blank" rel="noopener" href="https://webpack.docschina.org/api/loaders/">https://webpack.docschina.org/api/loaders/</a></p>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/07/03/webpack学习-4：如何编写一个plugin/" style="float: left;">
+    <a class="pull-left" href="/2019/07/03/webpack%E5%AD%A6%E4%B9%A0-4%EF%BC%9A%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99%E4%B8%80%E4%B8%AAplugin/" style="float: left;">
         ← webpack学习-4：如何编写一个plugin
     </a>
     
     
-    <a class="pull-right" href="/2019/06/20/CSS抗锯齿-font-smoothing-属性/">
+    <a class="pull-right" href="/2019/06/20/CSS%E6%8A%97%E9%94%AF%E9%BD%BF-font-smoothing-%E5%B1%9E%E6%80%A7/">
         CSS抗锯齿 font-smoothing 属性 →
     </a>
     
@@ -348,7 +361,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>错误监控 | DEMi&#39;S BLOG</title>
+  <title>错误监控 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -250,7 +250,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">前端错误分类</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">错误的捕捉方式</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">上报错误的基本原理</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E5%89%8D%E7%AB%AF%E9%94%99%E8%AF%AF%E5%88%86%E7%B1%BB"><span class="toc-list-text">前端错误分类</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E9%94%99%E8%AF%AF%E7%9A%84%E6%8D%95%E6%8D%89%E6%96%B9%E5%BC%8F"><span class="toc-list-text">错误的捕捉方式</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E4%B8%8A%E6%8A%A5%E9%94%99%E8%AF%AF%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-list-text">上报错误的基本原理</span></a></li></ol>
 </div>
 
       </div>
@@ -258,13 +258,14 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>在复杂的网络环境和浏览器环境下，自测、QA 测试以及 Code Review 都是不够的，如果对页面稳定性和准确性要求较高，就必须有一套完善的代码异常监控体系</p>
-<a id="more"></a>
-<h2><span id="前端错误分类">前端错误分类</span></h2><p>前端错误主要分为两类：</p>
+<span id="more"></span>
+
+<h2 id="前端错误分类"><a href="#前端错误分类" class="headerlink" title="前端错误分类"></a>前端错误分类</h2><p>前端错误主要分为两类：</p>
 <ul>
 <li>即时运行错误：代码错误</li>
 <li>资源加载错误</li>
 </ul>
-<h2><span id="错误的捕捉方式">错误的捕捉方式</span></h2><ol>
+<h2 id="错误的捕捉方式"><a href="#错误的捕捉方式" class="headerlink" title="错误的捕捉方式"></a>错误的捕捉方式</h2><ol>
 <li><strong>即时运行错误的捕捉方式</strong>：</li>
 </ol>
 <ul>
@@ -272,13 +273,15 @@
 <li>window.onerror:不能捕获资源加载错误</li>
 </ul>
 <p>onerror 函数会在页面发生 js 错误时被调用。函数正常是可以收集到错误字符串信息、发生错误的 js 文件，错误所在的行数、列数、和 Error 对象（里面会有调用堆栈信息等）。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  - @param &#123;String&#125; errorMessage 错误信息</span><br><span class="line">  - @param &#123;String&#125; scriptURI 出错的文件</span><br><span class="line">  - @param &#123;Long&#125; lineNumber 出错代码的行号</span><br><span class="line">  - @param &#123;Long&#125; columnNumber 出错代码的列号</span><br><span class="line">  - @param &#123;Object&#125; errorObj 错误的详细信息，Anything</span><br><span class="line"></span><br><span class="line">window.onerror = function(errorMessage, scriptURI, lineNumber, columnNumber, errorObj) &#123; ... return true;&#125;</span><br><span class="line"></span><br><span class="line">// 关于 window.onerror 还有两点需要值得注意</span><br><span class="line">// 1、对于 onerror 这种全局捕获，最好写在所有 JS 脚本的前面，因为你无法保证你写的代码是否出错，如果写在后面，一旦发生错误的话是不会被 onerror 捕获到的。</span><br><span class="line">// 2、另外 onerror 是无法捕获到网络异常的错误。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  - @param &#123;String&#125; errorMessage 错误信息</span><br><span class="line">  - @param &#123;String&#125; scriptURI 出错的文件</span><br><span class="line">  - @param &#123;Long&#125; lineNumber 出错代码的行号</span><br><span class="line">  - @param &#123;Long&#125; columnNumber 出错代码的列号</span><br><span class="line">  - @param &#123;Object&#125; errorObj 错误的详细信息，Anything</span><br><span class="line"></span><br><span class="line">window.onerror = function(errorMessage, scriptURI, lineNumber, columnNumber, errorObj) &#123; ... return true;&#125;</span><br><span class="line"></span><br><span class="line">// 关于 window.onerror 还有两点需要值得注意</span><br><span class="line">// 1、对于 onerror 这种全局捕获，最好写在所有 JS 脚本的前面，因为你无法保证你写的代码是否出错，如果写在后面，一旦发生错误的话是不会被 onerror 捕获到的。</span><br><span class="line">// 2、另外 onerror 是无法捕获到网络异常的错误。</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>Promise 错误:最后写上 catch 函数</li>
 </ul>
 <p>通过 Promise 可以帮助我们解决异步回调地狱的问题，但是一旦 Promise 实例抛出异常而你没有用 catch 去捕获的话，onerror 或 try-catch 也无能为力，无法捕捉到错误。虽然在写 Promise 实例的时候养成最后写上 catch 函数是个好习惯，但是代码写多了就容易糊涂，忘记写 catch。</p>
 <p>所以如果你的应用用到很多的 Promise 实例的话，特别是你在一些基于 promise 的异步库比如 axios 等一定要小心，因为你不知道什么时候这些异步请求会抛出异常而你并没有处理它，所以你最好添加一个 Promise 全局异常捕获事件 <strong>unhandledrejection。</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&quot;unhandledrejection&quot;, function(e)&#123;</span><br><span class="line">  e.preventDefault()</span><br><span class="line">  console.log(&apos;我知道 promise 的错误了&apos;);</span><br><span class="line">  console.log(e.reason);</span><br><span class="line">  return true;</span><br><span class="line">&#125;);</span><br><span class="line">Promise.reject(&apos;promise error&apos;);</span><br><span class="line"></span><br><span class="line">// 以下是捕获promise错误后的输出：</span><br><span class="line">// 我知道 promise 的错误了</span><br><span class="line">// promise error</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&quot;unhandledrejection&quot;, function(e)&#123;</span><br><span class="line">  e.preventDefault()</span><br><span class="line">  console.log(&#x27;我知道 promise 的错误了&#x27;);</span><br><span class="line">  console.log(e.reason);</span><br><span class="line">  return true;</span><br><span class="line">&#125;);</span><br><span class="line">Promise.reject(&#x27;promise error&#x27;);</span><br><span class="line"></span><br><span class="line">// 以下是捕获promise错误后的输出：</span><br><span class="line">// 我知道 promise 的错误了</span><br><span class="line">// promise error</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <p>当然，如果你的应用没有做 Promise 全局异常处理的话，那会在控制台报以下错误：</p>
 <p><img src="/img/promiseerror.png" alt="promiseerror"></p>
 <p><strong>注意：</strong>跨域的 js 运行错误也可以被 window.onerror 捕获，能够获得错误信息(Script error)，但是出错文件、误所在的行数、列数和错误详情都无法拿到，那该怎么办？</p>
@@ -292,9 +295,10 @@
 <ul>
 <li>如果 iframe 页面和你的主站是同域名的话，直接给 iframe 添加 onerror 事件即可。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=&quot;./iframe.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.frames[0].onerror = function (msg, url, row, col, error) &#123;</span><br><span class="line">    console.log(&apos;我知道 iframe 的错误了，也知道错误信息&apos;);</span><br><span class="line">    console.log(&#123;</span><br><span class="line">      msg,  url,  row, col, error</span><br><span class="line">    &#125;)</span><br><span class="line">    return true;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe src=&quot;./iframe.html&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">  window.frames[0].onerror = function (msg, url, row, col, error) &#123;</span><br><span class="line">    console.log(&#x27;我知道 iframe 的错误了，也知道错误信息&#x27;);</span><br><span class="line">    console.log(&#123;</span><br><span class="line">      msg,  url,  row, col, error</span><br><span class="line">    &#125;)</span><br><span class="line">    return true;</span><br><span class="line">  &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><p>如果你嵌入的 iframe 页面和你的主站不是同个域名的，但是 iframe 内容不属于第三方，是你可以控制的，那么可以通过与 iframe 通信的方式将异常信息抛给主站接收。与 iframe 通信的方式有很多，常用的如：postMessage，hash 或者 name 字段跨域等等，这里就不展开了,感兴趣的话可以看：<a href="//2019/01/07/通信类/">跨域，你需要知道的</a></p>
+<li><p>如果你嵌入的 iframe 页面和你的主站不是同个域名的，但是 iframe 内容不属于第三方，是你可以控制的，那么可以通过与 iframe 通信的方式将异常信息抛给主站接收。与 iframe 通信的方式有很多，常用的如：postMessage，hash 或者 name 字段跨域等等，这里就不展开了,感兴趣的话可以看：<a target="_blank" rel="noopener" href="//2019/01/07/%E9%80%9A%E4%BF%A1%E7%B1%BB/">跨域，你需要知道的</a></p>
 </li>
 <li><p>如果是非同域且网站不受自己控制的话，除了通过控制台看到详细的错误信息外，没办法捕获，这是出于安全性的考虑，你引入了一个百度首页，人家页面报出的错误凭啥让你去监控呢，这会引出很多安全性的问题。</p>
 </li>
@@ -308,22 +312,23 @@
 <li>Error 事件捕获</li>
 </ul>
 <p>Error 事件捕获举例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 如果我去加载一个不存在的资源： //baidu.com/test.js</span><br><span class="line">&lt;script src=&quot;//baidu.com/test.js&quot; charset=&quot;utf-8&quot;&gt;</span><br><span class="line"></span><br><span class="line">// 在页面上做 error 事件捕获</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">window.addEventListener(&apos;error&apos;,function(e)&#123;</span><br><span class="line">  console.log(&apos;捕获&apos; + e);</span><br><span class="line">&#125;,true)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">// 注意：由于网络请求异常不会事件冒泡，因此必须在捕获阶段将其捕捉到才行,这边第三个参数必须为 true 才是捕获，不然是冒泡</span><br><span class="line">// 但是这种方式虽然可以捕捉到网络请求的异常，但是无法判断 HTTP 的状态是 404 还是其他比如 500 等等，所以还需要配合服务端日志才进行排查分析才可以。</span><br></pre></td></tr></table></figure>
-<h2><span id="上报错误的基本原理">上报错误的基本原理</span></h2><p>1、采用 Ajax 通信的方式上报：这种方式能够实现错误上报，但是所有的错误监控都不会采用这种方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 如果我去加载一个不存在的资源： //baidu.com/test.js</span><br><span class="line">&lt;script src=&quot;//baidu.com/test.js&quot; charset=&quot;utf-8&quot;&gt;</span><br><span class="line"></span><br><span class="line">// 在页面上做 error 事件捕获</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">window.addEventListener(&#x27;error&#x27;,function(e)&#123;</span><br><span class="line">  console.log(&#x27;捕获&#x27; + e);</span><br><span class="line">&#125;,true)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">// 注意：由于网络请求异常不会事件冒泡，因此必须在捕获阶段将其捕捉到才行,这边第三个参数必须为 true 才是捕获，不然是冒泡</span><br><span class="line">// 但是这种方式虽然可以捕捉到网络请求的异常，但是无法判断 HTTP 的状态是 404 还是其他比如 500 等等，所以还需要配合服务端日志才进行排查分析才可以。</span><br></pre></td></tr></table></figure>
+
+<h2 id="上报错误的基本原理"><a href="#上报错误的基本原理" class="headerlink" title="上报错误的基本原理"></a>上报错误的基本原理</h2><p>1、采用 Ajax 通信的方式上报：这种方式能够实现错误上报，但是所有的错误监控都不会采用这种方式</p>
 <p>2、利用 Image 对象上报</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 利用 Image 对象上报</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">// src 的值是上报的路径和携带的信息</span><br><span class="line">(new Image()).src=&apos;http://baidu.com/testjk?r=tksk&apos;；</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 利用 Image 对象上报</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">// src 的值是上报的路径和携带的信息</span><br><span class="line">(new Image()).src=&#x27;http://baidu.com/testjk?r=tksk&#x27;；</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/01/22/设计模式-0/" style="float: left;">
+    <a class="pull-left" href="/2019/01/22/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-0/" style="float: left;">
         ← 设计模式-0
     </a>
     
     
-    <a class="pull-right" href="/2019/01/20/页面性能/">
+    <a class="pull-right" href="/2019/01/20/%E9%A1%B5%E9%9D%A2%E6%80%A7%E8%83%BD/">
         页面性能 →
     </a>
     
@@ -357,7 +362,7 @@
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

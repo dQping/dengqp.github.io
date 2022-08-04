@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>git提交远程仓库的冲突解决 | DEMi&#39;S BLOG</title>
+  <title>git提交远程仓库的冲突解决 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -251,7 +251,7 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">错误解决示范</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">解决冲突的正确姿势</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">扩展</span></a></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3%E7%A4%BA%E8%8C%83"><span class="toc-list-text">错误解决示范</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF"><span class="toc-list-text">解决冲突的正确姿势</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E6%89%A9%E5%B1%95"><span class="toc-list-text">扩展</span></a></li></ol>
 </div>
 
       </div>
@@ -259,18 +259,23 @@
 
     <div class="col-md-8 col-md-offset-2">
       <p>今天提交代码到 github，忘记 github 上的项目有个文件被我删了，我提交的时候忘记 pull 所以合并的时候出现了冲突，以下是我的解决过程和踩的坑，所以将次记录下来，以遍出现相同情况的时候可以快速查阅。</p>
- <a id="more"></a>
+ <span id="more"></span>
+
 <p>git push 时提示冲突：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">! [rejected]        master -&gt; master (non-fast-forward)</span><br><span class="line">error: failed to push some refs to &apos;https://github.com/dQping/********.git&apos;</span><br><span class="line">hint: Updates were rejected because the tip of your current branch is behind</span><br><span class="line">hint: its remote counterpart. Integrate the remote changes (e.g.</span><br><span class="line">hint: &apos;git pull ...&apos;) before pushing again.</span><br><span class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</span><br></pre></td></tr></table></figure>
-<h2><span id="错误解决示范">错误解决示范</span></h2><p>我先上网查了一下这个错误，然后看到说执行下面的命令可以解决：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard FETCH_HEAD</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
-<p>看了看，心里觉得简单嘛，美滋滋的就照做了，然后…… ( ̀⌄ ́) what？？？ 写了一个晚上的内容木有了！！！心塞有木有=。=</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">! [rejected]        master -&gt; master (non-fast-forward)</span><br><span class="line">error: failed to push some refs to &#x27;https://github.com/dQping/********.git&#x27;</span><br><span class="line">hint: Updates were rejected because the tip of your current branch is behind</span><br><span class="line">hint: its remote counterpart. Integrate the remote changes (e.g.</span><br><span class="line">hint: &#x27;git pull ...&#x27;) before pushing again.</span><br><span class="line">hint: See the &#x27;Note about fast-forwards&#x27; in &#x27;git push --help&#x27; for details.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="错误解决示范"><a href="#错误解决示范" class="headerlink" title="错误解决示范"></a>错误解决示范</h2><p>我先上网查了一下这个错误，然后看到说执行下面的命令可以解决：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard FETCH_HEAD</span><br><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<p>看了看，心里觉得简单嘛，美滋滋的就照做了，然后…… ( ̀⌄ ́) what？？？ 写了一个晚上的内容木有了！！！心塞有木有&#x3D;。&#x3D;</p>
 <p>接着查了查，才知道 <strong>git reset –hard FETCH_HEAD</strong> 是表示放弃当前修改，回退上一版本。。。</p>
 <p>emmmmmmm 不要慌，总有一条命令可以解决你的问题，如果不行，那就多执行几条(^_^)v 下面是我的执行步骤：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 查看你本地提交记录 找到最新一次提交的版本号：</span><br><span class="line">git reflog</span><br><span class="line"># 结果显示：</span><br><span class="line">603bb1d (HEAD -&gt; master, origin/master, origin/HEAD) HEAD@&#123;0&#125;: reset: moving to FETCH_HEAD</span><br><span class="line">d3a4654 HEAD@&#123;1&#125;: commit: gulp 实践</span><br><span class="line">9b03de3 HEAD@&#123;2&#125;: commit: 前端自动化构建</span><br><span class="line">0c5394a HEAD@&#123;3&#125;: clone: from https://github.com/dQping/******.git</span><br><span class="line"></span><br><span class="line"># 然后 回退到本地最新代码的位置：</span><br><span class="line">git reset --hard HEAD@&#123;1&#125;</span><br><span class="line"># 回退成功显示：</span><br><span class="line">HEAD is now at d3a4654 ggulp 实践</span><br><span class="line"></span><br><span class="line"># 另外 强推代码：</span><br><span class="line">git push -f origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 查看你本地提交记录 找到最新一次提交的版本号：</span><br><span class="line">git reflog</span><br><span class="line"># 结果显示：</span><br><span class="line">603bb1d (HEAD -&gt; master, origin/master, origin/HEAD) HEAD@&#123;0&#125;: reset: moving to FETCH_HEAD</span><br><span class="line">d3a4654 HEAD@&#123;1&#125;: commit: gulp 实践</span><br><span class="line">9b03de3 HEAD@&#123;2&#125;: commit: 前端自动化构建</span><br><span class="line">0c5394a HEAD@&#123;3&#125;: clone: from https://github.com/dQping/******.git</span><br><span class="line"></span><br><span class="line"># 然后 回退到本地最新代码的位置：</span><br><span class="line">git reset --hard HEAD@&#123;1&#125;</span><br><span class="line"># 回退成功显示：</span><br><span class="line">HEAD is now at d3a4654 ggulp 实践</span><br><span class="line"></span><br><span class="line"># 另外 强推代码：</span><br><span class="line">git push -f origin master</span><br></pre></td></tr></table></figure>
+
 <p><strong>但是！</strong>强制 push 本地仓库到远程并不是很好的方案 ，这种情况不会进行 merge, 强制 push 后远程文件可能会丢失，所以不建议使用此方法。</p>
-<h2><span id="解决冲突的正确姿势">解决冲突的正确姿势</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 拉取远程的文件</span><br><span class="line">git pull --rebase origin master</span><br><span class="line"># 推送文件到远程仓库</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-<h2><span id="扩展">扩展</span></h2><pre><code>简单对比git pull和git pull –rebase的使用：
+<h2 id="解决冲突的正确姿势"><a href="#解决冲突的正确姿势" class="headerlink" title="解决冲突的正确姿势"></a>解决冲突的正确姿势</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 拉取远程的文件</span><br><span class="line">git pull --rebase origin master</span><br><span class="line"># 推送文件到远程仓库</span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><pre><code>简单对比git pull和git pull –rebase的使用：
 git pull = git fetch + git merge
 git pull –rebase = git fetch + git rebase
 
@@ -283,15 +288,16 @@ git pull –rebase 到底做了什么呢？
 对于rebase的工作流以代码的形式也体现：
 
 git rebase
-while(存在冲突) {
+while(存在冲突) &#123;
     git status
     找到当前冲突文件，编辑解决冲突
     git add -u   //保存修改和删除，但是不包括新建文件
     git rebase --continue
     if( git rebase --abort )
         break;
-}
-</code></pre><p>除去替代 merge，git rebase 还有合并多个 commit 的功能，加上–rebase 参数的原因是，在多人开发中，有多个 merge commit，如果不加该参数，则有多个历史提交线，而它的作用，就相当于把分叉的提交线中的一条，每一次提交都捡选出来， 在另一条提交线上提交。最后也形成一条单一的提交线。</p>
+&#125;
+</code></pre>
+<p>除去替代 merge，git rebase 还有合并多个 commit 的功能，加上–rebase 参数的原因是，在多人开发中，有多个 merge commit，如果不加该参数，则有多个历史提交线，而它的作用，就相当于把分叉的提交线中的一条，每一次提交都捡选出来， 在另一条提交线上提交。最后也形成一条单一的提交线。</p>
 <p>示例：<br><img src="/img/git_1.png" alt="示例图片1"></p>
 <p>C 的基础上开发到 D，小明在 C 的基础上开发到 E，这个时候要把 E 合并到 origin，两种办法:<br><img src="/img/git_2.png" alt="示例图片2"></p>
 
@@ -300,12 +306,12 @@ while(存在冲突) {
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/03/29/webpack学习-2：高级概念/" style="float: left;">
+    <a class="pull-left" href="/2019/03/29/webpack%E5%AD%A6%E4%B9%A0-2%EF%BC%9A%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/" style="float: left;">
         ← webpack学习-2：高级概念
     </a>
     
     
-    <a class="pull-right" href="/2019/03/28/webpack学习-1：基础配置/">
+    <a class="pull-right" href="/2019/03/28/webpack%E5%AD%A6%E4%B9%A0-1%EF%BC%9A%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/">
         webpack学习-1：基础配置 →
     </a>
     
@@ -339,7 +345,7 @@ while(存在冲突) {
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran

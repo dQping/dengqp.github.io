@@ -17,13 +17,13 @@
 <!--<![endif]-->
 
 <head>
-  <title>表单校验：jQuery.Validate.js使用笔记 | DEMi&#39;S BLOG</title>
+  <title>表单校验：jQuery.Validate.js使用笔记 | Frida&#39;S BLOG</title>
   <!-- Meta data -->
   <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="generator" content="DEMi'S BLOG" />
-  <meta name="author" content="Demi Deng" />
+  <meta name="generator" content="Frida'S BLOG" />
+  <meta name="author" content="Frida Deng" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
 
@@ -37,7 +37,7 @@
   <link
     rel="alternate"
     href="/atom.xml"
-    title="DEMi&#39;S BLOG"
+    title="Frida&#39;S BLOG"
     type="application/atom+xml"
   />
   <link
@@ -198,7 +198,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">DEMi'S BLOG</a></li>
+                            <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -251,16 +251,17 @@
 </span>
 <div class="toc">
   <div class="toc-title">目录</div>
-  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">默认校验规则</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">API</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">使用</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">导入 js 库</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">将校验规则写到 js 代码中</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">更改错误信息显示的位置</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">异步验证</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">添加自定义校验</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#undefined"><span class="toc-list-text">radio 和 checkbox、select 的验证</span></a></li></ol></li></ol>
+  <ol class="toc-list"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E9%BB%98%E8%AE%A4%E6%A0%A1%E9%AA%8C%E8%A7%84%E5%88%99"><span class="toc-list-text">默认校验规则</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#API"><span class="toc-list-text">API</span></a></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-list-text">使用</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E5%AF%BC%E5%85%A5-js-%E5%BA%93"><span class="toc-list-text">导入 js 库</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E5%B0%86%E6%A0%A1%E9%AA%8C%E8%A7%84%E5%88%99%E5%86%99%E5%88%B0-js-%E4%BB%A3%E7%A0%81%E4%B8%AD"><span class="toc-list-text">将校验规则写到 js 代码中</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%9B%B4%E6%94%B9%E9%94%99%E8%AF%AF%E4%BF%A1%E6%81%AF%E6%98%BE%E7%A4%BA%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-list-text">更改错误信息显示的位置</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E5%BC%82%E6%AD%A5%E9%AA%8C%E8%AF%81"><span class="toc-list-text">异步验证</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A0%A1%E9%AA%8C"><span class="toc-list-text">添加自定义校验</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#radio-%E5%92%8C-checkbox%E3%80%81select-%E7%9A%84%E9%AA%8C%E8%AF%81"><span class="toc-list-text">radio 和 checkbox、select 的验证</span></a></li></ol></li></ol>
 </div>
 
       </div>
     </div>
 
     <div class="col-md-8 col-md-offset-2">
-      <p><a href="https://github.com/jquery-validation/jquery-validation" target="_blank" rel="noopener">jquery-validation</a>是一款表单验证插件，提供了强大的表单验证功能，详细使用参考<a href="http://www.runoob.com/jquery/jquery-plugin-validate.html" target="_blank" rel="noopener">菜鸟教程</a>,这边只简单记录一些常用的操作。</p>
-<a id="more"></a>
-<h2><span id="默认校验规则">默认校验规则</span></h2><table>
+      <p><a target="_blank" rel="noopener" href="https://github.com/jquery-validation/jquery-validation">jquery-validation</a>是一款表单验证插件，提供了强大的表单验证功能，详细使用参考<a target="_blank" rel="noopener" href="http://www.runoob.com/jquery/jquery-plugin-validate.html">菜鸟教程</a>,这边只简单记录一些常用的操作。</p>
+<span id="more"></span>
+
+<h2 id="默认校验规则"><a href="#默认校验规则" class="headerlink" title="默认校验规则"></a>默认校验规则</h2><table>
 <thead>
 <tr>
 <th>序号</th>
@@ -268,8 +269,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>1</td>
 <td>required:true</td>
 <td>必须输入的字段</td>
@@ -297,7 +297,7 @@
 <tr>
 <td>6</td>
 <td>dateISO:true</td>
-<td>必须输入正确格式的日期（ISO），例如：2009-06-23，1998/01/22。只验证格式，不验证有效性。</td>
+<td>必须输入正确格式的日期（ISO），例如：2009-06-23，1998&#x2F;01&#x2F;22。只验证格式，不验证有效性。</td>
 </tr>
 <tr>
 <td>7</td>
@@ -354,9 +354,8 @@
 <td>min:10</td>
 <td>输入值不能小于 10。</td>
 </tr>
-</tbody>
-</table>
-<h2><span id="api">API</span></h2><table>
+</tbody></table>
+<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><table>
 <thead>
 <tr>
 <th>名称</th>
@@ -364,8 +363,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>validate(options)</td>
 <td>Validator</td>
 <td>验证所选的 FORM。</td>
@@ -417,6 +415,8 @@
 </tr>
 <tr>
 <td>Validator 函数</td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td>setDefaults(defaults)</td>
@@ -438,16 +438,18 @@
 <td>undefined</td>
 <td>增加组合验证类型，这个是同时加多个验证方法。</td>
 </tr>
-</tbody>
-</table>
-<h2><span id="使用">使用</span></h2><h3><span id="导入-js-库">导入 js 库</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h3><span id="将校验规则写到-js-代码中">将校验规则写到 js 代码中</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">$().ready(function() &#123;</span><br><span class="line">// 在键盘按下并释放及提交后验证提交表单</span><br><span class="line">  $(&quot;#signupForm&quot;).validate(&#123;</span><br><span class="line">    rules: &#123;</span><br><span class="line">      firstname: &quot;required&quot;,</span><br><span class="line">      lastname: &quot;required&quot;,</span><br><span class="line">      username: &#123;</span><br><span class="line">        required: true,</span><br><span class="line">        minlength: 2</span><br><span class="line">      &#125;,</span><br><span class="line">      password: &#123;</span><br><span class="line">        required: true,</span><br><span class="line">        minlength: 5</span><br><span class="line">      &#125;,</span><br><span class="line">      confirm_password: &#123;</span><br><span class="line">        required: true,</span><br><span class="line">        minlength: 5,</span><br><span class="line">        equalTo: &quot;#password&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      email: &#123;</span><br><span class="line">        required: true,</span><br><span class="line">        email: true</span><br><span class="line">      &#125;,</span><br><span class="line">      topic: &#123;</span><br><span class="line">        required: &quot;#newsletter:checked&quot;,</span><br><span class="line">        minlength: 2</span><br><span class="line">      &#125;,</span><br><span class="line">      agree: &quot;required&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    messages: &#123;</span><br><span class="line">      firstname: &quot;请输入您的名字&quot;,</span><br><span class="line">      lastname: &quot;请输入您的姓氏&quot;,</span><br><span class="line">      username: &#123;</span><br><span class="line">        required: &quot;请输入用户名&quot;,</span><br><span class="line">        minlength: &quot;用户名必需由两个字母组成&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      password: &#123;</span><br><span class="line">        required: &quot;请输入密码&quot;,</span><br><span class="line">        minlength: &quot;密码长度不能小于 5 个字母&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      confirm_password: &#123;</span><br><span class="line">        required: &quot;请输入密码&quot;,</span><br><span class="line">        minlength: &quot;密码长度不能小于 5 个字母&quot;,</span><br><span class="line">        equalTo: &quot;两次密码输入不一致&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      email: &quot;请输入一个正确的邮箱&quot;,</span><br><span class="line">      agree: &quot;请接受我们的声明&quot;,</span><br><span class="line">      topic: &quot;请选择两个主题&quot;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</tbody></table>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="导入-js-库"><a href="#导入-js-库" class="headerlink" title="导入 js 库"></a>导入 js 库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=&quot;http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="将校验规则写到-js-代码中"><a href="#将校验规则写到-js-代码中" class="headerlink" title="将校验规则写到 js 代码中"></a>将校验规则写到 js 代码中</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">$().ready(function() &#123;</span><br><span class="line">// 在键盘按下并释放及提交后验证提交表单</span><br><span class="line">  $(&quot;#signupForm&quot;).validate(&#123;</span><br><span class="line">    rules: &#123;</span><br><span class="line">      firstname: &quot;required&quot;,</span><br><span class="line">      lastname: &quot;required&quot;,</span><br><span class="line">      username: &#123;</span><br><span class="line">        required: true,</span><br><span class="line">        minlength: 2</span><br><span class="line">      &#125;,</span><br><span class="line">      password: &#123;</span><br><span class="line">        required: true,</span><br><span class="line">        minlength: 5</span><br><span class="line">      &#125;,</span><br><span class="line">      confirm_password: &#123;</span><br><span class="line">        required: true,</span><br><span class="line">        minlength: 5,</span><br><span class="line">        equalTo: &quot;#password&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      email: &#123;</span><br><span class="line">        required: true,</span><br><span class="line">        email: true</span><br><span class="line">      &#125;,</span><br><span class="line">      topic: &#123;</span><br><span class="line">        required: &quot;#newsletter:checked&quot;,</span><br><span class="line">        minlength: 2</span><br><span class="line">      &#125;,</span><br><span class="line">      agree: &quot;required&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    messages: &#123;</span><br><span class="line">      firstname: &quot;请输入您的名字&quot;,</span><br><span class="line">      lastname: &quot;请输入您的姓氏&quot;,</span><br><span class="line">      username: &#123;</span><br><span class="line">        required: &quot;请输入用户名&quot;,</span><br><span class="line">        minlength: &quot;用户名必需由两个字母组成&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      password: &#123;</span><br><span class="line">        required: &quot;请输入密码&quot;,</span><br><span class="line">        minlength: &quot;密码长度不能小于 5 个字母&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      confirm_password: &#123;</span><br><span class="line">        required: &quot;请输入密码&quot;,</span><br><span class="line">        minlength: &quot;密码长度不能小于 5 个字母&quot;,</span><br><span class="line">        equalTo: &quot;两次密码输入不一致&quot;</span><br><span class="line">      &#125;,</span><br><span class="line">      email: &quot;请输入一个正确的邮箱&quot;,</span><br><span class="line">      agree: &quot;请接受我们的声明&quot;,</span><br><span class="line">      topic: &quot;请选择两个主题&quot;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
 <p>如果某个控件没有 message，将调用语言包默认的信息</p>
 <pre><code>required: true 值是必须的。
 required: &quot;#aa:checked&quot; 表达式的值为真，则需要验证。
-required: function(){} 返回为真，表示需要验证。
+required: function()&#123;&#125; 返回为真，表示需要验证。
 后边两种常用于，表单中需要同时填或不填的元素。
-</code></pre><h3><span id="更改错误信息显示的位置">更改错误信息显示的位置</span></h3><table>
+</code></pre>
+<h3 id="更改错误信息显示的位置"><a href="#更改错误信息显示的位置" class="headerlink" title="更改错误信息显示的位置"></a>更改错误信息显示的位置</h3><table>
 <thead>
 <tr>
 <th>参数</th>
@@ -456,8 +458,7 @@ required: function(){} 返回为真，表示需要验证。
 <th>默认值</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>errorClass</td>
 <td>String</td>
 <td>指定错误提示的 css 类名，可以自定义错误提示的样式。</td>
@@ -485,50 +486,58 @@ required: function(){} 返回为真，表示需要验证。
 <td>wrapper</td>
 <td>String</td>
 <td>用什么标签再把上边的 errorELement 包起来。</td>
+<td></td>
 </tr>
-</tbody>
-</table>
-<h3><span id="异步验证">异步验证</span></h3><p>三种方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">remote：URL</span><br></pre></td></tr></table></figure>
+</tbody></table>
+<h3 id="异步验证"><a href="#异步验证" class="headerlink" title="异步验证"></a>异步验证</h3><p>三种方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">remote：URL</span><br></pre></td></tr></table></figure>
+
 <p>使用 ajax 方式进行验证，默认会提交当前验证的值到远程地址。</p>
-<p><strong>_注：_</strong>远程地址只能输出 “true” 或 “false”，不能有其他输出。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">remote: &quot;check-email.php&quot;</span><br></pre></td></tr></table></figure>
+<p>**<em>注：</em>**远程地址只能输出 “true” 或 “false”，不能有其他输出。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">remote: &quot;check-email.php&quot;</span><br></pre></td></tr></table></figure>
+
 <p>如果需要提交其他的值，可以使用 data 选项。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">remote: &#123;</span><br><span class="line">    url: &quot;check-email.php&quot;,     //后台处理程序</span><br><span class="line">    type: &quot;post&quot;,               //数据发送方式</span><br><span class="line">    dataType: &quot;json&quot;,           //接受数据格式</span><br><span class="line">    data: &#123;                     //要传递的数据</span><br><span class="line">        username: function() &#123;</span><br><span class="line">            return $(&quot;#username&quot;).val();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="添加自定义校验">添加自定义校验</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">addMethod：name, method, message</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">remote: &#123;</span><br><span class="line">    url: &quot;check-email.php&quot;,     //后台处理程序</span><br><span class="line">    type: &quot;post&quot;,               //数据发送方式</span><br><span class="line">    dataType: &quot;json&quot;,           //接受数据格式</span><br><span class="line">    data: &#123;                     //要传递的数据</span><br><span class="line">        username: function() &#123;</span><br><span class="line">            return $(&quot;#username&quot;).val();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加自定义校验"><a href="#添加自定义校验" class="headerlink" title="添加自定义校验"></a>添加自定义校验</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">addMethod：name, method, message</span><br></pre></td></tr></table></figure>
+
 <p>自定义验证方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 中文字两个字节</span><br><span class="line">$.validator.addMethod(&quot;byteRangeLength&quot;, function(value, element, param) &#123;</span><br><span class="line">    var length = value.length;</span><br><span class="line">    for(var i = 0; i &lt; value.length; i++)&#123;</span><br><span class="line">        if(value.charCodeAt(i) &gt; 127)&#123;</span><br><span class="line">            length++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  return this.optional(element) || ( length &gt;= param[0] &amp;&amp; length &lt;= param[1] );</span><br><span class="line">&#125;, $.validator.format(&quot;请确保输入的值在&#123;0&#125;-&#123;1&#125;个字节之间(一个中文字算2个字节)&quot;));</span><br><span class="line"></span><br><span class="line">// 邮政编码验证</span><br><span class="line">$.validator.addMethod(&quot;isZipCode&quot;, function(value, element) &#123;</span><br><span class="line">    var tel = /^[0-9]&#123;6&#125;$/;</span><br><span class="line">    return this.optional(element) || (tel.test(value));</span><br><span class="line">&#125;, &quot;请正确填写您的邮政编码&quot;);</span><br></pre></td></tr></table></figure>
-<p><strong><em>注意：</em></strong>要在 additional-methods.js 文件中添加或者在 jquery.validate.js 文件中添加。建议一般写在 additional-methods.js 文件中。</p>
-<p><strong><em>注意：</em></strong>在 messages_cn.js 文件中添加：isZipCode: “只能包括中文字、英文字母、数字和下划线”。调用前要添加对 additional-methods.js 文件的引用。</p>
-<h3><span id="radio-和-checkbox-select-的验证">radio 和 checkbox、select 的验证</span></h3><ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 中文字两个字节</span><br><span class="line">$.validator.addMethod(&quot;byteRangeLength&quot;, function(value, element, param) &#123;</span><br><span class="line">    var length = value.length;</span><br><span class="line">    for(var i = 0; i &lt; value.length; i++)&#123;</span><br><span class="line">        if(value.charCodeAt(i) &gt; 127)&#123;</span><br><span class="line">            length++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  return this.optional(element) || ( length &gt;= param[0] &amp;&amp; length &lt;= param[1] );</span><br><span class="line">&#125;, $.validator.format(&quot;请确保输入的值在&#123;0&#125;-&#123;1&#125;个字节之间(一个中文字算2个字节)&quot;));</span><br><span class="line"></span><br><span class="line">// 邮政编码验证</span><br><span class="line">$.validator.addMethod(&quot;isZipCode&quot;, function(value, element) &#123;</span><br><span class="line">    var tel = /^[0-9]&#123;6&#125;$/;</span><br><span class="line">    return this.optional(element) || (tel.test(value));</span><br><span class="line">&#125;, &quot;请正确填写您的邮政编码&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>**<em>注意：</em>**要在 additional-methods.js 文件中添加或者在 jquery.validate.js 文件中添加。建议一般写在 additional-methods.js 文件中。</p>
+<p>**<em>注意：</em>**在 messages_cn.js 文件中添加：isZipCode: “只能包括中文字、英文字母、数字和下划线”。调用前要添加对 additional-methods.js 文件的引用。</p>
+<h3 id="radio-和-checkbox、select-的验证"><a href="#radio-和-checkbox、select-的验证" class="headerlink" title="radio 和 checkbox、select 的验证"></a>radio 和 checkbox、select 的验证</h3><ul>
 <li>radio 的 required 表示必须选中一个。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input  type=&quot;radio&quot; id=&quot;gender_male&quot; value=&quot;m&quot; name=&quot;gender&quot; required /&gt;</span><br><span class="line">&lt;input  type=&quot;radio&quot; id=&quot;gender_female&quot; value=&quot;f&quot; name=&quot;gender&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input  type=&quot;radio&quot; id=&quot;gender_male&quot; value=&quot;m&quot; name=&quot;gender&quot; required /&gt;</span><br><span class="line">&lt;input  type=&quot;radio&quot; id=&quot;gender_female&quot; value=&quot;f&quot; name=&quot;gender&quot;/&gt;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>checkbox 的 required 表示必须选中。</li>
 <li>checkbox 的 minlength 表示必须选中的最小个数，maxlength 表示最大的选中个数，rangelength:[2,3] 表示选中个数区间</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; id=&quot;spam_email&quot; value=&quot;email&quot; name=&quot;spam[]&quot; required minlength=&quot;2&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; id=&quot;spam_phone&quot; value=&quot;phone&quot; name=&quot;spam[]&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; id=&quot;spam_mail&quot; value=&quot;mail&quot; name=&quot;spam[]&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; id=&quot;spam_email&quot; value=&quot;email&quot; name=&quot;spam[]&quot; required minlength=&quot;2&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; id=&quot;spam_phone&quot; value=&quot;phone&quot; name=&quot;spam[]&quot; /&gt;</span><br><span class="line">&lt;input type=&quot;checkbox&quot; class=&quot;checkbox&quot; id=&quot;spam_mail&quot; value=&quot;mail&quot; name=&quot;spam[]&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>select 的 required 表示选中的 value 不能为空。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;jungle&quot; name=&quot;jungle&quot; title=&quot;Please select something!&quot; required&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;1&quot;&gt;Buga&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;2&quot;&gt;Baga&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;3&quot;&gt;Oi&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;jungle&quot; name=&quot;jungle&quot; title=&quot;Please select something!&quot; required&gt;</span><br><span class="line">    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;1&quot;&gt;Buga&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;2&quot;&gt;Baga&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;3&quot;&gt;Oi&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>select 的 minlength 表示选中的最小个数（可多选的 select），maxlength 表示最大的选中个数，rangelength:[2,3] 表示选中个数区间。</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;fruit&quot; name=&quot;fruit&quot; title=&quot;Please select at least two fruits&quot; class=&quot;&#123;required:true, minlength:2&#125;&quot; multiple=&quot;multiple&quot;&gt;</span><br><span class="line">    &lt;option value=&quot;b&quot;&gt;Banana&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;a&quot;&gt;Apple&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;p&quot;&gt;Peach&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;t&quot;&gt;Turtle&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;fruit&quot; name=&quot;fruit&quot; title=&quot;Please select at least two fruits&quot; class=&quot;&#123;required:true, minlength:2&#125;&quot; multiple=&quot;multiple&quot;&gt;</span><br><span class="line">    &lt;option value=&quot;b&quot;&gt;Banana&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;a&quot;&gt;Apple&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;p&quot;&gt;Peach&lt;/option&gt;</span><br><span class="line">    &lt;option value=&quot;t&quot;&gt;Turtle&lt;/option&gt;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure>
 
       <div class="clearfix"></div>
       <hr class="nogutter" />
     </div>
     <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2019/04/25/纯CSS画的基本图形/" style="float: left;">
+    <a class="pull-left" href="/2019/04/25/%E7%BA%AFCSS%E7%94%BB%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%BD%A2/" style="float: left;">
         ← 纯CSS画的基本图形
     </a>
     
     
-    <a class="pull-right" href="/2019/03/29/webpack学习-2：高级概念/">
+    <a class="pull-right" href="/2019/03/29/webpack%E5%AD%A6%E4%B9%A0-2%EF%BC%9A%E9%AB%98%E7%BA%A7%E6%A6%82%E5%BF%B5/">
         webpack学习-2：高级概念 →
     </a>
     
@@ -562,7 +571,7 @@ required: function(){} 返回为真，表示需要验证。
     <div class="copy">
       <p>
         &copy; 2019<script>
-          new Date().getFullYear()</script>, Content By Demi Deng. All Rights Reserved.
+          new Date().getFullYear()</script>, Content By Frida Deng. All Rights Reserved.
       </p>
       <p>
         Theme By Kieran
