@@ -117,7 +117,7 @@
                 <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
                 <ul class="sb-submenu">
                     
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAAs</a></li>
+                        <li><a href="/" target="_BLANK" class="animsition-link">TODO</a></li>
                     
                 </ul>
             </li>
@@ -127,6 +127,8 @@
         		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
             	<ul class="sb-submenu">
 				  	
+				    <li><a href="/categories/JavaScript/" class="animsition-link">JavaScript<small>(7)</small></a></li>
+				    
 				    <li><a href="/categories/Vue-cli项目构建/" class="animsition-link">Vue-cli项目构建<small>(6)</small></a></li>
 				    
 				    <li><a href="/categories/antd/" class="animsition-link">antd<small>(1)</small></a></li>
@@ -147,7 +149,7 @@
 				    
 				    <li><a href="/categories/webpack/" class="animsition-link">webpack<small>(6)</small></a></li>
 				    
-				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(17)</small></a></li>
+				    <li><a href="/categories/前端知识基础/" class="animsition-link">前端知识基础<small>(11)</small></a></li>
 				    
 				    <li><a href="/categories/收藏集/" class="animsition-link">收藏集<small>(1)</small></a></li>
 				    
@@ -172,7 +174,7 @@
         <ul class="sb-menu secondary">
             
             <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+            <!-- <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li> -->
         </ul>
     </div>
     
@@ -201,7 +203,7 @@
                             <li><a href="/" class="animsition-link">Frida'S BLOG</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            <li><a href="https://github.com/dQping" title="Github" target="_blank"><i class="icon-github"></i></a></li>
                             
                             
                             <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
@@ -277,7 +279,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// NodeList对象</span><br><span class="line">let ps = document.querySelectorAll(&#x27;p&#x27;);</span><br><span class="line">Array.from(ps).filter(p =&gt; &#123;</span><br><span class="line">  return p.textContent.length &gt; 100;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// arguments对象</span><br><span class="line">function foo() &#123;</span><br><span class="line">  var args = Array.from(arguments);</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Array.from 还可以接受第二个参数，作用类似于数组的 map 方法，用来对每个元素进行处理，将处理后的值放入返回的数组。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Array.from(arrayLike, x =&gt; x * x);</span><br><span class="line">// 等同于</span><br><span class="line">Array.from(arrayLike).map(x =&gt; x * x);</span><br><span class="line"></span><br><span class="line">Array.from([1, 2, 3], (x) =&gt; x * x)</span><br><span class="line">// [1, 4, 9</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let spans = document.querySelectorAll(&#x27;span.name&#x27;);</span><br><span class="line"></span><br><span class="line">// map()</span><br><span class="line">let names1 = Array.prototype.map.call(spans, s =&gt; s.textContent);</span><br><span class="line"></span><br><span class="line">// Array.from()</span><br><span class="line">let names2 = Array.from(spans, s =&gt; s.textContent)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Array.from(arrayLike, x =&gt; x * x);</span><br><span class="line">// 等同于</span><br><span class="line">Array.from(arrayLike).map(x =&gt; x * x);</span><br><span class="line"></span><br><span class="line">Array.from([1, 2, 3], (x) =&gt; x * x)</span><br><span class="line">// [1, 4, 9]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">let spans = document.querySelectorAll(&#x27;span.name&#x27;);</span><br><span class="line"></span><br><span class="line">// map()</span><br><span class="line">let names1 = Array.prototype.map.call(spans, s =&gt; s.textContent);</span><br><span class="line"></span><br><span class="line">// Array.from()</span><br><span class="line">let names2 = Array.from(spans, s =&gt; s.textContent)</span><br></pre></td></tr></table></figure>
 
 <p>如果<strong>map</strong>函数里面用到了<strong>this 关键字</strong>，还可以传入 Array.from 的<strong>第三个参数</strong>，用来<strong>绑定 this</strong>。</p>
 <h2 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let arr = [1,2,3,4,5]</span><br><span class="line"></span><br><span class="line">// 参数一：前一个值</span><br><span class="line">// 参数二：下一个值（当前值）</span><br><span class="line">// 参数三：当前的索引</span><br><span class="line">// 参数四：arr数组</span><br><span class="line">let total = arr.reduce(function(prev,next,currentIndex,arr)&#123;</span><br><span class="line">    return prev + next</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(total) // 15</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -392,7 +394,7 @@
   var gitment = new Gitment({
     id: "Sat Feb 23 2019 16:40:01 GMT+0800",
     owner: "dQping",
-    repo: "dqping.github.io",
+    repo: "dengqp.github.io",
     oauth: {
       client_id: "c2de462c28c32f89059f",
       client_secret: "9d664eef153368ff85f4a56d36783173e02dd462"
@@ -423,7 +425,7 @@
       <ul>
         
         <li>
-          <a href="https://github.com/" title="Github" target="_blank"
+          <a href="https://github.com/dQping" title="Github" target="_blank"
             ><i class="icon-github"></i></a
           >&nbsp;
         </li>
